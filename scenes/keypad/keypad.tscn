@@ -31,6 +31,135 @@ offset_bottom = 40.0
 layout_mode = 2
 theme_override_constants/separation = 25
 
+[node name="Panel1" type="GridContainer" parent="PanelContainer/HBoxContainer"]
+layout_mode = 2
+columns = 3
+
+[node name="ButtonPart" type="Button" parent="PanelContainer/HBoxContainer/Panel1" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "Part"
+script = ExtResource("2_v3vkr")
+key_string = "part"
+target_user = NodePath("../../../../OSCUser")
+
+[node name="ButtonCue" type="Button" parent="PanelContainer/HBoxContainer/Panel1" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "Cue"
+script = ExtResource("2_v3vkr")
+key_string = "cue"
+target_user = NodePath("../../../../OSCUser")
+
+[node name="ButtonRecord" type="Button" parent="PanelContainer/HBoxContainer/Panel1" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "Record"
+script = ExtResource("2_v3vkr")
+key_string = "record"
+target_user = NodePath("../../../../OSCUser")
+
+[node name="ButtonIntensityPallete" type="Button" parent="PanelContainer/HBoxContainer/Panel1" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "Int
+Palette"
+script = ExtResource("2_v3vkr")
+key_string = "intensity_palette"
+target_user = NodePath("../../../../OSCUser")
+
+[node name="ButtonFocusPalette" type="Button" parent="PanelContainer/HBoxContainer/Panel1" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "Focus
+Palette"
+script = ExtResource("2_v3vkr")
+key_string = "focus_palette"
+target_user = NodePath("../../../../OSCUser")
+
+[node name="ButtonRecordOnly" type="Button" parent="PanelContainer/HBoxContainer/Panel1" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "Record
+Only"
+script = ExtResource("2_v3vkr")
+key_string = "record_only"
+target_user = NodePath("../../../../OSCUser")
+
+[node name="ButtonColorPalette" type="Button" parent="PanelContainer/HBoxContainer/Panel1" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "Color
+Palette"
+script = ExtResource("2_v3vkr")
+key_string = "color_palette"
+target_user = NodePath("../../../../OSCUser")
+
+[node name="ButtonBeamPalette" type="Button" parent="PanelContainer/HBoxContainer/Panel1" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "Beam
+Palette"
+script = ExtResource("2_v3vkr")
+key_string = "beam_palette"
+target_user = NodePath("../../../../OSCUser")
+
+[node name="ButtonUpdate" type="Button" parent="PanelContainer/HBoxContainer/Panel1" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "Update"
+script = ExtResource("2_v3vkr")
+key_string = "update"
+target_user = NodePath("../../../../OSCUser")
+
+[node name="ButtonPreset" type="Button" parent="PanelContainer/HBoxContainer/Panel1" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "Preset"
+script = ExtResource("2_v3vkr")
+key_string = "preset"
+target_user = NodePath("../../../../OSCUser")
+
+[node name="ButtonSubmaster" type="Button" parent="PanelContainer/HBoxContainer/Panel1" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "Sub"
+script = ExtResource("2_v3vkr")
+key_string = "sub"
+target_user = NodePath("../../../../OSCUser")
+
+[node name="ButtonGroup" type="Button" parent="PanelContainer/HBoxContainer/Panel1" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "Group"
+script = ExtResource("2_v3vkr")
+key_string = "group"
+target_user = NodePath("../../../../OSCUser")
+
+[node name="ButtonShift" type="Button" parent="PanelContainer/HBoxContainer/Panel1" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "Shift"
+script = ExtResource("2_v3vkr")
+key_string = "shift"
+target_user = NodePath("../../../../OSCUser")
+
+[node name="ButtonDelay" type="Button" parent="PanelContainer/HBoxContainer/Panel1" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "Delay"
+script = ExtResource("2_v3vkr")
+key_string = "delay"
+target_user = NodePath("../../../../OSCUser")
+
+[node name="ButtonTime" type="Button" parent="PanelContainer/HBoxContainer/Panel1" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "Time"
+script = ExtResource("2_v3vkr")
+key_string = "time"
+target_user = NodePath("../../../../OSCUser")
+
 [node name="NumberPanel" type="GridContainer" parent="PanelContainer/HBoxContainer"]
 layout_mode = 2
 columns = 3
