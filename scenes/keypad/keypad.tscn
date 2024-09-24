@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cm6dth8l04aw6" path="res://Screenshot 2024-09-24 at 12.06.16.png" id="6_oav8w"]
 
 [sub_resource type="Theme" id="Theme_tq8lr"]
+Button/font_sizes/font_size = 12
 
 [node name="Keypad" type="Control"]
 layout_mode = 3
