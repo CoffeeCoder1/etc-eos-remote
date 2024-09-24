@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1p8ak2bb83bq"]
+
+[ext_resource type="Script" path="res://scenes/keypad/keypad.gd" id="1_ipp1c"]
+[ext_resource type="Script" path="res://scenes/messages/command.gd" id="2_r73ml"]
+[ext_resource type="Script" path="res://addons/godOSC/scripts/OSCClient.gd" id="3_b2fn5"]
+
+[node name="Keypad" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ipp1c")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="GridContainer"]
+layout_mode = 2
+
+[node name="OSCCommand" type="Node" parent="." node_paths=PackedStringArray("target_client")]
+script = ExtResource("2_r73ml")
+target_client = NodePath("../OSCClient")
+osc_address = "/eos/cmd"
+
+[node name="OSCClient" type="Node" parent="."]
+script = ExtResource("3_b2fn5")
