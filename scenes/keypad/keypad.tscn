@@ -61,8 +61,7 @@ layout_mode = 2
 [node name="ButtonHelp" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel1" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-text = "Help
-"
+text = "Help"
 script = ExtResource("2_v3vkr")
 key_string = "help"
 target_user = NodePath("../../../../../../OSCUser")
@@ -284,6 +283,62 @@ target_user = NodePath("../../../../../../OSCUser")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Panel2" type="GridContainer" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+columns = 3
+
+[node name="ButtonQuery" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Panel2" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "Query"
+script = ExtResource("2_v3vkr")
+key_string = "query"
+target_user = NodePath("../../../../../../OSCUser")
+
+[node name="ButtonCopyTo" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Panel2" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "CopyTo"
+script = ExtResource("2_v3vkr")
+key_string = "copy_to"
+target_user = NodePath("../../../../../../OSCUser")
+
+[node name="ButtonRecallFrom" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Panel2" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "Recall
+From"
+script = ExtResource("2_v3vkr")
+key_string = "recall_from"
+target_user = NodePath("../../../../../../OSCUser")
+
+[node name="ButtonGoToCue" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Panel2" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "GoTo
+Cue"
+script = ExtResource("2_v3vkr")
+key_string = "gotocue"
+target_user = NodePath("../../../../../../OSCUser")
+
+[node name="ButtonBlock" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Panel2" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "Block"
+script = ExtResource("2_v3vkr")
+key_string = "block"
+target_user = NodePath("../../../../../../OSCUser")
+
+[node name="ButtonAssert" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Panel2" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "Assert"
+script = ExtResource("2_v3vkr")
+key_string = "assert"
+target_user = NodePath("../../../../../../OSCUser")
 
 [node name="NumberPanel" type="GridContainer" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
@@ -411,12 +466,62 @@ target_user = NodePath("../../../../../../OSCUser")
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 25
 
 [node name="Panel2" type="GridContainer" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer3"]
 layout_mode = 2
 columns = 3
 
-[node name="ButtonSlash" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel2" node_paths=PackedStringArray("target_user")]
+[node name="ButtonLabelNote" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel2" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "Label
+Note"
+script = ExtResource("2_v3vkr")
+key_string = "label"
+target_user = NodePath("../../../../../../OSCUser")
+
+[node name="ButtonBlank" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="ButtonAbout" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel2" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "About"
+script = ExtResource("2_v3vkr")
+key_string = "about"
+target_user = NodePath("../../../../../../OSCUser")
+
+[node name="ButtonOffset" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel2" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "Offset"
+script = ExtResource("2_v3vkr")
+key_string = "offset"
+target_user = NodePath("../../../../../../OSCUser")
+
+[node name="ButtonHighlight" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel2" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "High"
+script = ExtResource("2_v3vkr")
+key_string = "highlight"
+target_user = NodePath("../../../../../../OSCUser")
+
+[node name="ButtonFan" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel2" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "Fan"
+script = ExtResource("2_v3vkr")
+key_string = "fan_"
+target_user = NodePath("../../../../../../OSCUser")
+
+[node name="Panel3" type="GridContainer" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+columns = 3
+
+[node name="ButtonSlash" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel3" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 text = "/"
@@ -424,7 +529,7 @@ script = ExtResource("2_v3vkr")
 key_string = "\\"
 target_user = NodePath("../../../../../../OSCUser")
 
-[node name="ButtonMark" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel2" node_paths=PackedStringArray("target_user")]
+[node name="ButtonMark" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel3" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 text = "Mark"
@@ -432,7 +537,7 @@ script = ExtResource("2_v3vkr")
 key_string = "mark"
 target_user = NodePath("../../../../../../OSCUser")
 
-[node name="ButtonSneak" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel2" node_paths=PackedStringArray("target_user")]
+[node name="ButtonSneak" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel3" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 text = "Sneak"
@@ -440,7 +545,7 @@ script = ExtResource("2_v3vkr")
 key_string = "sneak"
 target_user = NodePath("../../../../../../OSCUser")
 
-[node name="ButtonRemDim" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel2" node_paths=PackedStringArray("target_user")]
+[node name="ButtonRemDim" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel3" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 text = "Rem
@@ -449,7 +554,7 @@ script = ExtResource("2_v3vkr")
 key_string = "rem_dim"
 target_user = NodePath("../../../../../../OSCUser")
 
-[node name="ButtonPlus10" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel2" node_paths=PackedStringArray("target_user")]
+[node name="ButtonPlus10" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel3" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 text = "+%"
@@ -457,7 +562,7 @@ script = ExtResource("2_v3vkr")
 key_string = "+%"
 target_user = NodePath("../../../../../../OSCUser")
 
-[node name="ButtonHome" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel2" node_paths=PackedStringArray("target_user")]
+[node name="ButtonHome" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel3" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 text = "Home"
@@ -465,7 +570,7 @@ script = ExtResource("2_v3vkr")
 key_string = "home"
 target_user = NodePath("../../../../../../OSCUser")
 
-[node name="ButtonOut" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel2" node_paths=PackedStringArray("target_user")]
+[node name="ButtonOut" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel3" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 text = "Out"
@@ -473,7 +578,7 @@ script = ExtResource("2_v3vkr")
 key_string = "out"
 target_user = NodePath("../../../../../../OSCUser")
 
-[node name="ButtonMinus10" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel2" node_paths=PackedStringArray("target_user")]
+[node name="ButtonMinus10" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel3" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 text = "-%"
@@ -481,7 +586,7 @@ script = ExtResource("2_v3vkr")
 key_string = "-%"
 target_user = NodePath("../../../../../../OSCUser")
 
-[node name="ButtonTrace" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel2" node_paths=PackedStringArray("target_user")]
+[node name="ButtonTrace" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel3" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 text = "Trace"
@@ -489,7 +594,7 @@ script = ExtResource("2_v3vkr")
 key_string = "trace"
 target_user = NodePath("../../../../../../OSCUser")
 
-[node name="ButtonFull" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel2" node_paths=PackedStringArray("target_user")]
+[node name="ButtonFull" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel3" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 text = "Full"
@@ -497,7 +602,7 @@ script = ExtResource("2_v3vkr")
 key_string = "full"
 target_user = NodePath("../../../../../../OSCUser")
 
-[node name="ButtonLevel" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel2" node_paths=PackedStringArray("target_user")]
+[node name="ButtonLevel" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel3" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 text = "Level"
@@ -505,7 +610,7 @@ script = ExtResource("2_v3vkr")
 key_string = "level"
 target_user = NodePath("../../../../../../OSCUser")
 
-[node name="ButtonCueOnlyTrack" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel2" node_paths=PackedStringArray("target_user")]
+[node name="ButtonCueOnlyTrack" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel3" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 text = "QOnly
@@ -514,7 +619,7 @@ script = ExtResource("2_v3vkr")
 key_string = "cueonlytrack"
 target_user = NodePath("../../../../../../OSCUser")
 
-[node name="ButtonAt" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel2" node_paths=PackedStringArray("target_user")]
+[node name="ButtonAt" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel3" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 text = "At"
@@ -522,7 +627,7 @@ script = ExtResource("2_v3vkr")
 key_string = "at"
 target_user = NodePath("../../../../../../OSCUser")
 
-[node name="ButtonEnter" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel2" node_paths=PackedStringArray("target_user")]
+[node name="ButtonEnter" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel3" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 text = "Enter"
@@ -532,6 +637,27 @@ target_user = NodePath("../../../../../../OSCUser")
 
 [node name="VBoxContainer4" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Panel2" type="GridContainer" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer4"]
+layout_mode = 2
+
+[node name="ButtonPark" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer4/Panel2" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "Park"
+script = ExtResource("2_v3vkr")
+key_string = "park"
+target_user = NodePath("../../../../../../OSCUser")
+
+[node name="ButtonCapture" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer4/Panel2" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Capture"
+script = ExtResource("2_v3vkr")
+key_string = "capture"
+target_user = NodePath("../../../../../../OSCUser")
 
 [node name="Panel3" type="GridContainer" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer4"]
 layout_mode = 2
@@ -596,6 +722,6 @@ script = ExtResource("4_xkbgg")
 port = 8001
 
 [node name="Screenshot2024-09-24At12_06_16" type="Sprite2D" parent="."]
-position = Vector2(1074, 297)
+position = Vector2(1107, 296)
 scale = Vector2(0.31997, 0.35536)
 texture = ExtResource("6_oav8w")
