@@ -11,10 +11,9 @@ func _ready() -> void:
 	button_up.connect(_on_input.bind(false))
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
 func _on_input(is_pressed: bool) -> void:
 	target_user.send_message(command + "/" + key_string, [float(is_pressed)])
+	
+	# Emit a signal signaling that a key has been pressed
+	if is_pressed:
+		Globals.emit_signal("key_pressed")

@@ -15,6 +15,10 @@ run/main_scene="res://scenes/keypad/keypad.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Globals="*res://scenes/globals.gd"
+
 [display]
 
 window/stretch/mode="canvas_items"
@@ -23,3 +27,7 @@ window/stretch/aspect="expand"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godOSC/plugin.cfg")
+
+[rendering]
+
+textures/vram_compression/import_etc2_astc=true
