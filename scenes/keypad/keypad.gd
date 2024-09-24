@@ -1,8 +1,5 @@
 extends Control
 
-func _ready() -> void:
-	$OSCCommand.send_command("0")
-
 
 func _on_button_pressed(command: String) -> void:
 	$OSCCommand.send_command(command)
