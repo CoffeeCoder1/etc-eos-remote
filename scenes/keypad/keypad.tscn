@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://b1p8ak2bb83bq"]
 
+[ext_resource type="Script" path="res://scenes/keypad/command_line_display.gd" id="1_oohla"]
 [ext_resource type="Script" path="res://scenes/messages/osc_key.gd" id="2_v3vkr"]
 [ext_resource type="Script" path="res://addons/godOSC/scripts/OSCClient.gd" id="3_b2fn5"]
-[ext_resource type="Script" path="res://scenes/messages/command_line_output.gd" id="4_7uejp"]
 [ext_resource type="Script" path="res://scenes/messages/osc_user.gd" id="4_pnbcy"]
 [ext_resource type="Script" path="res://addons/godOSC/scripts/OSCServer.gd" id="4_xkbgg"]
 [ext_resource type="Texture2D" uid="uid://cm6dth8l04aw6" path="res://Screenshot 2024-09-24 at 12.06.16.png" id="6_oav8w"]
@@ -27,8 +27,11 @@ offset_bottom = 40.0
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
 layout_mode = 2
 
-[node name="CommandLineDisplay" type="Label" parent="PanelContainer/VBoxContainer"]
+[node name="CommandLineDisplay" type="Label" parent="PanelContainer/VBoxContainer" node_paths=PackedStringArray("target_user")]
 layout_mode = 2
+script = ExtResource("1_oohla")
+target_user = NodePath("../../../OSCUser")
+feedback_address = "/cmd"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
@@ -405,19 +408,16 @@ script = ExtResource("2_v3vkr")
 key_string = "enter"
 target_user = NodePath("../../../../../OSCUser")
 
-[node name="OSCUser" type="Node" parent="." node_paths=PackedStringArray("target_client")]
+[node name="OSCUser" type="Node" parent="." node_paths=PackedStringArray("target_client", "target_server")]
 script = ExtResource("4_pnbcy")
+osc_send_prefix = "/eos/user"
+osc_recieve_prefix = "/eos/out/user"
 target_client = NodePath("../OSCClient")
-osc_address = "/eos/user"
+target_server = NodePath("../OSCServer")
 
 [node name="OSCClient" type="Node" parent="."]
 script = ExtResource("3_b2fn5")
 port = 8000
-
-[node name="OSCCommandLineOutputReciever" type="Node" parent="." node_paths=PackedStringArray("target_server")]
-script = ExtResource("4_7uejp")
-target_server = NodePath("../OSCServer")
-osc_address = "/eos/out/cmd"
 
 [node name="OSCServer" type="Node" parent="."]
 script = ExtResource("4_xkbgg")
