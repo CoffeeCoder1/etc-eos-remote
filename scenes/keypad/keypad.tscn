@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://b1p8ak2bb83bq"]
+[gd_scene load_steps=8 format=3 uid="uid://b1p8ak2bb83bq"]
 
 [ext_resource type="Script" path="res://scenes/keypad/keypad.gd" id="1_ipp1c"]
 [ext_resource type="Script" path="res://scenes/messages/command.gd" id="2_r73ml"]
+[ext_resource type="Script" path="res://scenes/messages/key.gd" id="2_v3vkr"]
 [ext_resource type="Script" path="res://addons/godOSC/scripts/OSCClient.gd" id="3_b2fn5"]
+[ext_resource type="Script" path="res://scenes/messages/command_line_output.gd" id="4_7uejp"]
+[ext_resource type="Script" path="res://addons/godOSC/scripts/OSCServer.gd" id="4_xkbgg"]
+[ext_resource type="Texture2D" uid="uid://cm6dth8l04aw6" path="res://Screenshot 2024-09-24 at 12.06.16.png" id="6_oav8w"]
 
 [node name="Keypad" type="Control"]
 layout_mode = 3
@@ -17,9 +21,56 @@ script = ExtResource("1_ipp1c")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+columns = 3
 
-[node name="Button" type="Button" parent="GridContainer"]
+[node name="Button7" type="Button" parent="GridContainer"]
 layout_mode = 2
+text = "7"
+
+[node name="Button8" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "8"
+
+[node name="Button9" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "9"
+
+[node name="Button4" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "4"
+
+[node name="Button5" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "5"
+
+[node name="Button6" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "6"
+
+[node name="Button1" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "1"
+
+[node name="Button2" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "2"
+
+[node name="Button3" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "3"
+
+[node name="ButtonClear" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "Clear"
+
+[node name="Button0" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "0"
+
+[node name="OSCKey" type="Node" parent="." node_paths=PackedStringArray("target_client")]
+script = ExtResource("2_v3vkr")
+target_client = NodePath("../OSCClient")
+osc_address = "/eos/key"
 
 [node name="OSCCommand" type="Node" parent="." node_paths=PackedStringArray("target_client")]
 script = ExtResource("2_r73ml")
@@ -28,3 +79,31 @@ osc_address = "/eos/cmd"
 
 [node name="OSCClient" type="Node" parent="."]
 script = ExtResource("3_b2fn5")
+port = 8000
+
+[node name="OSCCommandLineOutputReciever" type="Node" parent="." node_paths=PackedStringArray("target_server")]
+script = ExtResource("4_7uejp")
+target_server = NodePath("../OSCServer")
+osc_address = "/eos/out/cmd"
+
+[node name="OSCServer" type="Node" parent="."]
+script = ExtResource("4_xkbgg")
+port = 8001
+
+[node name="Screenshot2024-09-24At12_06_16" type="Sprite2D" parent="."]
+position = Vector2(1644, 313)
+scale = Vector2(0.31997, 0.35536)
+texture = ExtResource("6_oav8w")
+
+[connection signal="button_down" from="GridContainer/Button7" to="." method="_on_button_pressed" binds= ["7"]]
+[connection signal="button_down" from="GridContainer/Button8" to="." method="_on_button_pressed" binds= ["8"]]
+[connection signal="button_down" from="GridContainer/Button9" to="." method="_on_button_pressed" binds= ["9"]]
+[connection signal="button_down" from="GridContainer/Button4" to="." method="_on_button_pressed" binds= ["4"]]
+[connection signal="button_down" from="GridContainer/Button5" to="." method="_on_button_pressed" binds= ["5"]]
+[connection signal="button_down" from="GridContainer/Button6" to="." method="_on_button_pressed" binds= ["6"]]
+[connection signal="button_down" from="GridContainer/Button1" to="." method="_on_button_pressed" binds= ["1"]]
+[connection signal="button_down" from="GridContainer/Button2" to="." method="_on_button_pressed" binds= ["2"]]
+[connection signal="button_down" from="GridContainer/Button3" to="." method="_on_button_pressed" binds= ["3"]]
+[connection signal="button_down" from="GridContainer/ButtonClear" to="." method="_on_key_pressed" binds= ["clear_cmd"]]
+[connection signal="button_up" from="GridContainer/ButtonClear" to="." method="_on_key_released" binds= ["clear_cmd"]]
+[connection signal="button_down" from="GridContainer/Button0" to="." method="_on_button_pressed" binds= ["0"]]

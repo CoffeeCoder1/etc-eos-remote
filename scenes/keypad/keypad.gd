@@ -1,11 +1,13 @@
 extends Control
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	$OSCCommand.send_command("Chan 1 Full Enter")
+func _on_button_pressed(command: String) -> void:
+	$OSCCommand.send_command(command)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _on_key_pressed(key: String) -> void:
+	$OSCKey.press_key(key)
+
+
+func _on_key_released(key: String) -> void:
+	$OSCKey.release_key(key)
