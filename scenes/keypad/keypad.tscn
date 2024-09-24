@@ -408,6 +408,53 @@ script = ExtResource("2_v3vkr")
 key_string = "enter"
 target_user = NodePath("../../../../../OSCUser")
 
+[node name="Panel3" type="GridContainer" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="ButtonSelectLast" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/Panel3" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "Select
+Last"
+script = ExtResource("2_v3vkr")
+key_string = "select_last"
+target_user = NodePath("../../../../../OSCUser")
+
+[node name="ButtonSelectManual" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/Panel3" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Select
+Manual"
+script = ExtResource("2_v3vkr")
+key_string = "select_manual"
+target_user = NodePath("../../../../../OSCUser")
+
+[node name="ButtonSelectActive" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/Panel3" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "Select
+Active"
+script = ExtResource("2_v3vkr")
+key_string = "select_active"
+target_user = NodePath("../../../../../OSCUser")
+
+[node name="ButtonLast" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/Panel3" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "Last"
+script = ExtResource("2_v3vkr")
+key_string = "last"
+target_user = NodePath("../../../../../OSCUser")
+
+[node name="ButtonNext" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/Panel3" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "Next"
+script = ExtResource("2_v3vkr")
+key_string = "next"
+target_user = NodePath("../../../../../OSCUser")
+
 [node name="OSCUser" type="Node" parent="." node_paths=PackedStringArray("target_client", "target_server")]
 script = ExtResource("4_pnbcy")
 osc_send_prefix = "/eos/user"
@@ -424,6 +471,6 @@ script = ExtResource("4_xkbgg")
 port = 8001
 
 [node name="Screenshot2024-09-24At12_06_16" type="Sprite2D" parent="."]
-position = Vector2(1020, 295)
+position = Vector2(1074, 297)
 scale = Vector2(0.31997, 0.35536)
 texture = ExtResource("6_oav8w")
