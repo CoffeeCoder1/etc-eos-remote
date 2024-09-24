@@ -1,7 +1,5 @@
-[gd_scene load_steps=10 format=3 uid="uid://b1p8ak2bb83bq"]
+[gd_scene load_steps=8 format=3 uid="uid://b1p8ak2bb83bq"]
 
-[ext_resource type="Script" path="res://scenes/keypad/keypad.gd" id="1_ipp1c"]
-[ext_resource type="Script" path="res://scenes/messages/command.gd" id="2_r73ml"]
 [ext_resource type="Script" path="res://scenes/messages/osc_key.gd" id="2_v3vkr"]
 [ext_resource type="Script" path="res://addons/godOSC/scripts/OSCClient.gd" id="3_b2fn5"]
 [ext_resource type="Script" path="res://scenes/messages/command_line_output.gd" id="4_7uejp"]
@@ -20,7 +18,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_tq8lr")
-script = ExtResource("1_ipp1c")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 0
@@ -407,11 +404,6 @@ text = "Enter"
 script = ExtResource("2_v3vkr")
 key_string = "enter"
 target_user = NodePath("../../../../../OSCUser")
-
-[node name="OSCCommand" type="Node" parent="." node_paths=PackedStringArray("target_client")]
-script = ExtResource("2_r73ml")
-target_client = NodePath("../OSCClient")
-osc_address = "/eos/cmd"
 
 [node name="OSCUser" type="Node" parent="." node_paths=PackedStringArray("target_client")]
 script = ExtResource("4_pnbcy")
