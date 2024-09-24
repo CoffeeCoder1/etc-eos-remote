@@ -639,13 +639,23 @@ script = ExtResource("2_v3vkr")
 key_string = "at"
 target_user = NodePath("../../../../../../../OSCUser")
 
-[node name="ButtonEnter" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel3" node_paths=PackedStringArray("target_user")]
+[node name="Control" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel3"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+
+[node name="ButtonEnter" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel3/Control" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 54.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "Enter"
 script = ExtResource("2_v3vkr")
 key_string = "enter"
-target_user = NodePath("../../../../../../../OSCUser")
+target_user = NodePath("../../../../../../../../OSCUser")
 
 [node name="VBoxContainer4" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
