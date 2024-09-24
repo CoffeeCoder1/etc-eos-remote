@@ -8,6 +8,5 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
-	#if target_server.incoming_messages.has(osc_address):
-		#print(osc_address[0])
+	if target_server.incoming_messages.has(osc_address):
+		$"../PanelContainer/VBoxContainer/CommandLineDisplay".text = target_server.incoming_messages[osc_address][0]
