@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://b1p8ak2bb83bq"]
+[gd_scene load_steps=9 format=3 uid="uid://b1p8ak2bb83bq"]
 
 [ext_resource type="Script" path="res://scenes/keypad/keypad.gd" id="1_ipp1c"]
 [ext_resource type="Script" path="res://scenes/messages/command.gd" id="2_r73ml"]
-[ext_resource type="Script" path="res://scenes/messages/key.gd" id="2_v3vkr"]
+[ext_resource type="Script" path="res://scenes/messages/osc_key.gd" id="2_v3vkr"]
 [ext_resource type="Script" path="res://addons/godOSC/scripts/OSCClient.gd" id="3_b2fn5"]
 [ext_resource type="Script" path="res://scenes/messages/command_line_output.gd" id="4_7uejp"]
+[ext_resource type="Script" path="res://scenes/messages/osc_user.gd" id="4_pnbcy"]
 [ext_resource type="Script" path="res://addons/godOSC/scripts/OSCServer.gd" id="4_xkbgg"]
 [ext_resource type="Texture2D" uid="uid://cm6dth8l04aw6" path="res://Screenshot 2024-09-24 at 12.06.16.png" id="6_oav8w"]
 
@@ -23,59 +24,92 @@ offset_right = 40.0
 offset_bottom = 40.0
 columns = 3
 
-[node name="Button7" type="Button" parent="GridContainer"]
+[node name="Button7" type="Button" parent="GridContainer" node_paths=PackedStringArray("target_user")]
 layout_mode = 2
 text = "7"
+script = ExtResource("2_v3vkr")
+key_string = "7"
+target_user = NodePath("../../OSCUser")
 
-[node name="Button8" type="Button" parent="GridContainer"]
+[node name="Button8" type="Button" parent="GridContainer" node_paths=PackedStringArray("target_user")]
 layout_mode = 2
 text = "8"
+script = ExtResource("2_v3vkr")
+key_string = "8"
+target_user = NodePath("../../OSCUser")
 
-[node name="Button9" type="Button" parent="GridContainer"]
+[node name="Button9" type="Button" parent="GridContainer" node_paths=PackedStringArray("target_user")]
 layout_mode = 2
 text = "9"
+script = ExtResource("2_v3vkr")
+key_string = "9"
+target_user = NodePath("../../OSCUser")
 
-[node name="Button4" type="Button" parent="GridContainer"]
+[node name="Button4" type="Button" parent="GridContainer" node_paths=PackedStringArray("target_user")]
 layout_mode = 2
 text = "4"
+script = ExtResource("2_v3vkr")
+key_string = "4"
+target_user = NodePath("../../OSCUser")
 
-[node name="Button5" type="Button" parent="GridContainer"]
+[node name="Button5" type="Button" parent="GridContainer" node_paths=PackedStringArray("target_user")]
 layout_mode = 2
 text = "5"
+script = ExtResource("2_v3vkr")
+key_string = "5"
+target_user = NodePath("../../OSCUser")
 
-[node name="Button6" type="Button" parent="GridContainer"]
+[node name="Button6" type="Button" parent="GridContainer" node_paths=PackedStringArray("target_user")]
 layout_mode = 2
 text = "6"
+script = ExtResource("2_v3vkr")
+key_string = "6"
+target_user = NodePath("../../OSCUser")
 
-[node name="Button1" type="Button" parent="GridContainer"]
+[node name="Button1" type="Button" parent="GridContainer" node_paths=PackedStringArray("target_user")]
 layout_mode = 2
 text = "1"
+script = ExtResource("2_v3vkr")
+key_string = "1"
+target_user = NodePath("../../OSCUser")
 
-[node name="Button2" type="Button" parent="GridContainer"]
+[node name="Button2" type="Button" parent="GridContainer" node_paths=PackedStringArray("target_user")]
 layout_mode = 2
 text = "2"
+script = ExtResource("2_v3vkr")
+key_string = "2"
+target_user = NodePath("../../OSCUser")
 
-[node name="Button3" type="Button" parent="GridContainer"]
+[node name="Button3" type="Button" parent="GridContainer" node_paths=PackedStringArray("target_user")]
 layout_mode = 2
 text = "3"
+script = ExtResource("2_v3vkr")
+key_string = "3"
+target_user = NodePath("../../OSCUser")
 
-[node name="ButtonClear" type="Button" parent="GridContainer"]
+[node name="ButtonClear" type="Button" parent="GridContainer" node_paths=PackedStringArray("target_user")]
 layout_mode = 2
 text = "Clear"
+script = ExtResource("2_v3vkr")
+key_string = "clear_cmd"
+target_user = NodePath("../../OSCUser")
 
-[node name="Button0" type="Button" parent="GridContainer"]
+[node name="Button0" type="Button" parent="GridContainer" node_paths=PackedStringArray("target_user")]
 layout_mode = 2
 text = "0"
-
-[node name="OSCKey" type="Node" parent="." node_paths=PackedStringArray("target_client")]
 script = ExtResource("2_v3vkr")
-target_client = NodePath("../OSCClient")
-osc_address = "/eos/key"
+key_string = "0"
+target_user = NodePath("../../OSCUser")
 
 [node name="OSCCommand" type="Node" parent="." node_paths=PackedStringArray("target_client")]
 script = ExtResource("2_r73ml")
 target_client = NodePath("../OSCClient")
 osc_address = "/eos/cmd"
+
+[node name="OSCUser" type="Node" parent="." node_paths=PackedStringArray("target_client")]
+script = ExtResource("4_pnbcy")
+target_client = NodePath("../OSCClient")
+osc_address = "/eos/user"
 
 [node name="OSCClient" type="Node" parent="."]
 script = ExtResource("3_b2fn5")
@@ -94,16 +128,3 @@ port = 8001
 position = Vector2(1644, 313)
 scale = Vector2(0.31997, 0.35536)
 texture = ExtResource("6_oav8w")
-
-[connection signal="button_down" from="GridContainer/Button7" to="." method="_on_button_pressed" binds= ["7"]]
-[connection signal="button_down" from="GridContainer/Button8" to="." method="_on_button_pressed" binds= ["8"]]
-[connection signal="button_down" from="GridContainer/Button9" to="." method="_on_button_pressed" binds= ["9"]]
-[connection signal="button_down" from="GridContainer/Button4" to="." method="_on_button_pressed" binds= ["4"]]
-[connection signal="button_down" from="GridContainer/Button5" to="." method="_on_button_pressed" binds= ["5"]]
-[connection signal="button_down" from="GridContainer/Button6" to="." method="_on_button_pressed" binds= ["6"]]
-[connection signal="button_down" from="GridContainer/Button1" to="." method="_on_button_pressed" binds= ["1"]]
-[connection signal="button_down" from="GridContainer/Button2" to="." method="_on_button_pressed" binds= ["2"]]
-[connection signal="button_down" from="GridContainer/Button3" to="." method="_on_button_pressed" binds= ["3"]]
-[connection signal="button_down" from="GridContainer/ButtonClear" to="." method="_on_key_pressed" binds= ["clear_cmd"]]
-[connection signal="button_up" from="GridContainer/ButtonClear" to="." method="_on_key_released" binds= ["clear_cmd"]]
-[connection signal="button_down" from="GridContainer/Button0" to="." method="_on_button_pressed" binds= ["0"]]
