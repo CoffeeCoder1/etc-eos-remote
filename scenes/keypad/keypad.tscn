@@ -60,7 +60,6 @@ columns = 3
 [node name="ButtonSnapshot" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel1" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 9
 text = "Snapshot"
 script = ExtResource("2_v3vkr")
 key_string = "snapshot"
@@ -93,7 +92,6 @@ layout_mode = 2
 [node name="ButtonAddressPatch" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel1" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 10
 text = "Address
 Patch"
 script = ExtResource("2_v3vkr")
@@ -338,7 +336,6 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="ButtonCopyTo" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Panel2" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 11
 text = "CopyTo"
 script = ExtResource("2_v3vkr")
 key_string = "copy_to"
@@ -726,7 +723,6 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="ButtonCapture" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer4/Panel2" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
 text = "Capture"
 script = ExtResource("2_v3vkr")
 key_string = "capture"
@@ -747,7 +743,6 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="ButtonSelectManual" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer4/Panel3" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 11
 text = "Select
 Manual"
 script = ExtResource("2_v3vkr")
