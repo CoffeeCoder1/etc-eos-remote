@@ -60,7 +60,7 @@ columns = 3
 [node name="ButtonSnapshot" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel1" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 9
+theme_override_font_sizes/font_size = 8
 text = "Snapshot"
 script = ExtResource("2_v3vkr")
 key_string = "snapshot"
@@ -74,7 +74,7 @@ layout_mode = 2
 [node name="ButtonHelp" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel1" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 13
 text = "Help"
 script = ExtResource("2_v3vkr")
 key_string = "help"
@@ -84,7 +84,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="ButtonFader" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel1" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 13
+theme_override_font_sizes/font_size = 12
 text = "Fader"
 script = ExtResource("2_v3vkr")
 key_string = "fader"
@@ -113,7 +113,7 @@ columns = 3
 [node name="ButtonMacro" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel2" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 13
+theme_override_font_sizes/font_size = 12
 text = "Macro"
 script = ExtResource("2_v3vkr")
 key_string = "macro"
@@ -127,7 +127,7 @@ layout_mode = 2
 [node name="ButtonLearn" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel2" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 13
+theme_override_font_sizes/font_size = 12
 text = "Learn"
 script = ExtResource("2_v3vkr")
 key_string = "learn"
@@ -153,7 +153,7 @@ layout_mode = 2
 [node name="ButtonDelete" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel3" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 10
 text = "Delete"
 script = ExtResource("2_v3vkr")
 key_string = "delete"
@@ -163,7 +163,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="ButtonColorPath" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel3" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 13
 text = "Path"
 script = ExtResource("2_v3vkr")
 key_string = "path"
@@ -173,7 +173,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="ButtonEffect" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel3" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 10
 text = "Effect"
 script = ExtResource("2_v3vkr")
 key_string = "effect"
@@ -187,7 +187,7 @@ columns = 3
 [node name="ButtonPart" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel4" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 13
 text = "Part"
 script = ExtResource("2_v3vkr")
 key_string = "part"
@@ -197,7 +197,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="ButtonCue" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel4" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 15
+theme_override_font_sizes/font_size = 14
 text = "Cue"
 script = ExtResource("2_v3vkr")
 key_string = "cue"
@@ -207,7 +207,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="ButtonRecord" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel4" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 10
 text = "Record"
 script = ExtResource("2_v3vkr")
 key_string = "record"
@@ -217,7 +217,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="ButtonIntensityPallete" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel4" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 9
 text = "Int
 Palette"
 script = ExtResource("2_v3vkr")
@@ -229,7 +229,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="ButtonFocusPalette" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel4" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 9
 text = "Focus
 Palette"
 script = ExtResource("2_v3vkr")
@@ -252,7 +252,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="ButtonColorPalette" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel4" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 9
 text = "Color
 Palette"
 script = ExtResource("2_v3vkr")
@@ -264,7 +264,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="ButtonBeamPalette" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel4" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 9
 text = "Beam
 Palette"
 script = ExtResource("2_v3vkr")
@@ -276,7 +276,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="ButtonUpdate" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel4" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 10
 text = "Update"
 script = ExtResource("2_v3vkr")
 key_string = "update"
@@ -286,7 +286,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="ButtonPreset" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel4" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 10
 text = "Preset"
 script = ExtResource("2_v3vkr")
 key_string = "preset"
@@ -296,7 +296,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="ButtonSubmaster" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel4" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 15
+theme_override_font_sizes/font_size = 14
 text = "Sub"
 script = ExtResource("2_v3vkr")
 key_string = "sub"
@@ -306,7 +306,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="ButtonGroup" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel4" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 13
+theme_override_font_sizes/font_size = 12
 text = "Group"
 script = ExtResource("2_v3vkr")
 key_string = "group"
@@ -325,7 +325,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="ButtonDelay" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel4" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 13
+theme_override_font_sizes/font_size = 12
 text = "Delay"
 script = ExtResource("2_v3vkr")
 key_string = "delay"
@@ -335,7 +335,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="ButtonTime" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel4" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 13
 text = "Time"
 script = ExtResource("2_v3vkr")
 key_string = "time"
@@ -378,7 +378,7 @@ columns = 3
 [node name="ButtonQuery" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Panel2" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 13
+theme_override_font_sizes/font_size = 12
 text = "Query"
 script = ExtResource("2_v3vkr")
 key_string = "query"
@@ -388,7 +388,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="ButtonCopyTo" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Panel2" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 10
 text = "CopyTo"
 script = ExtResource("2_v3vkr")
 key_string = "copy_to"
@@ -420,7 +420,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="ButtonBlock" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Panel2" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 13
+theme_override_font_sizes/font_size = 12
 text = "Block"
 script = ExtResource("2_v3vkr")
 key_string = "block"
@@ -430,7 +430,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="ButtonAssert" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Panel2" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 10
 text = "Assert"
 script = ExtResource("2_v3vkr")
 key_string = "assert"
@@ -444,6 +444,7 @@ columns = 3
 [node name="ButtonPlus" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+theme_override_font_sizes/font_size = 16
 text = "+"
 script = ExtResource("2_v3vkr")
 key_string = "+"
@@ -453,7 +454,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="ButtonThru" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 13
 text = "Thru"
 script = ExtResource("2_v3vkr")
 key_string = "thru"
@@ -463,6 +464,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="ButtonMinus" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+theme_override_font_sizes/font_size = 16
 text = "-"
 script = ExtResource("2_v3vkr")
 key_string = "-"
@@ -472,6 +474,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="Button7" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+theme_override_font_sizes/font_size = 16
 text = "7"
 script = ExtResource("2_v3vkr")
 key_string = "7"
@@ -481,6 +484,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="Button8" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+theme_override_font_sizes/font_size = 16
 text = "8"
 script = ExtResource("2_v3vkr")
 key_string = "8"
@@ -490,6 +494,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="Button9" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+theme_override_font_sizes/font_size = 16
 text = "9"
 script = ExtResource("2_v3vkr")
 key_string = "9"
@@ -499,6 +504,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="Button4" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+theme_override_font_sizes/font_size = 16
 text = "4"
 script = ExtResource("2_v3vkr")
 key_string = "4"
@@ -508,6 +514,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="Button5" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+theme_override_font_sizes/font_size = 16
 text = "5"
 script = ExtResource("2_v3vkr")
 key_string = "5"
@@ -517,6 +524,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="Button6" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+theme_override_font_sizes/font_size = 16
 text = "6"
 script = ExtResource("2_v3vkr")
 key_string = "6"
@@ -526,6 +534,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="Button1" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+theme_override_font_sizes/font_size = 16
 text = "1"
 script = ExtResource("2_v3vkr")
 key_string = "1"
@@ -535,6 +544,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+theme_override_font_sizes/font_size = 16
 text = "2"
 script = ExtResource("2_v3vkr")
 key_string = "2"
@@ -544,6 +554,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="Button3" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+theme_override_font_sizes/font_size = 16
 text = "3"
 script = ExtResource("2_v3vkr")
 key_string = "3"
@@ -553,7 +564,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="ButtonClear" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 13
+theme_override_font_sizes/font_size = 12
 text = "Clear"
 script = ExtResource("2_v3vkr")
 key_string = "clear_cmd"
@@ -563,6 +574,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="Button0" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+theme_override_font_sizes/font_size = 16
 text = "0"
 script = ExtResource("2_v3vkr")
 key_string = "0"
@@ -572,6 +584,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="ButtonPoint" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+theme_override_font_sizes/font_size = 16
 text = "."
 script = ExtResource("2_v3vkr")
 key_string = "."
@@ -629,7 +642,7 @@ layout_mode = 2
 [node name="ButtonAbout" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel2" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 13
+theme_override_font_sizes/font_size = 12
 text = "About"
 script = ExtResource("2_v3vkr")
 key_string = "about"
@@ -639,7 +652,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="ButtonOffset" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel2" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 10
 text = "Offset"
 script = ExtResource("2_v3vkr")
 key_string = "offset"
@@ -649,7 +662,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="ButtonHighlight" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel2" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 13
 text = "High"
 script = ExtResource("2_v3vkr")
 key_string = "highlight"
@@ -659,7 +672,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="ButtonFan" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel2" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 15
+theme_override_font_sizes/font_size = 14
 text = "Fan"
 script = ExtResource("2_v3vkr")
 key_string = "fan_"
@@ -673,6 +686,7 @@ columns = 3
 [node name="ButtonSlash" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel3" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+theme_override_font_sizes/font_size = 16
 text = "/"
 script = ExtResource("2_v3vkr")
 key_string = "\\"
@@ -682,7 +696,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="ButtonMark" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel3" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 13
 text = "Mark"
 script = ExtResource("2_v3vkr")
 key_string = "mark"
@@ -692,7 +706,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="ButtonSneak" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel3" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 13
+theme_override_font_sizes/font_size = 12
 text = "Sneak"
 script = ExtResource("2_v3vkr")
 key_string = "sneak"
@@ -702,7 +716,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="ButtonRemDim" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel3" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 15
+theme_override_font_sizes/font_size = 14
 text = "Rem
 Dim"
 script = ExtResource("2_v3vkr")
@@ -714,7 +728,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="ButtonPlus10" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel3" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 15
 text = "+%"
 script = ExtResource("2_v3vkr")
 key_string = "+%"
@@ -724,7 +738,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="ButtonHome" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel3" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 13
 text = "Home"
 script = ExtResource("2_v3vkr")
 key_string = "home"
@@ -734,7 +748,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="ButtonOut" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel3" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 15
+theme_override_font_sizes/font_size = 14
 text = "Out"
 script = ExtResource("2_v3vkr")
 key_string = "out"
@@ -744,7 +758,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="ButtonMinus10" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel3" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 15
 text = "-%"
 script = ExtResource("2_v3vkr")
 key_string = "-%"
@@ -754,7 +768,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="ButtonTrace" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel3" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 13
+theme_override_font_sizes/font_size = 12
 text = "Trace"
 script = ExtResource("2_v3vkr")
 key_string = "trace"
@@ -764,7 +778,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="ButtonFull" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel3" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 13
 text = "Full"
 script = ExtResource("2_v3vkr")
 key_string = "full"
@@ -774,7 +788,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="ButtonLevel" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel3" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 13
+theme_override_font_sizes/font_size = 12
 text = "Level"
 script = ExtResource("2_v3vkr")
 key_string = "level"
@@ -784,7 +798,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="ButtonCueOnlyTrack" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel3" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 13
+theme_override_font_sizes/font_size = 12
 text = "QOnly
 Track"
 script = ExtResource("2_v3vkr")
@@ -796,7 +810,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="ButtonAt" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel3" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 15
 text = "At"
 script = ExtResource("2_v3vkr")
 key_string = "at"
@@ -816,7 +830,7 @@ anchor_bottom = 1.0
 offset_right = 54.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 13
+theme_override_font_sizes/font_size = 12
 text = "Enter"
 script = ExtResource("2_v3vkr")
 key_string = "enter"
@@ -833,7 +847,7 @@ layout_mode = 2
 [node name="ButtonPark" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer4/Panel2" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 13
 text = "Park"
 script = ExtResource("2_v3vkr")
 key_string = "park"
@@ -843,7 +857,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="ButtonCapture" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer4/Panel2" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 9
 text = "Capture"
 script = ExtResource("2_v3vkr")
 key_string = "capture"
@@ -867,7 +881,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="ButtonSelectManual" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer4/Panel3" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 10
 text = "Select
 Manual"
 script = ExtResource("2_v3vkr")
@@ -879,7 +893,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="ButtonSelectActive" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer4/Panel3" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 10
 text = "Select
 Active"
 script = ExtResource("2_v3vkr")
@@ -891,7 +905,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="ButtonLast" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer4/Panel3" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 13
 text = "Last"
 script = ExtResource("2_v3vkr")
 key_string = "last"
@@ -901,7 +915,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="ButtonNext" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer4/Panel3" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 13
 text = "Next"
 script = ExtResource("2_v3vkr")
 key_string = "next"
