@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b1p8ak2bb83bq"]
+[gd_scene load_steps=15 format=3 uid="uid://b1p8ak2bb83bq"]
 
 [ext_resource type="Script" path="res://scenes/keypad/command_line_display.gd" id="1_oohla"]
 [ext_resource type="Script" path="res://scenes/messages/osc_key.gd" id="2_v3vkr"]
@@ -9,8 +9,68 @@
 [ext_resource type="Script" path="res://addons/godOSC/scripts/OSCServer.gd" id="4_xkbgg"]
 [ext_resource type="Texture2D" uid="uid://cm6dth8l04aw6" path="res://Screenshot 2024-09-24 at 12.06.16.png" id="6_oav8w"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5n5nr"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.3)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.8, 0.8, 0.8, 0.184314)
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oopuq"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j64ox"]
+bg_color = Color(0.167451, 0.167451, 0.167451, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.4123, 0.39294, 0.440007, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4f643"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.4123, 0.39294, 0.440007, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_80rpq"]
+bg_color = Color(0.163861, 0.163861, 0.163861, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.74127, 0.446711, 5.77569e-07, 1)
+
 [sub_resource type="Theme" id="Theme_tq8lr"]
 Button/font_sizes/font_size = 12
+Button/styles/disabled = SubResource("StyleBoxFlat_5n5nr")
+Button/styles/focus = SubResource("StyleBoxFlat_oopuq")
+Button/styles/hover = SubResource("StyleBoxFlat_j64ox")
+Button/styles/normal = SubResource("StyleBoxFlat_4f643")
+Button/styles/pressed = SubResource("StyleBoxFlat_80rpq")
+Label/styles/normal = SubResource("StyleBoxFlat_4f643")
 
 [node name="Keypad" type="Control"]
 layout_mode = 3
