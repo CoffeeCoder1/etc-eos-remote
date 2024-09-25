@@ -95,7 +95,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_45cpf")
 script = ExtResource("1_74sjs")
 live_color = Color(0.149475, 0.149475, 0.149474, 1)
-blind_color = Color(0.1178, 0.258747, 0.31, 1)
+blind_color = Color(0.0833569, 0.197115, 0.238439, 1)
 target_user = NodePath("../OSCUser")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
@@ -1237,6 +1237,7 @@ target_client = NodePath("../OSCClient")
 target_server = NodePath("../OSCServer")
 
 [node name="Screenshot2024-09-24At12_06_16" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(1260, 293)
 scale = Vector2(0.31997, 0.35536)
 texture = ExtResource("6_oav8w")
