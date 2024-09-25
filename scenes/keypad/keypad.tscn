@@ -1002,6 +1002,225 @@ key_string = "next"
 key_label = "Next"
 target_user = NodePath("../../../../../../../OSCUser")
 
+[node name="VBoxContainer5" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Panel1" type="GridContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer5"]
+layout_mode = 2
+columns = 3
+
+[node name="ButtonLive" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer5/Panel1" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "Live"
+script = ExtResource("2_v3vkr")
+key_string = "live"
+key_label = "Live"
+target_user = NodePath("../../../../../../../OSCUser")
+
+[node name="ButtonBlind" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer5/Panel1" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Blind"
+script = ExtResource("2_v3vkr")
+key_string = "blind"
+key_label = "Blind"
+target_user = NodePath("../../../../../../../OSCUser")
+
+[node name="ButtonStage" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer5/Panel1" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Stage"
+script = ExtResource("2_v3vkr")
+key_string = "stage"
+key_label = "Stage"
+target_user = NodePath("../../../../../../../OSCUser")
+
+[node name="ButtonDisplays" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer5/Panel1" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Displays"
+script = ExtResource("2_v3vkr")
+key_string = "displays"
+key_label = "Displays"
+target_user = NodePath("../../../../../../../OSCUser")
+
+[node name="ButtonBlank" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer5/Panel1"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="ButtonSystemSettings" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer5/Panel1" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "System"
+script = ExtResource("2_v3vkr")
+key_string = "system_settings"
+key_label = "System"
+target_user = NodePath("../../../../../../../OSCUser")
+
+[node name="Panel2" type="GridContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer5"]
+layout_mode = 2
+columns = 3
+
+[node name="ButtonUndo" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer5/Panel2" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "Undo"
+script = ExtResource("2_v3vkr")
+key_string = "undo"
+key_label = "Undo"
+target_user = NodePath("../../../../../../../OSCUser")
+
+[node name="ButtonBlank" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer5/Panel2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="ButtonPageMode" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer5/Panel2" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "Scroll
+Lock"
+script = ExtResource("2_v3vkr")
+key_string = "page_mode"
+key_label = "Scroll
+Lock"
+target_user = NodePath("../../../../../../../OSCUser")
+
+[node name="Panel3" type="GridContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer5"]
+layout_mode = 2
+columns = 3
+
+[node name="ButtonEscape" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer5/Panel3" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Escape"
+script = ExtResource("2_v3vkr")
+key_string = "escape"
+key_label = "Escape"
+target_user = NodePath("../../../../../../../OSCUser")
+
+[node name="ButtonPageUp" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer5/Panel3" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "Page
+Up"
+script = ExtResource("2_v3vkr")
+key_string = "page_up"
+key_label = "Page
+Up"
+target_user = NodePath("../../../../../../../OSCUser")
+
+[node name="ButtonSelect" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer5/Panel3" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Select"
+script = ExtResource("2_v3vkr")
+key_string = "select"
+key_label = "Select"
+target_user = NodePath("../../../../../../../OSCUser")
+
+[node name="ButtonPageLeft" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer5/Panel3" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "Page
+Left"
+script = ExtResource("2_v3vkr")
+key_string = "page_left"
+key_label = "Page
+Left"
+target_user = NodePath("../../../../../../../OSCUser")
+
+[node name="ButtonPageDown" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer5/Panel3" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "Page
+Down"
+script = ExtResource("2_v3vkr")
+key_string = "arrow_down"
+key_label = "Page
+Down"
+target_user = NodePath("../../../../../../../OSCUser")
+
+[node name="ButtonPageRight" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer5/Panel3" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Page
+Right"
+script = ExtResource("2_v3vkr")
+key_string = "page_right"
+key_label = "Page
+Right"
+target_user = NodePath("../../../../../../../OSCUser")
+
+[node name="Panel4" type="GridContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer5"]
+layout_mode = 2
+columns = 3
+
+[node name="ButtonTab" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer5/Panel4" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "Tab"
+script = ExtResource("2_v3vkr")
+key_string = "tab"
+key_label = "Tab"
+target_user = NodePath("../../../../../../../OSCUser")
+
+[node name="ButtonFlexi" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer5/Panel4" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Flexi"
+script = ExtResource("2_v3vkr")
+key_string = "flexichannel_mode"
+key_label = "Flexi"
+target_user = NodePath("../../../../../../../OSCUser")
+
+[node name="ButtonDisplayTiming" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer5/Panel4" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "Time"
+script = ExtResource("2_v3vkr")
+key_string = "display_timing"
+key_label = "Time"
+target_user = NodePath("../../../../../../../OSCUser")
+
+[node name="ButtonFormat" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer5/Panel4" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Format"
+script = ExtResource("2_v3vkr")
+key_string = "format"
+key_label = "Format"
+target_user = NodePath("../../../../../../../OSCUser")
+
+[node name="ButtonExpand" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer5/Panel4" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Expand"
+script = ExtResource("2_v3vkr")
+key_string = "expand"
+key_label = "Expand"
+target_user = NodePath("../../../../../../../OSCUser")
+
+[node name="ButtonData" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer5/Panel4" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "Data"
+script = ExtResource("2_v3vkr")
+key_string = "data"
+key_label = "Data"
+target_user = NodePath("../../../../../../../OSCUser")
+
 [node name="OSCClient" type="Node" parent="."]
 script = ExtResource("3_b2fn5")
 port = 8000
@@ -1018,6 +1237,6 @@ target_client = NodePath("../OSCClient")
 target_server = NodePath("../OSCServer")
 
 [node name="Screenshot2024-09-24At12_06_16" type="Sprite2D" parent="."]
-position = Vector2(1107, 296)
+position = Vector2(1260, 293)
 scale = Vector2(0.31997, 0.35536)
 texture = ExtResource("6_oav8w")
