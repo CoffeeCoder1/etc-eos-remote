@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://b1p8ak2bb83bq"]
+[gd_scene load_steps=10 format=3 uid="uid://b1p8ak2bb83bq"]
 
 [ext_resource type="Script" path="res://scenes/keypad/command_line_display.gd" id="1_oohla"]
 [ext_resource type="Script" path="res://scenes/messages/osc_key.gd" id="2_v3vkr"]
 [ext_resource type="Script" path="res://addons/godOSC/scripts/OSCClient.gd" id="3_b2fn5"]
 [ext_resource type="Script" path="res://scenes/messages/osc_modifier_key.gd" id="3_p86lf"]
 [ext_resource type="Script" path="res://scenes/messages/osc_user.gd" id="4_pnbcy"]
+[ext_resource type="Script" path="res://scenes/messages/osc_softkey.gd" id="4_pndv3"]
 [ext_resource type="Script" path="res://addons/godOSC/scripts/OSCServer.gd" id="4_xkbgg"]
 [ext_resource type="Texture2D" uid="uid://cm6dth8l04aw6" path="res://Screenshot 2024-09-24 at 12.06.16.png" id="6_oav8w"]
 
@@ -297,6 +298,31 @@ target_user = NodePath("../../../../../../../OSCUser")
 layout_mode = 2
 theme_override_constants/separation = 25
 
+[node name="Softkeys" type="GridContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+columns = 3
+
+[node name="Softkey1" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Softkeys" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+script = ExtResource("4_pndv3")
+softkey_index = 1
+target_user = NodePath("../../../../../../../OSCUser")
+
+[node name="Softkey2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Softkeys" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+script = ExtResource("4_pndv3")
+softkey_index = 2
+target_user = NodePath("../../../../../../../OSCUser")
+
+[node name="Softkey3" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Softkeys" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+script = ExtResource("4_pndv3")
+softkey_index = 3
+target_user = NodePath("../../../../../../../OSCUser")
+
 [node name="Panel2" type="GridContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 columns = 3
@@ -479,6 +505,31 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="VBoxContainer3" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 25
+
+[node name="Softkeys" type="GridContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+columns = 3
+
+[node name="Softkey4" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Softkeys" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+script = ExtResource("4_pndv3")
+softkey_index = 4
+target_user = NodePath("../../../../../../../OSCUser")
+
+[node name="Softkey5" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Softkeys" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+script = ExtResource("4_pndv3")
+softkey_index = 5
+target_user = NodePath("../../../../../../../OSCUser")
+
+[node name="Softkey6" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Softkeys" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+script = ExtResource("4_pndv3")
+softkey_index = 6
+target_user = NodePath("../../../../../../../OSCUser")
 
 [node name="Panel2" type="GridContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3"]
 layout_mode = 2
@@ -696,7 +747,7 @@ target_user = NodePath("../../../../../../../OSCUser")
 [node name="ButtonSelectManual" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer4/Panel3" node_paths=PackedStringArray("target_user")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 11
 text = "Select
 Manual"
 script = ExtResource("2_v3vkr")
