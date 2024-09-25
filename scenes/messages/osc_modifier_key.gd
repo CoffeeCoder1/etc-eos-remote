@@ -1,3 +1,4 @@
+@tool
 extends OSCKey
 
 
@@ -6,8 +7,9 @@ func _ready() -> void:
 	toggle_mode = true
 	toggled.connect(_on_input)
 	
-	# Clear the modifier when a key is pressed
-	Globals.key_pressed.connect(_clear_modifier)
+	if not Engine.is_editor_hint():
+		# Clear the modifier when a key is pressed
+		Globals.key_pressed.connect(_clear_modifier)
 
 
 func _on_input(is_pressed: bool) -> void:

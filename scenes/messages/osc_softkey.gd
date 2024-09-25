@@ -14,7 +14,6 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	super._process(delta) # Adjust font scale
 	var feedback = target_user.target_server.incoming_messages.get("/eos/out/softkey/" + key_string, [])
 	if feedback:
-		text = str(feedback[0]).replace(" ", "\n")
+		key_label = str(feedback[0]).replace(" ", "\n")
