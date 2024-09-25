@@ -7,6 +7,10 @@ class_name OSCUser extends Node
 @export var target_server: OSCServer
 
 
+func _ready() -> void:
+	target_client.send_message("/eos/reset", [])
+
+
 func send_message(osc_message: String, args: Array) -> void:
 	target_client.send_message(osc_send_prefix + "/" + str(user_number) + osc_message, args)
 
