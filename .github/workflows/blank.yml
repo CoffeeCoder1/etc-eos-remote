@@ -20,7 +20,7 @@ jobs:
           preset: ${{ matrix.platform }}
           debugMode: true
       - name: Upload Artifact
-        uses: actions/upload-artifact@v3.0.1
+        uses: actions/upload-artifact@v4.3.6
         with:
           name: etc-eos-remote-${{ matrix.platform }}
           path: ${{ github.workspace }}/${{ steps.build.outputs.build }}
