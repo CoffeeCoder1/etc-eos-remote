@@ -910,6 +910,17 @@ target_user = NodePath("../../../../../../../../OSCUser")
 layout_mode = 2
 theme_override_constants/separation = 25
 
+[node name="ButtonMoreSoftkeys" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer4" node_paths=PackedStringArray("target_user")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "More
+SK"
+script = ExtResource("2_v3vkr")
+key_string = "more_softkeys"
+key_label = "More
+SK"
+target_user = NodePath("../../../../../../OSCUser")
+
 [node name="Panel2" type="GridContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer4"]
 layout_mode = 2
 
