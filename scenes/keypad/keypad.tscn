@@ -1,5 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://b1p8ak2bb83bq"]
+[gd_scene load_steps=17 format=3 uid="uid://b1p8ak2bb83bq"]
 
+[ext_resource type="Script" path="res://scenes/keypad/panel_container.gd" id="1_74sjs"]
 [ext_resource type="Script" path="res://scenes/keypad/command_line_display.gd" id="1_oohla"]
 [ext_resource type="Script" path="res://scenes/messages/osc_key.gd" id="2_v3vkr"]
 [ext_resource type="Script" path="res://addons/godOSC/scripts/OSCClient.gd" id="3_b2fn5"]
@@ -72,6 +73,9 @@ Button/styles/normal = SubResource("StyleBoxFlat_4f643")
 Button/styles/pressed = SubResource("StyleBoxFlat_80rpq")
 Label/styles/normal = SubResource("StyleBoxFlat_4f643")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_45cpf"]
+bg_color = Color(0.149475, 0.149475, 0.149474, 1)
+
 [node name="Keypad" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -81,13 +85,18 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_tq8lr")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="PanelContainer" type="PanelContainer" parent="." node_paths=PackedStringArray("target_user")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_45cpf")
+script = ExtResource("1_74sjs")
+live_color = Color(0.149475, 0.149475, 0.149474, 1)
+blind_color = Color(0.1178, 0.258747, 0.31, 1)
+target_user = NodePath("../OSCUser")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
 layout_mode = 2
@@ -982,13 +991,6 @@ key_string = "next"
 key_label = "Next"
 target_user = NodePath("../../../../../../../OSCUser")
 
-[node name="OSCUser" type="Node" parent="." node_paths=PackedStringArray("target_client", "target_server")]
-script = ExtResource("4_pnbcy")
-osc_send_prefix = "/eos/user"
-osc_recieve_prefix = "/eos/out/user"
-target_client = NodePath("../OSCClient")
-target_server = NodePath("../OSCServer")
-
 [node name="OSCClient" type="Node" parent="."]
 script = ExtResource("3_b2fn5")
 port = 8000
@@ -996,6 +998,13 @@ port = 8000
 [node name="OSCServer" type="Node" parent="."]
 script = ExtResource("4_xkbgg")
 port = 8001
+
+[node name="OSCUser" type="Node" parent="." node_paths=PackedStringArray("target_client", "target_server")]
+script = ExtResource("4_pnbcy")
+osc_send_prefix = "/eos/user"
+osc_recieve_prefix = "/eos/out/user"
+target_client = NodePath("../OSCClient")
+target_server = NodePath("../OSCServer")
 
 [node name="Screenshot2024-09-24At12_06_16" type="Sprite2D" parent="."]
 position = Vector2(1107, 296)
