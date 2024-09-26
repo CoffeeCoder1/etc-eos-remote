@@ -7,12 +7,14 @@ jobs:
     strategy:
       matrix:
         include:
-          #- identifier: linux
-          #  os: ubuntu-latest
-          #  export-preset: Linux
-          #- identifier: windows
-          #  os: ubuntu-latest
-          #  export-preset: Windows Desktop
+          - identifier: linux
+            os: ubuntu-latest
+            export-preset: Linux
+            export-filename: etc-eos-remote.tar.gz
+          - identifier: windows
+            os: ubuntu-latest
+            export-preset: Windows Desktop
+            export-filename: etc-eos-remote.exe
           - identifier: macos
             os: macos-latest
             export-preset: macOS
