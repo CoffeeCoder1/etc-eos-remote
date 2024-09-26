@@ -19,7 +19,6 @@ jobs:
             os: macos-latest
             export-preset: macOS
             export-filename: etc-eos-remote.dmg
-            export-template-location: "/Users/runner/Library/Application Support/Godot/export_templates/4.3.stable"
     runs-on: ${{ matrix.os }}
     name: Build (${{ matrix.export-preset }})
     steps:
