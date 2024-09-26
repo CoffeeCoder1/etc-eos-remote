@@ -1359,7 +1359,7 @@ port = 8000
 
 [node name="OSCServer" type="Node" parent="."]
 script = ExtResource("4_xkbgg")
-port = 8002
+port = 8001
 
 [node name="OSCUser" type="Node" parent="." node_paths=PackedStringArray("target_client", "target_server")]
 script = ExtResource("4_pnbcy")
