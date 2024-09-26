@@ -4,10 +4,34 @@ on: [push, pull_request]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
     strategy:
       matrix:
-        platform: ["Linux", "Windows Desktop", "macOS"]
+        include:
+          - identifier: linux-release
+            os: ubuntu-latest
+            export-preset: Linux
+            debug-mode: false
+          - identifier: linux-debug
+            os: ubuntu-latest
+            export-preset: Linux
+            debug-mode: true
+          - identifier: windows-release
+            os: ubuntu-latest
+            export-preset: Windows Desktop
+            debug-mode: false
+          - identifier: windows-debug
+            os: ubuntu-latest
+            export-preset: Windows Desktop
+            debug-mode: true
+          - identifier: macos-release
+            os: macos-latest
+            export-preset: macOS
+            debug-mode: false
+          - identifier: macos-debug
+            os: macos-latest
+            export-preset: macOS
+            debug-mode: true
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4.1.7
         with:
@@ -17,10 +41,10 @@ jobs:
         uses: manleydev/build-godot-action@f759ed7f8fcb5137cb70873ecf663aa8a1bd998b
         with:
           name: etc-eos-remote
-          preset: ${{ matrix.platform }}
-          debugMode: true
+          preset: ${{ matrix.export-preset }}
+          debugMode: ${{ matrix.debug-mode }}
       - name: Upload Artifact
         uses: actions/upload-artifact@v4.3.6
         with:
-          name: etc-eos-remote-${{ matrix.platform }}
+          name: etc-eos-remote-${{ matrix.identifier }}
           path: ${{ github.workspace }}/${{ steps.build.outputs.build }}
