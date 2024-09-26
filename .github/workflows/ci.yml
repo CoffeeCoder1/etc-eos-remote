@@ -27,6 +27,7 @@ jobs:
             os: macos-latest
             export-preset: macOS
             debug-mode: false
+            export-filename: etc-eos-remote.dmg
             export-template-location: "/Users/runner/Library/Application Support/Godot/export_templates/4.3.stable"
           #- identifier: macos-debug
           #  os: macos-latest
@@ -47,7 +48,7 @@ jobs:
           mkdir -v -p "${{ matrix.export-template-location }}"
           mv ./templates/* "${{ matrix.export-template-location }}"
       - name: Build
-        run: godot --headless --export-release ${{ matrix.export-preset }} ${{ github.workspace }}/export
+        run: godot --headless --export-release ${{ matrix.export-preset }} ${{ github.workspace }}/export/${{ matrix.export-filename }}
       - name: Upload Artifact
         uses: actions/upload-artifact@v4.3.6
         with:
