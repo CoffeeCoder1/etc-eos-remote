@@ -14,7 +14,7 @@ jobs:
           lfs: true
       - name: Build
         id: build
-        uses: manleydev/build-godot-action@v1.5.0
+        uses: manleydev/build-godot-action@f759ed7f8fcb5137cb70873ecf663aa8a1bd998b
         with:
           name: etc-eos-remote
           preset: ${{ matrix.platform }}
