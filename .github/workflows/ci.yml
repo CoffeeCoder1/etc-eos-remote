@@ -7,44 +7,42 @@ jobs:
     strategy:
       matrix:
         include:
-          - identifier: linux-release
-            os: ubuntu-latest
-            export-preset: Linux
-            debug-mode: false
-          - identifier: linux-debug
-            os: ubuntu-latest
-            export-preset: Linux
-            debug-mode: true
-          - identifier: windows-release
-            os: ubuntu-latest
-            export-preset: Windows Desktop
-            debug-mode: false
-          - identifier: windows-debug
-            os: ubuntu-latest
-            export-preset: Windows Desktop
-            debug-mode: true
+          #- identifier: linux-release
+          #  os: ubuntu-latest
+          #  export-preset: Linux
+          #  debug-mode: false
+          #- identifier: linux-debug
+          #  os: ubuntu-latest
+          #  export-preset: Linux
+          #  debug-mode: true
+          #- identifier: windows-release
+          #  os: ubuntu-latest
+          #  export-preset: Windows Desktop
+          #  debug-mode: false
+          #- identifier: windows-debug
+          #  os: ubuntu-latest
+          #  export-preset: Windows Desktop
+          #  debug-mode: true
           - identifier: macos-release
             os: macos-latest
             export-preset: macOS
             debug-mode: false
-          - identifier: macos-debug
-            os: macos-latest
-            export-preset: macOS
-            debug-mode: true
+          #- identifier: macos-debug
+          #  os: macos-latest
+          #  export-preset: macOS
+          #  debug-mode: true
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4.1.7
         with:
           lfs: true
+      - name: Install dependencies (macOS)
+        if: runner.os == 'macOS'
+        run: brew install --cask godot
       - name: Build
-        id: build
-        uses: manleydev/build-godot-action@f759ed7f8fcb5137cb70873ecf663aa8a1bd998b
-        with:
-          name: etc-eos-remote
-          preset: ${{ matrix.export-preset }}
-          debugMode: ${{ matrix.debug-mode }}
+        run: godot --headless --export-release %{{ matrix.export-preset }} ${{ github.workspace }}/export
       - name: Upload Artifact
         uses: actions/upload-artifact@v4.3.6
         with:
           name: etc-eos-remote-${{ matrix.identifier }}
-          path: ${{ github.workspace }}/${{ steps.build.outputs.build }}
+          path: ${{ github.workspace }}/export
