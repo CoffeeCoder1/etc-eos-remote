@@ -7,32 +7,17 @@ jobs:
     strategy:
       matrix:
         include:
-          #- identifier: linux-release
+          #- identifier: linux
           #  os: ubuntu-latest
           #  export-preset: Linux
-          #  debug-mode: false
-          #- identifier: linux-debug
-          #  os: ubuntu-latest
-          #  export-preset: Linux
-          #  debug-mode: true
-          #- identifier: windows-release
+          #- identifier: windows
           #  os: ubuntu-latest
           #  export-preset: Windows Desktop
-          #  debug-mode: false
-          #- identifier: windows-debug
-          #  os: ubuntu-latest
-          #  export-preset: Windows Desktop
-          #  debug-mode: true
-          - identifier: macos-release
+          - identifier: macos
             os: macos-latest
             export-preset: macOS
-            debug-mode: false
             export-filename: etc-eos-remote.dmg
             export-template-location: "/Users/runner/Library/Application Support/Godot/export_templates/4.3.stable"
-          #- identifier: macos-debug
-          #  os: macos-latest
-          #  export-preset: macOS
-          #  debug-mode: true
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4.1.7
