@@ -27,6 +27,7 @@ jobs:
             os: macos-latest
             export-preset: macOS
             debug-mode: false
+            export-template-location: "/Users/runner/Library/Application Support/Godot/export_templates/4.3.stable"
           #- identifier: macos-debug
           #  os: macos-latest
           #  export-preset: macOS
@@ -39,6 +40,12 @@ jobs:
       - name: Install dependencies (macOS)
         if: runner.os == 'macOS'
         run: brew install --cask godot
+      - name: Download and extract export templates
+        run: |
+          wget https://github.com/godotengine/godot-builds/releases/download/4.3-stable/Godot_v4.3-stable_export_templates.tpz
+          unzip -a Godot_v4.3-stable_export_templates.tpz
+          mkdir -v -p ${{ matrix.export-template-location }}
+          mv ./templates/* ${{ matrix.export-template-location }}
       - name: Build
         run: godot --headless --export-release ${{ matrix.export-preset }} ${{ github.workspace }}/export
       - name: Upload Artifact
