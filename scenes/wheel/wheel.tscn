@@ -1,0 +1,60 @@
+[gd_scene load_steps=3 format=3 uid="uid://cy73ew523w6b4"]
+
+[ext_resource type="Script" path="res://scenes/wheel/wheel.gd" id="1_7dxjw"]
+[ext_resource type="Script" path="res://scenes/wheel/wheel_box.gd" id="2_4k3ov"]
+
+[node name="Wheel" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 16.0
+offset_bottom = 8.0
+size_flags_vertical = 3
+script = ExtResource("1_7dxjw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Value" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="MaxButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Max"
+
+[node name="WheelBox" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("2_4k3ov")
+
+[node name="VSlider" type="VSlider" parent="VBoxContainer/WheelBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 1
+size_flags_vertical = 3
+mouse_filter = 1
+editable = false
+tick_count = 3
+ticks_on_borders = true
+
+[node name="MinButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Min
+"
+
+[connection signal="button_down" from="VBoxContainer/MaxButton" to="." method="_on_max_button_button_down"]
+[connection signal="button_up" from="VBoxContainer/MaxButton" to="." method="_on_max_button_button_up"]
+[connection signal="dragged" from="VBoxContainer/WheelBox" to="." method="_on_wheel_box_dragged"]
+[connection signal="button_down" from="VBoxContainer/MinButton" to="." method="_on_min_button_button_down"]
+[connection signal="button_up" from="VBoxContainer/MinButton" to="." method="_on_min_button_button_up"]
