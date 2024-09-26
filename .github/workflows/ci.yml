@@ -48,7 +48,9 @@ jobs:
           mkdir -v -p "${{ matrix.export-template-location }}"
           mv ./templates/* "${{ matrix.export-template-location }}"
       - name: Build
-        run: godot --headless --export-release ${{ matrix.export-preset }} ${{ github.workspace }}/export/${{ matrix.export-filename }}
+        run: |
+          mkdir -v -p "${{ github.workspace }}/export"
+          godot --headless --export-release "${{ matrix.export-preset }}" "${{ github.workspace }}/export/${{ matrix.export-filename }}"
       - name: Upload Artifact
         uses: actions/upload-artifact@v4.3.6
         with:
