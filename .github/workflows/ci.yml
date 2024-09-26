@@ -40,7 +40,7 @@ jobs:
         if: runner.os == 'macOS'
         run: brew install --cask godot
       - name: Build
-        run: godot --headless --export-release %{{ matrix.export-preset }} ${{ github.workspace }}/export
+        run: godot --headless --export-release ${{ matrix.export-preset }} ${{ github.workspace }}/export
       - name: Upload Artifact
         uses: actions/upload-artifact@v4.3.6
         with:
