@@ -2,5 +2,8 @@
 .godot/
 /android/
 
+# Build stuff
+export
+
 # MacOS Stuff
 .DS_Store
