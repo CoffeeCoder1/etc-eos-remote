@@ -44,8 +44,8 @@ jobs:
         run: |
           wget https://github.com/godotengine/godot-builds/releases/download/4.3-stable/Godot_v4.3-stable_export_templates.tpz
           unzip -a Godot_v4.3-stable_export_templates.tpz
-          mkdir -v -p ${{ matrix.export-template-location }}
-          mv ./templates/* ${{ matrix.export-template-location }}
+          mkdir -v -p "${{ matrix.export-template-location }}"
+          mv ./templates/* "${{ matrix.export-template-location }}"
       - name: Build
         run: godot --headless --export-release ${{ matrix.export-preset }} ${{ github.workspace }}/export
       - name: Upload Artifact
