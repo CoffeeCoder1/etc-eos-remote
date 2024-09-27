@@ -8,8 +8,9 @@ var osc_element: OSCElement
 func _ready() -> void:
 	osc_element = OSCElement.new()
 	add_child(osc_element)
+	osc_element.recieve_address = feedback_address
+	osc_element.feedback_recieved.connect(_on_osc_feedback)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _on_osc_feedback(value):
+	text = value[0]

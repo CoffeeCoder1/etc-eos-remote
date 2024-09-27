@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cy73ew523w6b4"]
+[gd_scene load_steps=4 format=3 uid="uid://cy73ew523w6b4"]
 
 [ext_resource type="Script" path="res://scenes/elements/wheel/wheel.gd" id="1_7dxjw"]
 [ext_resource type="Script" path="res://scenes/elements/wheel/wheel_box.gd" id="2_4k3ov"]
+[ext_resource type="Script" path="res://scenes/messages/osc_key.gd" id="2_vuptc"]
 
 [node name="Wheel" type="Control"]
 layout_mode = 3
@@ -27,7 +28,12 @@ layout_mode = 2
 
 [node name="MaxButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 14
 text = "Max"
+script = ExtResource("2_vuptc")
+key_string = "full"
+address_prefix = "/at"
+key_label = "Max"
 
 [node name="WheelBox" type="Control" parent="VBoxContainer"]
 layout_mode = 2
@@ -50,11 +56,11 @@ ticks_on_borders = true
 
 [node name="MinButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "Min
-"
+theme_override_font_sizes/font_size = 14
+text = "Min"
+script = ExtResource("2_vuptc")
+key_string = "min"
+address_prefix = "/at"
+key_label = "Min"
 
-[connection signal="button_down" from="VBoxContainer/MaxButton" to="." method="_on_max_button_button_down"]
-[connection signal="button_up" from="VBoxContainer/MaxButton" to="." method="_on_max_button_button_up"]
 [connection signal="dragged" from="VBoxContainer/WheelBox" to="." method="_on_wheel_box_dragged"]
-[connection signal="button_down" from="VBoxContainer/MinButton" to="." method="_on_min_button_button_down"]
-[connection signal="button_up" from="VBoxContainer/MinButton" to="." method="_on_min_button_button_up"]

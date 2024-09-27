@@ -13,3 +13,7 @@ func send_message(osc_message: String, args: Array) -> void:
 
 func get_feedback(osc_address: String) -> Array:
 	return target_client.incoming_messages.get(osc_recieve_prefix + "/" + str(user_number) + osc_address, [])
+
+
+func get_global_feedback(osc_address: String) -> Array:
+	return target_client.incoming_messages.get(osc_address, [])

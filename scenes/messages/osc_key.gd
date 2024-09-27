@@ -42,8 +42,9 @@ func _setup_button() -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	osc_element = OSCElement.new()
-	add_child(osc_element)
+	if not Engine.is_editor_hint():
+		osc_element = OSCElement.new()
+		add_child(osc_element)
 	
 	_setup_button()
 	_update_send_address()

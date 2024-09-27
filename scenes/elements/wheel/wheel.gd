@@ -1,43 +1,28 @@
 class_name Wheel extends Control
 
-@export var target_user: OSCUser
 @export var wheel_index: int = 1
-@export var send_address: String = "/wheel"
+@export var send_address: String = "/wheel/level"
 @export var recieve_address: String = "/eos/out/active/wheel"
+
+var osc_element: OSCElement
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	osc_element = OSCElement.new()
+	add_child(osc_element)
+	
+	osc_element.send_address = send_address
+	osc_element.global_feedback = true
+	osc_element.recieve_address = recieve_address + "/" + str(wheel_index)
+	osc_element.feedback_recieved.connect(_on_osc_feedback)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-	# TODO: Get this working again
-	#var feedback = target_user.target_client.incoming_messages.get(recieve_address + "/" + str(wheel_index), [])
-	#if feedback:
-	#	$VBoxContainer/Label.text = str(feedback[0])
-	#	$VBoxContainer/Value.text = str(round(feedback[2]))
-	#	$VBoxContainer/WheelBox/VSlider.value = feedback[2]
+func _on_osc_feedback(value: Array):
+	$VBoxContainer/Label.text = str(value[0])
+	$VBoxContainer/Value.text = str(round(value[2]))
+	$VBoxContainer/WheelBox/VSlider.value = value[2]
 
 
 func _on_wheel_box_dragged(distance: float) -> void:
-	target_user.send_message(send_address + "/" + str(wheel_index) + "/level", [distance])
-
-
-# TODO: OSCKeys should be used for this instead of doing it manually (requires some changes to how OSCKeys are given a target user)
-func _on_min_button_button_down() -> void:
-	target_user.send_message("/at/min", [1])
-
-
-func _on_min_button_button_up() -> void:
-	target_user.send_message("/at/min", [0])
-
-
-func _on_max_button_button_down() -> void:
-	target_user.send_message("/at/max", [1])
-
-
-func _on_max_button_button_up() -> void:
-	target_user.send_message("/at/max", [0])
+	osc_element.send_message([distance])
