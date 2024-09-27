@@ -1,18 +1,16 @@
-[gd_scene load_steps=24 format=3 uid="uid://b1p8ak2bb83bq"]
+[gd_scene load_steps=22 format=3 uid="uid://b1p8ak2bb83bq"]
 
 [ext_resource type="Script" path="res://scenes/keypad/panel_container.gd" id="1_74sjs"]
 [ext_resource type="Script" path="res://scenes/keypad/command_line_display.gd" id="1_oohla"]
 [ext_resource type="Script" path="res://scenes/messages/osc_key.gd" id="2_v3vkr"]
-[ext_resource type="Script" path="res://addons/godOSC/scripts/OSCClient.gd" id="3_b2fn5"]
 [ext_resource type="Script" path="res://scenes/messages/osc_modifier_key.gd" id="3_p86lf"]
 [ext_resource type="Script" path="res://scenes/messages/osc_user.gd" id="4_pnbcy"]
 [ext_resource type="Script" path="res://scenes/messages/osc_softkey.gd" id="4_pndv3"]
-[ext_resource type="Script" path="res://addons/godOSC/scripts/OSCServer.gd" id="4_xkbgg"]
 [ext_resource type="Script" path="res://scenes/keypad/settings_menu.gd" id="6_1bvfd"]
 [ext_resource type="PackedScene" uid="uid://cy73ew523w6b4" path="res://scenes/wheel/wheel.tscn" id="6_66y7a"]
 [ext_resource type="Script" path="res://scenes/keypad/ip_address_edit.gd" id="7_bo2wc"]
 [ext_resource type="Script" path="res://scenes/keypad/send_port_edit.gd" id="8_ywgya"]
-[ext_resource type="Script" path="res://scenes/keypad/recieve_port_edit.gd" id="9_f7sn2"]
+[ext_resource type="Script" path="res://addons/godOSC/scripts/OSCClientTCP.gd" id="14_oc6cs"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5n5nr"]
 content_margin_left = 4.0
@@ -1320,56 +1318,34 @@ script = ExtResource("7_bo2wc")
 [node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/SettingsContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="SendPortLabel" type="Label" parent="PanelContainer/MarginContainer/SettingsContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="PortLabel" type="Label" parent="PanelContainer/MarginContainer/SettingsContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 1
-text = "Send Port"
+text = "Port"
 vertical_alignment = 1
 
-[node name="SendPortEdit" type="LineEdit" parent="PanelContainer/MarginContainer/SettingsContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="PortEdit" type="LineEdit" parent="PanelContainer/MarginContainer/SettingsContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 size_flags_horizontal = 3
-placeholder_text = "8000"
+placeholder_text = "3037"
 script = ExtResource("8_ywgya")
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/MarginContainer/SettingsContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="RecievePortLabel" type="Label" parent="PanelContainer/MarginContainer/SettingsContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
-layout_mode = 2
-size_flags_vertical = 1
-text = "Recieve Port"
-vertical_alignment = 1
-
-[node name="RecievePortEdit" type="LineEdit" parent="PanelContainer/MarginContainer/SettingsContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
-custom_minimum_size = Vector2(500, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-placeholder_text = "8001"
-script = ExtResource("9_f7sn2")
 
 [node name="CloseButton" type="Button" parent="PanelContainer/MarginContainer/SettingsContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Close"
 
-[node name="OSCClient" type="Node" parent="."]
-script = ExtResource("3_b2fn5")
-port = 8000
+[node name="OSCClientTCP" type="Node" parent="."]
+script = ExtResource("14_oc6cs")
+port = 3037
 
-[node name="OSCServer" type="Node" parent="."]
-script = ExtResource("4_xkbgg")
-port = 8001
-
-[node name="OSCUser" type="Node" parent="." node_paths=PackedStringArray("target_client", "target_server")]
+[node name="OSCUser" type="Node" parent="." node_paths=PackedStringArray("target_client")]
 script = ExtResource("4_pnbcy")
 osc_send_prefix = "/eos/user"
 osc_recieve_prefix = "/eos/out/user"
-target_client = NodePath("../OSCClient")
-target_server = NodePath("../OSCServer")
+target_client = NodePath("../OSCClientTCP")
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer6/SettingsButton" to="PanelContainer/MarginContainer/SettingsContainer" method="_on_settings_button_pressed"]
 [connection signal="text_submitted" from="PanelContainer/MarginContainer/SettingsContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/IPAddressEdit" to="PanelContainer/MarginContainer/SettingsContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/IPAddressEdit" method="_on_text_submitted"]
-[connection signal="text_submitted" from="PanelContainer/MarginContainer/SettingsContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/SendPortEdit" to="PanelContainer/MarginContainer/SettingsContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/SendPortEdit" method="_on_text_submitted"]
-[connection signal="text_submitted" from="PanelContainer/MarginContainer/SettingsContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/RecievePortEdit" to="PanelContainer/MarginContainer/SettingsContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/RecievePortEdit" method="_on_text_submitted"]
+[connection signal="text_submitted" from="PanelContainer/MarginContainer/SettingsContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/PortEdit" to="PanelContainer/MarginContainer/SettingsContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/PortEdit" method="_on_text_submitted"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/SettingsContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/CloseButton" to="PanelContainer/MarginContainer/SettingsContainer" method="_on_close_button_pressed"]

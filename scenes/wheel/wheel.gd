@@ -13,7 +13,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	var feedback = target_user.target_server.incoming_messages.get(recieve_address + "/" + str(wheel_index), [])
+	var feedback = target_user.target_client.incoming_messages.get(recieve_address + "/" + str(wheel_index), [])
 	if feedback:
 		$VBoxContainer/Label.text = str(feedback[0])
 		$VBoxContainer/Value.text = str(round(feedback[2]))

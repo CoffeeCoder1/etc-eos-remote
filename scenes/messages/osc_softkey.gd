@@ -14,6 +14,6 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	var feedback = target_user.target_server.incoming_messages.get("/eos/out/softkey/" + key_string, [])
+	var feedback = target_user.target_client.incoming_messages.get("/eos/out/softkey/" + key_string, [])
 	if feedback:
 		key_label = str(feedback[0]).replace(" ", "\n")
