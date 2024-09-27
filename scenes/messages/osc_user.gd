@@ -6,11 +6,6 @@ class_name OSCUser extends Node
 @export var target_client: OSCClientTCP
 
 
-func _ready() -> void:
-	target_client.send_message("/eos/reset", [])
-	target_client.send_message("/eos/subscribe", [1.0])
-
-
 func send_message(osc_message: String, args: Array) -> void:
 	target_client.send_message(osc_send_prefix + "/" + str(user_number) + osc_message, args)
 	print(osc_send_prefix + "/" + str(user_number) + osc_message, args)
