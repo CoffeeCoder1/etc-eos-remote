@@ -1324,11 +1324,11 @@ size_flags_vertical = 1
 text = "Port"
 vertical_alignment = 1
 
-[node name="PortEdit" type="LineEdit" parent="PanelContainer/MarginContainer/SettingsContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="PortEdit" type="SpinBox" parent="PanelContainer/MarginContainer/SettingsContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 size_flags_horizontal = 3
-placeholder_text = "3037"
+max_value = 65535.0
 script = ExtResource("8_ywgya")
 
 [node name="CloseButton" type="Button" parent="PanelContainer/MarginContainer/SettingsContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
@@ -1347,5 +1347,4 @@ target_client = NodePath("../OSCClientTCP")
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer6/SettingsButton" to="PanelContainer/MarginContainer/SettingsContainer" method="_on_settings_button_pressed"]
 [connection signal="text_submitted" from="PanelContainer/MarginContainer/SettingsContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/IPAddressEdit" to="PanelContainer/MarginContainer/SettingsContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/IPAddressEdit" method="_on_text_submitted"]
-[connection signal="text_submitted" from="PanelContainer/MarginContainer/SettingsContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/PortEdit" to="PanelContainer/MarginContainer/SettingsContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/PortEdit" method="_on_text_submitted"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/SettingsContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/CloseButton" to="PanelContainer/MarginContainer/SettingsContainer" method="_on_close_button_pressed"]
