@@ -1,0 +1,1147 @@
+[gd_scene load_steps=8 format=3 uid="uid://lowydp6qwkqd"]
+
+[ext_resource type="Script" path="res://scenes/messages/osc_group.gd" id="1_pg0ae"]
+[ext_resource type="Script" path="res://scenes/panels/keypad/command_line_display.gd" id="2_p7so8"]
+[ext_resource type="Script" path="res://scenes/messages/osc_key.gd" id="2_v3vkr"]
+[ext_resource type="Script" path="res://scenes/messages/osc_modifier_key.gd" id="3_p86lf"]
+[ext_resource type="Script" path="res://scenes/messages/osc_softkey.gd" id="4_pndv3"]
+[ext_resource type="PackedScene" uid="uid://cy73ew523w6b4" path="res://scenes/elements/wheel/wheel.tscn" id="6_66y7a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h4bam"]
+
+[node name="Keypad" type="Container"]
+script = ExtResource("1_pg0ae")
+
+[node name="KeypadContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_h4bam")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="KeypadContainer"]
+layout_mode = 2
+
+[node name="CommandLineDisplay" type="Label" parent="KeypadContainer/VBoxContainer"]
+layout_mode = 2
+script = ExtResource("2_p7so8")
+feedback_address = "/cmd"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="KeypadContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="KeypadContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Panel1" type="GridContainer" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+columns = 3
+
+[node name="ButtonSnapshot" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel1"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Snapshot"
+script = ExtResource("2_v3vkr")
+key_string = "snapshot"
+address_prefix = null
+key_label = "Snapshot"
+
+[node name="ButtonBlank1" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel1"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="ButtonHelp" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel1"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "Help"
+script = ExtResource("2_v3vkr")
+key_string = "help"
+address_prefix = null
+key_label = "Help"
+
+[node name="ButtonFader" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel1"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Fader"
+script = ExtResource("2_v3vkr")
+key_string = "fader"
+address_prefix = null
+key_label = "Fader"
+
+[node name="ButtonBlank2" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel1"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="ButtonAddressPatch" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel1"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "Address
+Patch"
+script = ExtResource("2_v3vkr")
+key_string = "address"
+address_prefix = null
+key_label = "Address
+Patch"
+
+[node name="Panel2" type="GridContainer" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+columns = 3
+
+[node name="ButtonMacro" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Macro"
+script = ExtResource("2_v3vkr")
+key_string = "macro"
+address_prefix = null
+key_label = "Macro"
+
+[node name="ButtonBlank" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="ButtonLearn" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Learn"
+script = ExtResource("2_v3vkr")
+key_string = "learn"
+address_prefix = null
+key_label = "Learn"
+
+[node name="Panel3" type="GridContainer" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+columns = 3
+
+[node name="ButtonBlank1" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel3"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="ButtonBlank2" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel3"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="ButtonBlank3" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel3"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="ButtonDelete" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel3"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Delete"
+script = ExtResource("2_v3vkr")
+key_string = "delete"
+address_prefix = null
+key_label = "Delete"
+
+[node name="ButtonColorPath" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel3"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "Path"
+script = ExtResource("2_v3vkr")
+key_string = "path"
+address_prefix = null
+key_label = "Path"
+
+[node name="ButtonEffect" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel3"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Effect"
+script = ExtResource("2_v3vkr")
+key_string = "effect"
+address_prefix = null
+key_label = "Effect"
+
+[node name="Panel4" type="GridContainer" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+columns = 3
+
+[node name="ButtonPart" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel4"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "Part"
+script = ExtResource("2_v3vkr")
+key_string = "part"
+address_prefix = null
+key_label = "Part"
+
+[node name="ButtonCue" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel4"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Cue"
+script = ExtResource("2_v3vkr")
+key_string = "cue"
+address_prefix = null
+key_label = "Cue"
+
+[node name="ButtonRecord" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel4"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Record"
+script = ExtResource("2_v3vkr")
+key_string = "record"
+address_prefix = null
+key_label = "Record"
+
+[node name="ButtonIntensityPallete" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel4"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 9
+text = "Int
+Palette"
+script = ExtResource("2_v3vkr")
+key_string = "intensity_palette"
+address_prefix = null
+key_label = "Int
+Palette"
+
+[node name="ButtonFocusPalette" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel4"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 9
+text = "Focus
+Palette"
+script = ExtResource("2_v3vkr")
+key_string = "focus_palette"
+address_prefix = null
+key_label = "Focus
+Palette"
+
+[node name="ButtonRecordOnly" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel4"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "Record
+Only"
+script = ExtResource("2_v3vkr")
+key_string = "record_only"
+address_prefix = null
+key_label = "Record
+Only"
+
+[node name="ButtonColorPalette" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel4"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 9
+text = "Color
+Palette"
+script = ExtResource("2_v3vkr")
+key_string = "color_palette"
+address_prefix = null
+key_label = "Color
+Palette"
+
+[node name="ButtonBeamPalette" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel4"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 9
+text = "Beam
+Palette"
+script = ExtResource("2_v3vkr")
+key_string = "beam_palette"
+address_prefix = null
+key_label = "Beam
+Palette"
+
+[node name="ButtonUpdate" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel4"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Update"
+script = ExtResource("2_v3vkr")
+key_string = "update"
+address_prefix = null
+key_label = "Update"
+
+[node name="ButtonPreset" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel4"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Preset"
+script = ExtResource("2_v3vkr")
+key_string = "preset"
+address_prefix = null
+key_label = "Preset"
+
+[node name="ButtonSubmaster" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel4"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Sub"
+script = ExtResource("2_v3vkr")
+key_string = "sub"
+address_prefix = null
+key_label = "Sub"
+
+[node name="ButtonGroup" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel4"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Group"
+script = ExtResource("2_v3vkr")
+key_string = "group"
+address_prefix = null
+key_label = "Group"
+
+[node name="ButtonShift" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel4"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+toggle_mode = true
+script = ExtResource("3_p86lf")
+key_string = "shift"
+address_prefix = null
+clears_modifiers = false
+
+[node name="ButtonDelay" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel4"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Delay"
+script = ExtResource("2_v3vkr")
+key_string = "delay"
+address_prefix = null
+key_label = "Delay"
+
+[node name="ButtonTime" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel4"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "Time"
+script = ExtResource("2_v3vkr")
+key_string = "time"
+address_prefix = null
+key_label = "Time"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="KeypadContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Softkeys" type="GridContainer" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+columns = 3
+
+[node name="Softkey1" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Softkeys"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+script = ExtResource("4_pndv3")
+softkey_index = 1
+
+[node name="Softkey2" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Softkeys"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+script = ExtResource("4_pndv3")
+softkey_index = 2
+
+[node name="Softkey3" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Softkeys"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+script = ExtResource("4_pndv3")
+softkey_index = 3
+
+[node name="Panel2" type="GridContainer" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+columns = 3
+
+[node name="ButtonQuery" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Panel2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Query"
+script = ExtResource("2_v3vkr")
+key_string = "query"
+address_prefix = null
+key_label = "Query"
+
+[node name="ButtonCopyTo" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Panel2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "CopyTo"
+script = ExtResource("2_v3vkr")
+key_string = "copy_to"
+address_prefix = null
+key_label = "CopyTo"
+
+[node name="ButtonRecallFrom" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Panel2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "Recall
+From"
+script = ExtResource("2_v3vkr")
+key_string = "recall_from"
+address_prefix = null
+key_label = "Recall
+From"
+
+[node name="ButtonGoToCue" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Panel2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "GoTo
+Cue"
+script = ExtResource("2_v3vkr")
+key_string = "gotocue"
+address_prefix = null
+key_label = "GoTo
+Cue"
+
+[node name="ButtonBlock" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Panel2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Block"
+script = ExtResource("2_v3vkr")
+key_string = "block"
+address_prefix = null
+key_label = "Block"
+
+[node name="ButtonAssert" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Panel2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Assert"
+script = ExtResource("2_v3vkr")
+key_string = "assert"
+address_prefix = null
+key_label = "Assert"
+
+[node name="NumberPanel" type="GridContainer" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+columns = 3
+
+[node name="ButtonPlus" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "+"
+script = ExtResource("2_v3vkr")
+key_string = "+"
+address_prefix = null
+key_label = "+"
+
+[node name="ButtonThru" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "Thru"
+script = ExtResource("2_v3vkr")
+key_string = "thru"
+address_prefix = null
+key_label = "Thru"
+
+[node name="ButtonMinus" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "-"
+script = ExtResource("2_v3vkr")
+key_string = "-"
+address_prefix = null
+key_label = "-"
+
+[node name="Button7" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "7"
+script = ExtResource("2_v3vkr")
+key_string = "7"
+address_prefix = null
+key_label = "7"
+
+[node name="Button8" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "8"
+script = ExtResource("2_v3vkr")
+key_string = "8"
+address_prefix = null
+key_label = "8"
+
+[node name="Button9" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "9"
+script = ExtResource("2_v3vkr")
+key_string = "9"
+address_prefix = null
+key_label = "9"
+
+[node name="Button4" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "4"
+script = ExtResource("2_v3vkr")
+key_string = "4"
+address_prefix = null
+key_label = "4"
+
+[node name="Button5" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "5"
+script = ExtResource("2_v3vkr")
+key_string = "5"
+address_prefix = null
+key_label = "5"
+
+[node name="Button6" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "6"
+script = ExtResource("2_v3vkr")
+key_string = "6"
+address_prefix = null
+key_label = "6"
+
+[node name="Button1" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "1"
+script = ExtResource("2_v3vkr")
+key_string = "1"
+address_prefix = null
+key_label = "1"
+
+[node name="Button2" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "2"
+script = ExtResource("2_v3vkr")
+key_string = "2"
+address_prefix = null
+key_label = "2"
+
+[node name="Button3" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "3"
+script = ExtResource("2_v3vkr")
+key_string = "3"
+address_prefix = null
+key_label = "3"
+
+[node name="ButtonClear" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Clear"
+script = ExtResource("2_v3vkr")
+key_string = "clear_cmd"
+address_prefix = null
+key_label = "Clear"
+
+[node name="Button0" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "0"
+script = ExtResource("2_v3vkr")
+key_string = "0"
+address_prefix = null
+key_label = "0"
+
+[node name="ButtonPoint" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "."
+script = ExtResource("2_v3vkr")
+key_string = "."
+address_prefix = null
+key_label = "."
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="KeypadContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Softkeys" type="GridContainer" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+columns = 3
+
+[node name="Softkey4" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Softkeys"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+script = ExtResource("4_pndv3")
+softkey_index = 4
+
+[node name="Softkey5" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Softkeys"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+script = ExtResource("4_pndv3")
+softkey_index = 5
+
+[node name="Softkey6" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Softkeys"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+script = ExtResource("4_pndv3")
+softkey_index = 6
+
+[node name="Panel2" type="GridContainer" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+columns = 3
+
+[node name="ButtonLabelNote" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "Label
+Note"
+script = ExtResource("2_v3vkr")
+key_string = "label"
+address_prefix = null
+key_label = "Label
+Note"
+
+[node name="ButtonBlank" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="ButtonAbout" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "About"
+script = ExtResource("2_v3vkr")
+key_string = "about"
+address_prefix = null
+key_label = "About"
+
+[node name="ButtonOffset" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Offset"
+script = ExtResource("2_v3vkr")
+key_string = "offset"
+address_prefix = null
+key_label = "Offset"
+
+[node name="ButtonHighlight" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "High"
+script = ExtResource("2_v3vkr")
+key_string = "highlight"
+address_prefix = null
+key_label = "High"
+
+[node name="ButtonFan" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Fan"
+script = ExtResource("2_v3vkr")
+key_string = "fan_"
+address_prefix = null
+key_label = "Fan"
+
+[node name="Panel3" type="GridContainer" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+columns = 3
+
+[node name="ButtonSlash" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel3"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "/"
+script = ExtResource("2_v3vkr")
+key_string = "\\"
+address_prefix = null
+key_label = "/"
+
+[node name="ButtonMark" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel3"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "Mark"
+script = ExtResource("2_v3vkr")
+key_string = "mark"
+address_prefix = null
+key_label = "Mark"
+
+[node name="ButtonSneak" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel3"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Sneak"
+script = ExtResource("2_v3vkr")
+key_string = "sneak"
+address_prefix = null
+key_label = "Sneak"
+
+[node name="ButtonRemDim" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel3"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Rem
+Dim"
+script = ExtResource("2_v3vkr")
+key_string = "rem_dim"
+address_prefix = null
+key_label = "Rem
+Dim"
+
+[node name="ButtonPlus10" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel3"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "+%"
+script = ExtResource("2_v3vkr")
+key_string = "+%"
+address_prefix = null
+key_label = "+%"
+
+[node name="ButtonHome" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel3"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "Home"
+script = ExtResource("2_v3vkr")
+key_string = "home"
+address_prefix = null
+key_label = "Home"
+
+[node name="ButtonOut" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel3"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Out"
+script = ExtResource("2_v3vkr")
+key_string = "out"
+address_prefix = null
+key_label = "Out"
+
+[node name="ButtonMinus10" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel3"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "-%"
+script = ExtResource("2_v3vkr")
+key_string = "-%"
+address_prefix = null
+key_label = "-%"
+
+[node name="ButtonTrace" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel3"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Trace"
+script = ExtResource("2_v3vkr")
+key_string = "trace"
+address_prefix = null
+key_label = "Trace"
+
+[node name="ButtonFull" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel3"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "Full"
+script = ExtResource("2_v3vkr")
+key_string = "full"
+address_prefix = null
+key_label = "Full"
+
+[node name="ButtonLevel" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel3"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Level"
+script = ExtResource("2_v3vkr")
+key_string = "level"
+address_prefix = null
+key_label = "Level"
+
+[node name="ButtonCueOnlyTrack" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel3"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "QOnly
+Track"
+script = ExtResource("2_v3vkr")
+key_string = "cueonlytrack"
+address_prefix = null
+key_label = "QOnly
+Track"
+
+[node name="ButtonAt" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel3"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "At"
+script = ExtResource("2_v3vkr")
+key_string = "at"
+address_prefix = null
+key_label = "At"
+
+[node name="Control" type="Control" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel3"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="ButtonEnter" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Panel3/Control"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 54.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 12
+text = "Enter"
+script = ExtResource("2_v3vkr")
+key_string = "enter"
+address_prefix = null
+key_label = "Enter"
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="KeypadContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="ButtonMoreSoftkeys" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer4"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "More
+SK"
+script = ExtResource("2_v3vkr")
+key_string = "more_softkeys"
+address_prefix = null
+key_label = "More
+SK"
+
+[node name="Panel2" type="GridContainer" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer4"]
+layout_mode = 2
+
+[node name="ButtonPark" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer4/Panel2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "Park"
+script = ExtResource("2_v3vkr")
+key_string = "park"
+address_prefix = null
+key_label = "Park"
+
+[node name="ButtonCapture" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer4/Panel2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 9
+text = "Capture"
+script = ExtResource("2_v3vkr")
+key_string = "capture"
+address_prefix = null
+key_label = "Capture"
+
+[node name="Panel3" type="GridContainer" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer4"]
+layout_mode = 2
+
+[node name="ButtonSelectLast" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer4/Panel3"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "Select
+Last"
+script = ExtResource("2_v3vkr")
+key_string = "select_last"
+address_prefix = null
+key_label = "Select
+Last"
+
+[node name="ButtonSelectManual" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer4/Panel3"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Select
+Manual"
+script = ExtResource("2_v3vkr")
+key_string = "select_manual"
+address_prefix = null
+key_label = "Select
+Manual"
+
+[node name="ButtonSelectActive" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer4/Panel3"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Select
+Active"
+script = ExtResource("2_v3vkr")
+key_string = "select_active"
+address_prefix = null
+key_label = "Select
+Active"
+
+[node name="ButtonLast" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer4/Panel3"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "Last"
+script = ExtResource("2_v3vkr")
+key_string = "last"
+address_prefix = null
+key_label = "Last"
+
+[node name="ButtonNext" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer4/Panel3"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "Next"
+script = ExtResource("2_v3vkr")
+key_string = "next"
+address_prefix = null
+key_label = "Next"
+
+[node name="VBoxContainer5" type="VBoxContainer" parent="KeypadContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Panel1" type="GridContainer" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer5"]
+layout_mode = 2
+columns = 3
+
+[node name="ButtonLive" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer5/Panel1"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "Live"
+script = ExtResource("2_v3vkr")
+key_string = "live"
+address_prefix = null
+key_label = "Live"
+
+[node name="ButtonBlind" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer5/Panel1"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Blind"
+script = ExtResource("2_v3vkr")
+key_string = "blind"
+address_prefix = null
+key_label = "Blind"
+
+[node name="ButtonStage" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer5/Panel1"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Stage"
+script = ExtResource("2_v3vkr")
+key_string = "stage"
+address_prefix = null
+key_label = "Stage"
+
+[node name="ButtonDisplays" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer5/Panel1"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Displays"
+script = ExtResource("2_v3vkr")
+key_string = "displays"
+address_prefix = null
+key_label = "Displays"
+
+[node name="ButtonBlank" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer5/Panel1"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="ButtonSystemSettings" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer5/Panel1"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "System"
+script = ExtResource("2_v3vkr")
+key_string = "system_settings"
+address_prefix = null
+key_label = "System"
+
+[node name="Panel2" type="GridContainer" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer5"]
+layout_mode = 2
+columns = 3
+
+[node name="ButtonUndo" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer5/Panel2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "Undo"
+script = ExtResource("2_v3vkr")
+key_string = "undo"
+address_prefix = null
+key_label = "Undo"
+
+[node name="ButtonBlank" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer5/Panel2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="ButtonPageMode" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer5/Panel2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "Scroll
+Lock"
+script = ExtResource("2_v3vkr")
+key_string = "page_mode"
+address_prefix = null
+key_label = "Scroll
+Lock"
+
+[node name="Panel3" type="GridContainer" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer5"]
+layout_mode = 2
+columns = 3
+
+[node name="ButtonEscape" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer5/Panel3"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Escape"
+script = ExtResource("2_v3vkr")
+key_string = "escape"
+address_prefix = null
+key_label = "Escape"
+
+[node name="ButtonPageUp" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer5/Panel3"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "Page
+Up"
+script = ExtResource("2_v3vkr")
+key_string = "page_up"
+address_prefix = null
+key_label = "Page
+Up"
+
+[node name="ButtonSelect" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer5/Panel3"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Select"
+script = ExtResource("2_v3vkr")
+key_string = "select"
+address_prefix = null
+key_label = "Select"
+
+[node name="ButtonPageLeft" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer5/Panel3"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "Page
+Left"
+script = ExtResource("2_v3vkr")
+key_string = "page_left"
+address_prefix = null
+key_label = "Page
+Left"
+
+[node name="ButtonPageDown" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer5/Panel3"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "Page
+Down"
+script = ExtResource("2_v3vkr")
+key_string = "arrow_down"
+address_prefix = null
+key_label = "Page
+Down"
+
+[node name="ButtonPageRight" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer5/Panel3"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Page
+Right"
+script = ExtResource("2_v3vkr")
+key_string = "page_right"
+address_prefix = null
+key_label = "Page
+Right"
+
+[node name="Panel4" type="GridContainer" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer5"]
+layout_mode = 2
+columns = 3
+
+[node name="ButtonTab" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer5/Panel4"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Tab"
+script = ExtResource("2_v3vkr")
+key_string = "tab"
+address_prefix = null
+key_label = "Tab"
+
+[node name="ButtonFlexi" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer5/Panel4"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Flexi"
+script = ExtResource("2_v3vkr")
+key_string = "flexichannel_mode"
+address_prefix = null
+key_label = "Flexi"
+
+[node name="ButtonDisplayTiming" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer5/Panel4"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "Time"
+script = ExtResource("2_v3vkr")
+key_string = "display_timing"
+address_prefix = null
+key_label = "Time"
+
+[node name="ButtonFormat" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer5/Panel4"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Format"
+script = ExtResource("2_v3vkr")
+key_string = "format"
+address_prefix = null
+key_label = "Format"
+
+[node name="ButtonExpand" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer5/Panel4"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Expand"
+script = ExtResource("2_v3vkr")
+key_string = "expand"
+address_prefix = null
+key_label = "Expand"
+
+[node name="ButtonData" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer5/Panel4"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "Data"
+script = ExtResource("2_v3vkr")
+key_string = "data"
+address_prefix = null
+key_label = "Data"
+
+[node name="VBoxContainer6" type="VBoxContainer" parent="KeypadContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="SettingsButton" type="Button" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer6"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "App
+Settings"
+
+[node name="Wheel" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer6" instance=ExtResource("6_66y7a")]
+layout_mode = 2

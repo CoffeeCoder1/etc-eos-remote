@@ -1,0 +1,78 @@
+[gd_scene load_steps=6 format=3 uid="uid://cv50y2jxdoasn"]
+
+[ext_resource type="Script" path="res://scenes/panels/settings/settings_menu.gd" id="1_x2vtn"]
+[ext_resource type="Script" path="res://scenes/panels/settings/ip_address_edit.gd" id="2_w7goa"]
+[ext_resource type="Script" path="res://scenes/panels/settings/send_port_edit.gd" id="3_f4rmd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h4bam"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_we45e"]
+bg_color = Color(0.114897, 0.114897, 0.114897, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.521141, 0.521141, 0.52114, 1)
+
+[node name="SettingsContainer" type="PanelContainer"]
+theme_override_styles/panel = SubResource("StyleBoxEmpty_h4bam")
+script = ExtResource("1_x2vtn")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_we45e")
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Settings"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="IPAddressLabel" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Board IP Address"
+vertical_alignment = 1
+
+[node name="IPAddressEdit" type="LineEdit" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+placeholder_text = "127.0.0.1"
+script = ExtResource("2_w7goa")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="PortLabel" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Port"
+vertical_alignment = 1
+
+[node name="PortEdit" type="SpinBox" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 65535.0
+script = ExtResource("3_f4rmd")
+
+[node name="CloseButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Close"
+
+[connection signal="text_submitted" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/IPAddressEdit" to="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/IPAddressEdit" method="_on_text_submitted"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]

@@ -1,0 +1,133 @@
+[gd_scene load_steps=14 format=3 uid="uid://b1p8ak2bb83bq"]
+
+[ext_resource type="Script" path="res://scenes/main/panel_container.gd" id="1_ltf1v"]
+[ext_resource type="PackedScene" uid="uid://cv50y2jxdoasn" path="res://scenes/panels/settings/settings.tscn" id="2_w362o"]
+[ext_resource type="PackedScene" uid="uid://lowydp6qwkqd" path="res://scenes/panels/keypad/keypad.tscn" id="5_j6y4i"]
+[ext_resource type="Script" path="res://addons/godOSC/scripts/OSCClientTCP.gd" id="10_iei1a"]
+[ext_resource type="Script" path="res://scenes/messages/osc_user.gd" id="11_3aw7r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5n5nr"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.3)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.8, 0.8, 0.8, 0.184314)
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oopuq"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j64ox"]
+bg_color = Color(0.167451, 0.167451, 0.167451, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.4123, 0.39294, 0.440007, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4f643"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.4123, 0.39294, 0.440007, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_80rpq"]
+bg_color = Color(0.163861, 0.163861, 0.163861, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.74127, 0.446711, 5.77569e-07, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_11fej"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.4123, 0.39294, 0.440007, 1)
+corner_detail = 5
+
+[sub_resource type="Theme" id="Theme_tq8lr"]
+Button/font_sizes/font_size = 12
+Button/styles/disabled = SubResource("StyleBoxFlat_5n5nr")
+Button/styles/focus = SubResource("StyleBoxFlat_oopuq")
+Button/styles/hover = SubResource("StyleBoxFlat_j64ox")
+Button/styles/normal = SubResource("StyleBoxFlat_4f643")
+Button/styles/pressed = SubResource("StyleBoxFlat_80rpq")
+Label/styles/normal = SubResource("StyleBoxFlat_4f643")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_11fej")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_45cpf"]
+bg_color = Color(0.149475, 0.149475, 0.149474, 1)
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_tq8lr")
+
+[node name="PanelContainer" type="PanelContainer" parent="." node_paths=PackedStringArray("target_user")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_45cpf")
+script = ExtResource("1_ltf1v")
+live_color = Color(0.149475, 0.149475, 0.149474, 1)
+blind_color = Color(0.0833569, 0.197115, 0.238439, 1)
+target_user = NodePath("../OSCUser")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="SettingsContainer" parent="PanelContainer/MarginContainer" instance=ExtResource("2_w362o")]
+visible = false
+layout_mode = 2
+
+[node name="Keypad" parent="PanelContainer/MarginContainer" instance=ExtResource("5_j6y4i")]
+layout_mode = 2
+
+[node name="OSCClientTCP" type="Node" parent="."]
+script = ExtResource("10_iei1a")
+port = 3037
+
+[node name="OSCUser" type="Node" parent="." node_paths=PackedStringArray("target_client")]
+script = ExtResource("11_3aw7r")
+osc_send_prefix = "/eos/user"
+osc_recieve_prefix = "/eos/out/user"
+target_client = NodePath("../OSCClientTCP")

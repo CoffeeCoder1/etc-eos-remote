@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cy73ew523w6b4"]
 
-[ext_resource type="Script" path="res://scenes/wheel/wheel.gd" id="1_7dxjw"]
-[ext_resource type="Script" path="res://scenes/wheel/wheel_box.gd" id="2_4k3ov"]
+[ext_resource type="Script" path="res://scenes/elements/wheel/wheel.gd" id="1_7dxjw"]
+[ext_resource type="Script" path="res://scenes/elements/wheel/wheel_box.gd" id="2_4k3ov"]
 
 [node name="Wheel" type="Control"]
 layout_mode = 3
