@@ -64,3 +64,4 @@ address_prefix = "/at"
 key_label = "Min"
 
 [connection signal="dragged" from="VBoxContainer/WheelBox" to="." method="_on_wheel_box_dragged"]
+[connection signal="released" from="VBoxContainer/WheelBox" to="." method="_on_wheel_box_released"]

@@ -1,7 +1,7 @@
 class_name Wheel extends Control
 
 @export var wheel_index: int = 1
-@export var send_address: String = "/wheel/level"
+@export var send_address: String = "/switch/level"
 @export var recieve_address: String = "/eos/out/active/wheel"
 
 var osc_element: OSCElement
@@ -26,3 +26,7 @@ func _on_osc_feedback(value: Array):
 
 func _on_wheel_box_dragged(distance: float) -> void:
 	osc_element.send_message([distance])
+
+
+func _on_wheel_box_released() -> void:
+	osc_element.send_message([0])
