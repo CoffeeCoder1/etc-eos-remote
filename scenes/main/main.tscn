@@ -115,11 +115,11 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="SettingsContainer" parent="PanelContainer/MarginContainer" instance=ExtResource("2_w362o")]
-visible = false
+[node name="Keypad" parent="PanelContainer/MarginContainer" instance=ExtResource("5_j6y4i")]
 layout_mode = 2
 
-[node name="Keypad" parent="PanelContainer/MarginContainer" instance=ExtResource("5_j6y4i")]
+[node name="SettingsContainer" parent="PanelContainer/MarginContainer" instance=ExtResource("2_w362o")]
+visible = false
 layout_mode = 2
 
 [node name="OSCClientTCP" type="Node" parent="."]
@@ -131,3 +131,5 @@ script = ExtResource("11_3aw7r")
 osc_send_prefix = "/eos/user"
 osc_recieve_prefix = "/eos/out/user"
 target_client = NodePath("../OSCClientTCP")
+
+[connection signal="settings_button_pressed" from="PanelContainer/MarginContainer/Keypad" to="PanelContainer/MarginContainer/SettingsContainer" method="_on_settings_button_pressed"]

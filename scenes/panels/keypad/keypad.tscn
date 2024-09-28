@@ -1054,3 +1054,5 @@ Settings"
 
 [node name="Wheel" parent="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer6" instance=ExtResource("6_66y7a")]
 layout_mode = 2
+
+[connection signal="pressed" from="KeypadContainer/VBoxContainer/HBoxContainer/VBoxContainer6/SettingsButton" to="." method="_on_settings_button_pressed"]
