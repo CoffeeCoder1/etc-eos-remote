@@ -116,6 +116,7 @@ theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
 [node name="Keypad" parent="PanelContainer/MarginContainer" instance=ExtResource("5_j6y4i")]
+visible = true
 layout_mode = 2
 
 [node name="SettingsContainer" parent="PanelContainer/MarginContainer" instance=ExtResource("2_w362o")]
