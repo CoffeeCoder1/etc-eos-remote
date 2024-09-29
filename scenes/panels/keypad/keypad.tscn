@@ -1038,4 +1038,5 @@ key_label = "Data"
 
 [node name="Wheel" parent="VBoxContainer/HBoxContainer" instance=ExtResource("6_66y7a")]
 layout_mode = 2
+size_flags_horizontal = 10
 delete_on_null_type = false
