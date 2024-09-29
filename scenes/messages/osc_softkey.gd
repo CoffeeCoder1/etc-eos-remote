@@ -14,7 +14,7 @@ func _ready() -> void:
 	key_string = str(softkey_index)
 	
 	osc_element.recieve_address = "/eos/out/softkey/" + key_string
-	osc_element.global_feedback = true
+	osc_element.feedback_mode = OSCElement.FeedbackMode.GLOBAL
 	osc_element.feedback_recieved.connect(_on_osc_feedback)
 
 

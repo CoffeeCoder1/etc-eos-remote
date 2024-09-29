@@ -2,12 +2,14 @@ class_name OSCElement extends Node
 
 @export var send_address: String
 @export var recieve_address: String
-## Is the feedback address local to the user or global?
-@export var global_feedback: bool = false
+## What mode to use for recieving feedback.
+@export var feedback_mode: FeedbackMode = FeedbackMode.USER
 
 signal feedback_recieved(value: Array)
 
 var target_user: OSCUser
+
+enum FeedbackMode {USER, FEEDBACK_USER, GLOBAL}
 
 
 # Called when the node enters the scene tree for the first time.
@@ -20,9 +22,11 @@ func _process(delta: float) -> void:
 	if recieve_address:
 		var feedback
 		
-		if global_feedback:
+		if feedback_mode == FeedbackMode.GLOBAL:
 			feedback = target_user.get_global_feedback(recieve_address)
-		else:
+		elif feedback_mode == FeedbackMode.FEEDBACK_USER:
+			feedback = target_user.get_user_feedback(recieve_address)
+		elif feedback_mode == FeedbackMode.USER:
 			feedback = target_user.get_feedback(recieve_address)
 		
 		if feedback:

@@ -19,7 +19,7 @@ func _ready() -> void:
 	add_child(osc_element)
 	
 	osc_element.send_address = send_address + "/" + str(wheel_index)
-	osc_element.global_feedback = true
+	osc_element.feedback_mode = OSCElement.FeedbackMode.GLOBAL
 	osc_element.recieve_address = recieve_address + "/" + str(wheel_index)
 	osc_element.feedback_recieved.connect(_on_osc_feedback)
 

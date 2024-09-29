@@ -17,6 +17,7 @@ layout_mode = 2
 [node name="CommandLineDisplay" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 script = ExtResource("2_p7so8")
+feedback_mode = 1
 feedback_address = "/cmd"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]

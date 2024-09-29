@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cv50y2jxdoasn"]
+[gd_scene load_steps=7 format=3 uid="uid://cv50y2jxdoasn"]
 
 [ext_resource type="Script" path="res://scenes/panels/settings/settings_menu.gd" id="1_x2vtn"]
 [ext_resource type="Script" path="res://scenes/panels/settings/ip_address_edit.gd" id="2_w7goa"]
 [ext_resource type="Script" path="res://scenes/panels/settings/send_port_edit.gd" id="3_f4rmd"]
+[ext_resource type="Script" path="res://scenes/panels/settings/user_edit.gd" id="4_1ce6q"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h4bam"]
 
@@ -70,9 +71,26 @@ size_flags_horizontal = 3
 max_value = 65535.0
 script = ExtResource("3_f4rmd")
 
+[node name="User" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="UserLabel" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/User"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "User"
+vertical_alignment = 1
+
+[node name="UserEdit" type="SpinBox" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/User"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = -1.0
+script = ExtResource("4_1ce6q")
+
 [node name="CloseButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Close"
 
 [connection signal="text_submitted" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/IPAddressEdit" to="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/IPAddressEdit" method="_on_text_submitted"]
+[connection signal="value_changed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/User/UserEdit" to="." method="_on_user_selected"]
 [connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]

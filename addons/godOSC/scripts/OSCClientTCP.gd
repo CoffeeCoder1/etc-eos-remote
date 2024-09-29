@@ -6,12 +6,14 @@ extends Node
 ## The IP Address of the server to connect to.
 @export var ip_address: String = "127.0.0.1":
 	set(new_ip_address):
-		connect_socket(new_ip_address, port)
+		if ip_address != new_ip_address:
+			connect_socket(new_ip_address, port)
 		ip_address = new_ip_address
 ## The port to connect to.
 @export var port: int = 4646:
 	set(new_port):
-		connect_socket(ip_address, new_port)
+		if port != new_port:
+			connect_socket(ip_address, new_port)
 		port = new_port
 var client: StreamPeerTCP = StreamPeerTCP.new()
 
