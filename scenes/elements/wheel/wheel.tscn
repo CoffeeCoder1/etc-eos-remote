@@ -5,6 +5,7 @@
 [ext_resource type="Script" path="res://scenes/messages/osc_key.gd" id="2_vuptc"]
 
 [node name="Wheel" type="PanelContainer"]
+custom_minimum_size = Vector2(75, 0)
 offset_right = 37.0
 offset_bottom = 118.0
 size_flags_vertical = 3
@@ -15,9 +16,13 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Value" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="MaxButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
