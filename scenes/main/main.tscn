@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://b1p8ak2bb83bq"]
+[gd_scene load_steps=15 format=3 uid="uid://b1p8ak2bb83bq"]
 
 [ext_resource type="Script" path="res://scenes/main/panel_container.gd" id="1_ltf1v"]
 [ext_resource type="PackedScene" uid="uid://cv50y2jxdoasn" path="res://scenes/panels/settings/settings.tscn" id="2_w362o"]
+[ext_resource type="PackedScene" uid="uid://5rbtyjxu8hl4" path="res://scenes/panels/wheels/wheels.tscn" id="4_jlbm2"]
 [ext_resource type="PackedScene" uid="uid://lowydp6qwkqd" path="res://scenes/panels/keypad/keypad.tscn" id="5_j6y4i"]
 [ext_resource type="Script" path="res://addons/godOSC/scripts/OSCClientTCP.gd" id="10_iei1a"]
 [ext_resource type="Script" path="res://scenes/messages/osc_user.gd" id="11_3aw7r"]
@@ -116,11 +117,14 @@ theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
 [node name="Keypad" parent="PanelContainer/MarginContainer" instance=ExtResource("5_j6y4i")]
-visible = true
+visible = false
 layout_mode = 2
 
 [node name="SettingsContainer" parent="PanelContainer/MarginContainer" instance=ExtResource("2_w362o")]
 visible = false
+layout_mode = 2
+
+[node name="Wheels" parent="PanelContainer/MarginContainer" instance=ExtResource("4_jlbm2")]
 layout_mode = 2
 
 [node name="OSCClientTCP" type="Node" parent="."]

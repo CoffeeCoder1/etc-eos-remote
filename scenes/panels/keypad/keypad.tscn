@@ -10,7 +10,6 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h4bam"]
 
 [node name="Keypad" type="PanelContainer"]
-visible = false
 theme_override_styles/panel = SubResource("StyleBoxEmpty_h4bam")
 script = ExtResource("1_pg0ae")
 
@@ -1050,7 +1049,7 @@ theme_override_font_sizes/font_size = 10
 text = "App
 Settings"
 
-[node name="Wheel" parent="VBoxContainer/HBoxContainer/VBoxContainer6" instance=ExtResource("6_66y7a")]
+[node name="Wheel" parent="VBoxContainer/HBoxContainer" instance=ExtResource("6_66y7a")]
 layout_mode = 2
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer6/SettingsButton" to="." method="_on_settings_button_pressed"]

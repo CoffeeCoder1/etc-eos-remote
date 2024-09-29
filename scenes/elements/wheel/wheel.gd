@@ -1,7 +1,7 @@
 class_name Wheel extends Control
 
 @export var wheel_index: int = 1
-@export var send_address: String = "/switch/level"
+@export var send_address: String = "/active/switch"
 @export var recieve_address: String = "/eos/out/active/wheel"
 
 var osc_element: OSCElement
@@ -12,7 +12,7 @@ func _ready() -> void:
 	osc_element = OSCElement.new()
 	add_child(osc_element)
 	
-	osc_element.send_address = send_address
+	osc_element.send_address = send_address + "/" + str(wheel_index)
 	osc_element.global_feedback = true
 	osc_element.recieve_address = recieve_address + "/" + str(wheel_index)
 	osc_element.feedback_recieved.connect(_on_osc_feedback)
