@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b1p8ak2bb83bq"]
+[gd_scene load_steps=17 format=3 uid="uid://b1p8ak2bb83bq"]
 
 [ext_resource type="Script" path="res://scenes/main/panel_container.gd" id="1_ltf1v"]
 [ext_resource type="Script" path="res://scenes/messages/osc_label.gd" id="2_6h2ie"]
@@ -88,6 +88,8 @@ LineEdit/styles/normal = SubResource("StyleBoxFlat_11fej")
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_45cpf"]
 bg_color = Color(0.149475, 0.149475, 0.149474, 1)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hoj37"]
+
 [node name="Main" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -122,6 +124,7 @@ layout_mode = 2
 
 [node name="OSCLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hoj37")
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("2_6h2ie")
