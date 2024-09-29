@@ -8,7 +8,6 @@ class_name OSCUser extends Node
 
 func send_message(osc_message: String, args: Array) -> void:
 	target_client.send_message(osc_send_prefix + "/" + str(user_number) + osc_message, args)
-	print(osc_send_prefix + "/" + str(user_number) + osc_message, args)
 
 
 func get_feedback(osc_address: String) -> Array:

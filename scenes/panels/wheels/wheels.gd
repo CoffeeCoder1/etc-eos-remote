@@ -24,6 +24,5 @@ func _process(delta: float) -> void:
 				var wheel = wheel_scene.instantiate()
 				%WheelContainer.add_child(wheel)
 				wheel.wheel_index = int(str(e).get_slice(recieve_address + "/", 1))
-				print(feedback[0])
 			elif feedback[1] == 0 && wheels.has(e):
 				wheels.erase(e)
