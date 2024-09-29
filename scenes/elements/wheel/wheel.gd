@@ -26,7 +26,12 @@ func _on_osc_feedback(value: Array):
 	# Remove wheels that don't exist in the selected channel
 	if value[1] == 0:
 		queue_free()
-	$VBoxContainer/Label.text = str(value[0])
+	
+	# Regex to remove value appended to property name
+	var regex = RegEx.new()
+	regex.compile(".+?(?= \\[\\d+])")
+	
+	$VBoxContainer/Label.text = regex.search(str(value[0])).get_string()
 	$VBoxContainer/Value.text = str(round(value[2]))
 	$VBoxContainer/WheelBox/VSlider.value = value[2]
 
