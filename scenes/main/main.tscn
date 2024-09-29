@@ -130,6 +130,7 @@ feedback_address = "/eos/out/show/name"
 
 [node name="TabContainer" type="TabContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 current_tab = 0
 
 [node name="Keypad" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer" instance=ExtResource("5_j6y4i")]
