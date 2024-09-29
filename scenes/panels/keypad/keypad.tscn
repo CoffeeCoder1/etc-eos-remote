@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://lowydp6qwkqd"]
 
 [ext_resource type="Script" path="res://scenes/panels/keypad/keypad.gd" id="1_pg0ae"]
-[ext_resource type="Script" path="res://scenes/panels/keypad/command_line_display.gd" id="2_p7so8"]
+[ext_resource type="Script" path="res://scenes/messages/osc_label.gd" id="2_p7so8"]
 [ext_resource type="Script" path="res://scenes/messages/osc_key.gd" id="2_v3vkr"]
 [ext_resource type="Script" path="res://scenes/messages/osc_modifier_key.gd" id="3_p86lf"]
 [ext_resource type="Script" path="res://scenes/messages/osc_softkey.gd" id="4_pndv3"]
