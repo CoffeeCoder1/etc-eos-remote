@@ -7,6 +7,8 @@ class_name Wheel extends Control
 		wheel_index = new_wheel_index
 @export var send_address: String = "/active/switch"
 @export var recieve_address: String = "/eos/out/active/wheel"
+## Deletes the wheel if the feedback contains a type of 0 (null), which is sent when a wheel doesn't exist for the selected channel.
+@export var delete_on_null_type: bool = true
 
 var osc_element: OSCElement
 
@@ -24,7 +26,7 @@ func _ready() -> void:
 
 func _on_osc_feedback(value: Array):
 	# Remove wheels that don't exist in the selected channel
-	if value[1] == 0:
+	if value[1] == 0 && delete_on_null_type:
 		queue_free()
 	
 	# Regex to remove value appended to property name

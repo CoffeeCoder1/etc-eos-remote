@@ -1051,5 +1051,6 @@ Settings"
 
 [node name="Wheel" parent="VBoxContainer/HBoxContainer" instance=ExtResource("6_66y7a")]
 layout_mode = 2
+delete_on_null_type = false
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer6/SettingsButton" to="." method="_on_settings_button_pressed"]
