@@ -14,9 +14,13 @@ var feedback_user = 1
 
 
 func _process(delta: float) -> void:
-	var user_feedback = get_global_feedback("/eos/out/user")
-	if user_feedback:
-		feedback_user = user_feedback[0]
+	# TODO: Fix this properly so user -1 is always the user selected on the console.
+	if user_number == -1:
+		feedback_user = 1
+	else:
+		var user_feedback = get_global_feedback("/eos/out/user")
+		if user_feedback:
+			feedback_user = user_feedback[0]
 
 
 func send_message(osc_message: String, args: Array) -> void:
