@@ -1521,7 +1521,7 @@ theme_override_font_sizes/font_size = 12
 shortcut = SubResource("Shortcut_w87q1")
 text = "Stage"
 script = ExtResource("2_v3vkr")
-key_string = "stage"
+key_string = "staging_mode"
 key_label = "Stage"
 
 [node name="ButtonDisplays" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer5/Panel1"]
