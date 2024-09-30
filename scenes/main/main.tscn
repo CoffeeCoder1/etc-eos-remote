@@ -127,7 +127,7 @@ layout_mode = 2
 [node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="OSCLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer"]
+[node name="ShowNameLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_styles/normal = SubResource("StyleBoxEmpty_hoj37")
