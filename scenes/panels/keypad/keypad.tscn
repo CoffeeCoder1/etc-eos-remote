@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://lowydp6qwkqd"]
+[gd_scene load_steps=199 format=3 uid="uid://lowydp6qwkqd"]
 
 [ext_resource type="Script" path="res://scenes/messages/osc_label.gd" id="2_p7so8"]
 [ext_resource type="Script" path="res://scenes/messages/osc_key.gd" id="2_v3vkr"]
@@ -7,6 +7,582 @@
 [ext_resource type="PackedScene" uid="uid://cy73ew523w6b4" path="res://scenes/elements/wheel/wheel.tscn" id="6_66y7a"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h4bam"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_8yro0"]
+action = &"keypad_snapshot"
+
+[sub_resource type="Shortcut" id="Shortcut_0r2if"]
+events = [SubResource("InputEventAction_8yro0")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_e3jsx"]
+action = &"keypad_help"
+
+[sub_resource type="Shortcut" id="Shortcut_wwwlj"]
+events = [SubResource("InputEventAction_e3jsx")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_dvho2"]
+action = &"keypad_address"
+
+[sub_resource type="Shortcut" id="Shortcut_1kn8q"]
+events = [SubResource("InputEventAction_dvho2")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_kwx0k"]
+action = &"keypad_macro"
+
+[sub_resource type="Shortcut" id="Shortcut_emf1a"]
+events = [SubResource("InputEventAction_kwx0k")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_w8cxl"]
+action = &"keypad_learn"
+
+[sub_resource type="Shortcut" id="Shortcut_iawnx"]
+events = [SubResource("InputEventAction_w8cxl")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_2y431"]
+action = &"keypad_delete"
+
+[sub_resource type="Shortcut" id="Shortcut_cgws0"]
+events = [SubResource("InputEventAction_2y431")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_f2wwg"]
+action = &"keypad_path"
+
+[sub_resource type="Shortcut" id="Shortcut_4kam5"]
+events = [SubResource("InputEventAction_f2wwg")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_dqdmx"]
+action = &"keypad_effect"
+
+[sub_resource type="Shortcut" id="Shortcut_by6d0"]
+events = [SubResource("InputEventAction_dqdmx")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_w4tog"]
+action = &"keypad_part"
+
+[sub_resource type="Shortcut" id="Shortcut_v8wg8"]
+events = [SubResource("InputEventAction_w4tog")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_axtf3"]
+action = &"keypad_cue"
+
+[sub_resource type="Shortcut" id="Shortcut_wyw2n"]
+events = [SubResource("InputEventAction_axtf3")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_0r3wb"]
+action = &"keypad_record"
+
+[sub_resource type="Shortcut" id="Shortcut_q0gud"]
+events = [SubResource("InputEventAction_0r3wb")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_t27gt"]
+action = &"keypad_int_palette"
+
+[sub_resource type="Shortcut" id="Shortcut_k8g5g"]
+events = [SubResource("InputEventAction_t27gt")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_usts1"]
+action = &"keypad_focus_palette"
+
+[sub_resource type="Shortcut" id="Shortcut_y3pc3"]
+events = [SubResource("InputEventAction_usts1")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_na1oj"]
+action = &"keypad_record_only"
+
+[sub_resource type="Shortcut" id="Shortcut_c52u3"]
+events = [SubResource("InputEventAction_na1oj")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_px38r"]
+action = &"keypad_color_palette"
+
+[sub_resource type="Shortcut" id="Shortcut_rrx3u"]
+events = [SubResource("InputEventAction_px38r")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_k4e5j"]
+action = &"keypad_beam_palette"
+
+[sub_resource type="Shortcut" id="Shortcut_gqoxf"]
+events = [SubResource("InputEventAction_k4e5j")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_pw0fb"]
+action = &"keypad_update"
+
+[sub_resource type="Shortcut" id="Shortcut_dg1l1"]
+events = [SubResource("InputEventAction_pw0fb")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_7x1hh"]
+action = &"keypad_preset"
+
+[sub_resource type="Shortcut" id="Shortcut_o64vq"]
+events = [SubResource("InputEventAction_7x1hh")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_0dknt"]
+action = &"keypad_sub"
+
+[sub_resource type="Shortcut" id="Shortcut_wupme"]
+events = [SubResource("InputEventAction_0dknt")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_8k8ft"]
+action = &"keypad_group"
+
+[sub_resource type="Shortcut" id="Shortcut_1ve50"]
+events = [SubResource("InputEventAction_8k8ft")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_mkje7"]
+action = &"keypad_shift"
+
+[sub_resource type="Shortcut" id="Shortcut_7edfl"]
+events = [SubResource("InputEventAction_mkje7")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_y5sfg"]
+action = &"keypad_delay"
+
+[sub_resource type="Shortcut" id="Shortcut_i01vp"]
+events = [SubResource("InputEventAction_y5sfg")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_y3s5m"]
+action = &"keypad_time"
+
+[sub_resource type="Shortcut" id="Shortcut_8cc2g"]
+events = [SubResource("InputEventAction_y3s5m")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_5obfl"]
+action = &"keypad_softkey_1"
+
+[sub_resource type="Shortcut" id="Shortcut_kgj3t"]
+events = [SubResource("InputEventAction_5obfl")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_q3y6h"]
+action = &"keypad_softkey_2"
+
+[sub_resource type="Shortcut" id="Shortcut_1nuje"]
+events = [SubResource("InputEventAction_q3y6h")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_gaf65"]
+action = &"keypad_softkey_3"
+
+[sub_resource type="Shortcut" id="Shortcut_2q6gs"]
+events = [SubResource("InputEventAction_gaf65")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_gwafb"]
+action = &"keypad_query"
+
+[sub_resource type="Shortcut" id="Shortcut_i1svf"]
+events = [SubResource("InputEventAction_gwafb")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_xfge5"]
+action = &"keypad_copy_to"
+
+[sub_resource type="Shortcut" id="Shortcut_veset"]
+events = [SubResource("InputEventAction_xfge5")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_82fpj"]
+action = &"keypad_recall_from"
+
+[sub_resource type="Shortcut" id="Shortcut_0q5pt"]
+events = [SubResource("InputEventAction_82fpj")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_dgewu"]
+action = &"keypad_go_to_cue"
+
+[sub_resource type="Shortcut" id="Shortcut_a7ef4"]
+events = [SubResource("InputEventAction_dgewu")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_2yr7y"]
+action = &"keypad_block"
+
+[sub_resource type="Shortcut" id="Shortcut_gkvkc"]
+events = [SubResource("InputEventAction_2yr7y")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_s0x8e"]
+action = &"keypad_assert"
+
+[sub_resource type="Shortcut" id="Shortcut_2o635"]
+events = [SubResource("InputEventAction_s0x8e")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_2e08u"]
+action = &"keypad_plus"
+
+[sub_resource type="Shortcut" id="Shortcut_u1afh"]
+events = [SubResource("InputEventAction_2e08u")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_iheh6"]
+action = &"keypad_thru"
+
+[sub_resource type="Shortcut" id="Shortcut_ripm3"]
+events = [SubResource("InputEventAction_iheh6")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_7u8mh"]
+action = &"keypad_minus"
+
+[sub_resource type="Shortcut" id="Shortcut_w0c3i"]
+events = [SubResource("InputEventAction_7u8mh")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_hdupd"]
+action = &"keypad_7"
+
+[sub_resource type="Shortcut" id="Shortcut_535iy"]
+events = [SubResource("InputEventAction_hdupd")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_2b4c4"]
+action = &"keypad_8"
+
+[sub_resource type="Shortcut" id="Shortcut_ycpu3"]
+events = [SubResource("InputEventAction_2b4c4")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_3vb5a"]
+action = &"keypad_9"
+
+[sub_resource type="Shortcut" id="Shortcut_k8irb"]
+events = [SubResource("InputEventAction_3vb5a")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_8yhsm"]
+action = &"keypad_4"
+
+[sub_resource type="Shortcut" id="Shortcut_v1742"]
+events = [SubResource("InputEventAction_8yhsm")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_pe0cb"]
+action = &"keypad_5"
+
+[sub_resource type="Shortcut" id="Shortcut_4n5xe"]
+events = [SubResource("InputEventAction_pe0cb")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_jnrbk"]
+action = &"keypad_6"
+
+[sub_resource type="Shortcut" id="Shortcut_7yn6l"]
+events = [SubResource("InputEventAction_jnrbk")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_4fjvm"]
+action = &"keypad_1"
+
+[sub_resource type="Shortcut" id="Shortcut_cy8dt"]
+events = [SubResource("InputEventAction_4fjvm")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_88744"]
+action = &"keypad_2"
+
+[sub_resource type="Shortcut" id="Shortcut_h5ie8"]
+events = [SubResource("InputEventAction_88744")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_vlsd8"]
+action = &"keypad_3"
+
+[sub_resource type="Shortcut" id="Shortcut_p1nbo"]
+events = [SubResource("InputEventAction_vlsd8")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_l42uy"]
+action = &"keypad_clear"
+
+[sub_resource type="Shortcut" id="Shortcut_b0p4f"]
+events = [SubResource("InputEventAction_l42uy")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_o8e10"]
+action = &"keypad_0"
+
+[sub_resource type="Shortcut" id="Shortcut_3hq6l"]
+events = [SubResource("InputEventAction_o8e10")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_8krkh"]
+action = &"keypad_dot"
+
+[sub_resource type="Shortcut" id="Shortcut_tjm8m"]
+events = [SubResource("InputEventAction_8krkh")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_lhyvi"]
+action = &"keypad_softkey_4"
+
+[sub_resource type="Shortcut" id="Shortcut_e25rg"]
+events = [SubResource("InputEventAction_lhyvi")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_q16mb"]
+action = &"keypad_softkey_5"
+
+[sub_resource type="Shortcut" id="Shortcut_fxb45"]
+events = [SubResource("InputEventAction_q16mb")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_ua32q"]
+action = &"keypad_softkey_6"
+
+[sub_resource type="Shortcut" id="Shortcut_1p1x7"]
+events = [SubResource("InputEventAction_ua32q")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_tsna5"]
+action = &"keypad_label"
+
+[sub_resource type="Shortcut" id="Shortcut_1s202"]
+events = [SubResource("InputEventAction_tsna5")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_60a7k"]
+action = &"keypad_about"
+
+[sub_resource type="Shortcut" id="Shortcut_j2u8y"]
+events = [SubResource("InputEventAction_60a7k")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_ghijs"]
+action = &"keypad_offset"
+
+[sub_resource type="Shortcut" id="Shortcut_sfyw8"]
+events = [SubResource("InputEventAction_ghijs")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_l368x"]
+action = &"keypad_high"
+
+[sub_resource type="Shortcut" id="Shortcut_ki5to"]
+events = [SubResource("InputEventAction_l368x")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_2e1bn"]
+action = &"keypad_fan"
+
+[sub_resource type="Shortcut" id="Shortcut_5v83c"]
+events = [SubResource("InputEventAction_2e1bn")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_vrc0m"]
+action = &"keypad_slash"
+
+[sub_resource type="Shortcut" id="Shortcut_ewxwi"]
+events = [SubResource("InputEventAction_vrc0m")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_y6fyd"]
+action = &"keypad_mark"
+
+[sub_resource type="Shortcut" id="Shortcut_4bojq"]
+events = [SubResource("InputEventAction_y6fyd")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_unec1"]
+action = &"keypad_sneak"
+
+[sub_resource type="Shortcut" id="Shortcut_1l3ip"]
+events = [SubResource("InputEventAction_unec1")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_16wqu"]
+action = &"keypad_rem_dim"
+
+[sub_resource type="Shortcut" id="Shortcut_tgkp5"]
+events = [SubResource("InputEventAction_16wqu")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_g1qrg"]
+action = &"keypad_plus_percent"
+
+[sub_resource type="Shortcut" id="Shortcut_sa5v6"]
+events = [SubResource("InputEventAction_g1qrg")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_fraty"]
+action = &"keypad_home"
+
+[sub_resource type="Shortcut" id="Shortcut_fvqca"]
+events = [SubResource("InputEventAction_fraty")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_j8wvk"]
+action = &"keypad_out"
+
+[sub_resource type="Shortcut" id="Shortcut_sqfhc"]
+events = [SubResource("InputEventAction_j8wvk")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_b1luq"]
+action = &"keypad_minus_percent"
+
+[sub_resource type="Shortcut" id="Shortcut_lcasb"]
+events = [SubResource("InputEventAction_b1luq")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_lfiy7"]
+action = &"keypad_trace"
+
+[sub_resource type="Shortcut" id="Shortcut_tuw4b"]
+events = [SubResource("InputEventAction_lfiy7")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_gfige"]
+action = &"keypad_full"
+
+[sub_resource type="Shortcut" id="Shortcut_fva6h"]
+events = [SubResource("InputEventAction_gfige")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_d26hf"]
+action = &"keypad_level"
+
+[sub_resource type="Shortcut" id="Shortcut_ne0il"]
+events = [SubResource("InputEventAction_d26hf")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_1t0it"]
+action = &"keypad_cue_only_track"
+
+[sub_resource type="Shortcut" id="Shortcut_bch85"]
+events = [SubResource("InputEventAction_1t0it")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_hga7s"]
+action = &"keypad_at"
+
+[sub_resource type="Shortcut" id="Shortcut_qv8xm"]
+events = [SubResource("InputEventAction_hga7s")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_316oe"]
+action = &"keypad_enter"
+
+[sub_resource type="Shortcut" id="Shortcut_0uxgw"]
+events = [SubResource("InputEventAction_316oe")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_lvhjk"]
+action = &"keypad_more_sk"
+
+[sub_resource type="Shortcut" id="Shortcut_bbt7h"]
+events = [SubResource("InputEventAction_lvhjk")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_0kn6b"]
+action = &"keypad_park"
+
+[sub_resource type="Shortcut" id="Shortcut_pxvqb"]
+events = [SubResource("InputEventAction_0kn6b")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_00dhj"]
+action = &"keypad_capture"
+
+[sub_resource type="Shortcut" id="Shortcut_vvh70"]
+events = [SubResource("InputEventAction_00dhj")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_xg2ym"]
+action = &"keypad_select_last"
+
+[sub_resource type="Shortcut" id="Shortcut_1mpk2"]
+events = [SubResource("InputEventAction_xg2ym")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_nr3wy"]
+action = &"keypad_select_manual"
+
+[sub_resource type="Shortcut" id="Shortcut_3f6fj"]
+events = [SubResource("InputEventAction_nr3wy")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_gq8l1"]
+action = &"keypad_select_active"
+
+[sub_resource type="Shortcut" id="Shortcut_fxfv6"]
+events = [SubResource("InputEventAction_gq8l1")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_03iwu"]
+action = &"keypad_last"
+
+[sub_resource type="Shortcut" id="Shortcut_n7ifq"]
+events = [SubResource("InputEventAction_03iwu")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_001my"]
+action = &"keypad_next"
+
+[sub_resource type="Shortcut" id="Shortcut_uikg4"]
+events = [SubResource("InputEventAction_001my")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_srlbb"]
+action = &"keypad_live"
+
+[sub_resource type="Shortcut" id="Shortcut_pf1rg"]
+events = [SubResource("InputEventAction_srlbb")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_8w3u2"]
+action = &"keypad_blind"
+
+[sub_resource type="Shortcut" id="Shortcut_uiwn5"]
+events = [SubResource("InputEventAction_8w3u2")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_kb7xh"]
+action = &"keypad_stage"
+
+[sub_resource type="Shortcut" id="Shortcut_w87q1"]
+events = [SubResource("InputEventAction_kb7xh")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_r8t60"]
+action = &"keypad_displays"
+
+[sub_resource type="Shortcut" id="Shortcut_nhdyp"]
+events = [SubResource("InputEventAction_r8t60")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_se6fm"]
+action = &"keypad_system"
+
+[sub_resource type="Shortcut" id="Shortcut_apoub"]
+events = [SubResource("InputEventAction_se6fm")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_l4sr0"]
+action = &"keypad_undo"
+
+[sub_resource type="Shortcut" id="Shortcut_bjirw"]
+events = [SubResource("InputEventAction_l4sr0")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_sqcvt"]
+action = &"keypad_scroll_lock"
+
+[sub_resource type="Shortcut" id="Shortcut_jb8i2"]
+events = [SubResource("InputEventAction_sqcvt")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_4ipc8"]
+action = &"keypad_escape"
+
+[sub_resource type="Shortcut" id="Shortcut_fav1u"]
+events = [SubResource("InputEventAction_4ipc8")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_2ni13"]
+action = &"keypad_page_up"
+
+[sub_resource type="Shortcut" id="Shortcut_hfejv"]
+events = [SubResource("InputEventAction_2ni13")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_w4fuw"]
+action = &"keypad_select"
+
+[sub_resource type="Shortcut" id="Shortcut_usmyp"]
+events = [SubResource("InputEventAction_w4fuw")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_sjvye"]
+action = &"keypad_page_left"
+
+[sub_resource type="Shortcut" id="Shortcut_mnv24"]
+events = [SubResource("InputEventAction_sjvye")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_okwhs"]
+action = &"keypad_page_down"
+
+[sub_resource type="Shortcut" id="Shortcut_uviwl"]
+events = [SubResource("InputEventAction_okwhs")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_qrw7r"]
+action = &"keypad_page_right"
+
+[sub_resource type="Shortcut" id="Shortcut_mg828"]
+events = [SubResource("InputEventAction_qrw7r")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_flxtc"]
+action = &"keypad_tab"
+
+[sub_resource type="Shortcut" id="Shortcut_tcylv"]
+events = [SubResource("InputEventAction_flxtc")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_s4ctl"]
+action = &"keypad_flexi"
+
+[sub_resource type="Shortcut" id="Shortcut_nxxr0"]
+events = [SubResource("InputEventAction_s4ctl")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_x5ijj"]
+action = &"keypad_display_timing"
+
+[sub_resource type="Shortcut" id="Shortcut_44tw7"]
+events = [SubResource("InputEventAction_x5ijj")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_gf4id"]
+action = &"keypad_format"
+
+[sub_resource type="Shortcut" id="Shortcut_0nhlw"]
+events = [SubResource("InputEventAction_gf4id")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_5bb7d"]
+action = &"keypad_expand"
+
+[sub_resource type="Shortcut" id="Shortcut_2eapa"]
+events = [SubResource("InputEventAction_5bb7d")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_2p0so"]
+action = &"keypad_data"
+
+[sub_resource type="Shortcut" id="Shortcut_m6kx0"]
+events = [SubResource("InputEventAction_2p0so")]
 
 [node name="Keypad" type="PanelContainer"]
 theme_override_styles/panel = SubResource("StyleBoxEmpty_h4bam")
@@ -36,6 +612,7 @@ columns = 3
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 8
+shortcut = SubResource("Shortcut_0r2if")
 text = "Snapshot"
 script = ExtResource("2_v3vkr")
 key_string = "snapshot"
@@ -49,6 +626,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 13
+shortcut = SubResource("Shortcut_wwwlj")
 text = "Help"
 script = ExtResource("2_v3vkr")
 key_string = "help"
@@ -70,6 +648,7 @@ layout_mode = 2
 [node name="ButtonAddressPatch" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel1"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+shortcut = SubResource("Shortcut_1kn8q")
 text = "Address
 Patch"
 script = ExtResource("2_v3vkr")
@@ -85,6 +664,7 @@ columns = 3
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
+shortcut = SubResource("Shortcut_emf1a")
 text = "Macro"
 script = ExtResource("2_v3vkr")
 key_string = "macro"
@@ -98,6 +678,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
+shortcut = SubResource("Shortcut_iawnx")
 text = "Learn"
 script = ExtResource("2_v3vkr")
 key_string = "learn"
@@ -123,6 +704,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 10
+shortcut = SubResource("Shortcut_cgws0")
 text = "Delete"
 script = ExtResource("2_v3vkr")
 key_string = "delete"
@@ -132,6 +714,7 @@ key_label = "Delete"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 13
+shortcut = SubResource("Shortcut_4kam5")
 text = "Path"
 script = ExtResource("2_v3vkr")
 key_string = "path"
@@ -141,6 +724,7 @@ key_label = "Path"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 10
+shortcut = SubResource("Shortcut_by6d0")
 text = "Effect"
 script = ExtResource("2_v3vkr")
 key_string = "effect"
@@ -154,6 +738,7 @@ columns = 3
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 13
+shortcut = SubResource("Shortcut_v8wg8")
 text = "Part"
 script = ExtResource("2_v3vkr")
 key_string = "part"
@@ -163,6 +748,7 @@ key_label = "Part"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
+shortcut = SubResource("Shortcut_wyw2n")
 text = "Cue"
 script = ExtResource("2_v3vkr")
 key_string = "cue"
@@ -172,6 +758,7 @@ key_label = "Cue"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 10
+shortcut = SubResource("Shortcut_q0gud")
 text = "Record"
 script = ExtResource("2_v3vkr")
 key_string = "record"
@@ -181,6 +768,7 @@ key_label = "Record"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 9
+shortcut = SubResource("Shortcut_k8g5g")
 text = "Int
 Palette"
 script = ExtResource("2_v3vkr")
@@ -192,6 +780,7 @@ Palette"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 9
+shortcut = SubResource("Shortcut_y3pc3")
 text = "Focus
 Palette"
 script = ExtResource("2_v3vkr")
@@ -202,6 +791,7 @@ Palette"
 [node name="ButtonRecordOnly" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel4"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+shortcut = SubResource("Shortcut_c52u3")
 text = "Record
 Only"
 script = ExtResource("2_v3vkr")
@@ -213,6 +803,7 @@ Only"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 9
+shortcut = SubResource("Shortcut_rrx3u")
 text = "Color
 Palette"
 script = ExtResource("2_v3vkr")
@@ -224,6 +815,7 @@ Palette"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 9
+shortcut = SubResource("Shortcut_gqoxf")
 text = "Beam
 Palette"
 script = ExtResource("2_v3vkr")
@@ -235,6 +827,7 @@ Palette"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 10
+shortcut = SubResource("Shortcut_dg1l1")
 text = "Update"
 script = ExtResource("2_v3vkr")
 key_string = "update"
@@ -244,6 +837,7 @@ key_label = "Update"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 10
+shortcut = SubResource("Shortcut_o64vq")
 text = "Preset"
 script = ExtResource("2_v3vkr")
 key_string = "preset"
@@ -253,6 +847,7 @@ key_label = "Preset"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
+shortcut = SubResource("Shortcut_wupme")
 text = "Sub"
 script = ExtResource("2_v3vkr")
 key_string = "sub"
@@ -262,6 +857,7 @@ key_label = "Sub"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
+shortcut = SubResource("Shortcut_1ve50")
 text = "Group"
 script = ExtResource("2_v3vkr")
 key_string = "group"
@@ -270,15 +866,20 @@ key_label = "Group"
 [node name="ButtonShift" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel4"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+theme_override_font_sizes/font_size = 12
 toggle_mode = true
+shortcut = SubResource("Shortcut_7edfl")
+text = "Shift"
 script = ExtResource("3_p86lf")
 key_string = "shift"
+key_label = "Shift"
 clears_modifiers = false
 
 [node name="ButtonDelay" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel4"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
+shortcut = SubResource("Shortcut_i01vp")
 text = "Delay"
 script = ExtResource("2_v3vkr")
 key_string = "delay"
@@ -288,6 +889,7 @@ key_label = "Delay"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 13
+shortcut = SubResource("Shortcut_8cc2g")
 text = "Time"
 script = ExtResource("2_v3vkr")
 key_string = "time"
@@ -304,18 +906,21 @@ columns = 3
 [node name="Softkey1" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Softkeys"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+shortcut = SubResource("Shortcut_kgj3t")
 script = ExtResource("4_pndv3")
 softkey_index = 1
 
 [node name="Softkey2" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Softkeys"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+shortcut = SubResource("Shortcut_1nuje")
 script = ExtResource("4_pndv3")
 softkey_index = 2
 
 [node name="Softkey3" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Softkeys"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+shortcut = SubResource("Shortcut_2q6gs")
 script = ExtResource("4_pndv3")
 softkey_index = 3
 
@@ -327,6 +932,7 @@ columns = 3
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
+shortcut = SubResource("Shortcut_i1svf")
 text = "Query"
 script = ExtResource("2_v3vkr")
 key_string = "query"
@@ -336,6 +942,7 @@ key_label = "Query"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 10
+shortcut = SubResource("Shortcut_veset")
 text = "CopyTo"
 script = ExtResource("2_v3vkr")
 key_string = "copy_to"
@@ -344,6 +951,7 @@ key_label = "CopyTo"
 [node name="ButtonRecallFrom" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Panel2"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+shortcut = SubResource("Shortcut_0q5pt")
 text = "Recall
 From"
 script = ExtResource("2_v3vkr")
@@ -354,6 +962,7 @@ From"
 [node name="ButtonGoToCue" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Panel2"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+shortcut = SubResource("Shortcut_a7ef4")
 text = "GoTo
 Cue"
 script = ExtResource("2_v3vkr")
@@ -365,6 +974,7 @@ Cue"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
+shortcut = SubResource("Shortcut_gkvkc")
 text = "Block"
 script = ExtResource("2_v3vkr")
 key_string = "block"
@@ -374,6 +984,7 @@ key_label = "Block"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 10
+shortcut = SubResource("Shortcut_2o635")
 text = "Assert"
 script = ExtResource("2_v3vkr")
 key_string = "assert"
@@ -387,6 +998,7 @@ columns = 3
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
+shortcut = SubResource("Shortcut_u1afh")
 text = "+"
 script = ExtResource("2_v3vkr")
 key_string = "+"
@@ -396,6 +1008,7 @@ key_label = "+"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 13
+shortcut = SubResource("Shortcut_ripm3")
 text = "Thru"
 script = ExtResource("2_v3vkr")
 key_string = "thru"
@@ -405,6 +1018,7 @@ key_label = "Thru"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
+shortcut = SubResource("Shortcut_w0c3i")
 text = "-"
 script = ExtResource("2_v3vkr")
 key_string = "-"
@@ -414,6 +1028,7 @@ key_label = "-"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
+shortcut = SubResource("Shortcut_535iy")
 text = "7"
 script = ExtResource("2_v3vkr")
 key_string = "7"
@@ -423,6 +1038,7 @@ key_label = "7"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
+shortcut = SubResource("Shortcut_ycpu3")
 text = "8"
 script = ExtResource("2_v3vkr")
 key_string = "8"
@@ -432,6 +1048,7 @@ key_label = "8"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
+shortcut = SubResource("Shortcut_k8irb")
 text = "9"
 script = ExtResource("2_v3vkr")
 key_string = "9"
@@ -441,6 +1058,7 @@ key_label = "9"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
+shortcut = SubResource("Shortcut_v1742")
 text = "4"
 script = ExtResource("2_v3vkr")
 key_string = "4"
@@ -450,6 +1068,7 @@ key_label = "4"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
+shortcut = SubResource("Shortcut_4n5xe")
 text = "5"
 script = ExtResource("2_v3vkr")
 key_string = "5"
@@ -459,6 +1078,7 @@ key_label = "5"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
+shortcut = SubResource("Shortcut_7yn6l")
 text = "6"
 script = ExtResource("2_v3vkr")
 key_string = "6"
@@ -468,6 +1088,7 @@ key_label = "6"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
+shortcut = SubResource("Shortcut_cy8dt")
 text = "1"
 script = ExtResource("2_v3vkr")
 key_string = "1"
@@ -477,6 +1098,7 @@ key_label = "1"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
+shortcut = SubResource("Shortcut_h5ie8")
 text = "2"
 script = ExtResource("2_v3vkr")
 key_string = "2"
@@ -486,6 +1108,7 @@ key_label = "2"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
+shortcut = SubResource("Shortcut_p1nbo")
 text = "3"
 script = ExtResource("2_v3vkr")
 key_string = "3"
@@ -495,6 +1118,7 @@ key_label = "3"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
+shortcut = SubResource("Shortcut_b0p4f")
 text = "Clear"
 script = ExtResource("2_v3vkr")
 key_string = "clear_cmd"
@@ -504,6 +1128,7 @@ key_label = "Clear"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
+shortcut = SubResource("Shortcut_3hq6l")
 text = "0"
 script = ExtResource("2_v3vkr")
 key_string = "0"
@@ -513,6 +1138,7 @@ key_label = "0"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
+shortcut = SubResource("Shortcut_tjm8m")
 text = "."
 script = ExtResource("2_v3vkr")
 key_string = "."
@@ -529,18 +1155,21 @@ columns = 3
 [node name="Softkey4" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer3/Softkeys"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+shortcut = SubResource("Shortcut_e25rg")
 script = ExtResource("4_pndv3")
 softkey_index = 4
 
 [node name="Softkey5" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer3/Softkeys"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+shortcut = SubResource("Shortcut_fxb45")
 script = ExtResource("4_pndv3")
 softkey_index = 5
 
 [node name="Softkey6" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer3/Softkeys"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+shortcut = SubResource("Shortcut_1p1x7")
 script = ExtResource("4_pndv3")
 softkey_index = 6
 
@@ -551,6 +1180,7 @@ columns = 3
 [node name="ButtonLabelNote" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer3/Panel2"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+shortcut = SubResource("Shortcut_1s202")
 text = "Label
 Note"
 script = ExtResource("2_v3vkr")
@@ -566,6 +1196,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
+shortcut = SubResource("Shortcut_j2u8y")
 text = "About"
 script = ExtResource("2_v3vkr")
 key_string = "about"
@@ -575,6 +1206,7 @@ key_label = "About"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 10
+shortcut = SubResource("Shortcut_sfyw8")
 text = "Offset"
 script = ExtResource("2_v3vkr")
 key_string = "offset"
@@ -584,6 +1216,7 @@ key_label = "Offset"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 13
+shortcut = SubResource("Shortcut_ki5to")
 text = "High"
 script = ExtResource("2_v3vkr")
 key_string = "highlight"
@@ -593,6 +1226,7 @@ key_label = "High"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
+shortcut = SubResource("Shortcut_5v83c")
 text = "Fan"
 script = ExtResource("2_v3vkr")
 key_string = "fan_"
@@ -606,6 +1240,7 @@ columns = 3
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
+shortcut = SubResource("Shortcut_ewxwi")
 text = "/"
 script = ExtResource("2_v3vkr")
 key_string = "\\"
@@ -615,6 +1250,7 @@ key_label = "/"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 13
+shortcut = SubResource("Shortcut_4bojq")
 text = "Mark"
 script = ExtResource("2_v3vkr")
 key_string = "mark"
@@ -624,6 +1260,7 @@ key_label = "Mark"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
+shortcut = SubResource("Shortcut_1l3ip")
 text = "Sneak"
 script = ExtResource("2_v3vkr")
 key_string = "sneak"
@@ -633,6 +1270,7 @@ key_label = "Sneak"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
+shortcut = SubResource("Shortcut_tgkp5")
 text = "Rem
 Dim"
 script = ExtResource("2_v3vkr")
@@ -644,6 +1282,7 @@ Dim"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
+shortcut = SubResource("Shortcut_sa5v6")
 text = "+%"
 script = ExtResource("2_v3vkr")
 key_string = "+%"
@@ -653,6 +1292,7 @@ key_label = "+%"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 13
+shortcut = SubResource("Shortcut_fvqca")
 text = "Home"
 script = ExtResource("2_v3vkr")
 key_string = "home"
@@ -662,6 +1302,7 @@ key_label = "Home"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
+shortcut = SubResource("Shortcut_sqfhc")
 text = "Out"
 script = ExtResource("2_v3vkr")
 key_string = "out"
@@ -671,6 +1312,7 @@ key_label = "Out"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
+shortcut = SubResource("Shortcut_lcasb")
 text = "-%"
 script = ExtResource("2_v3vkr")
 key_string = "-%"
@@ -680,6 +1322,7 @@ key_label = "-%"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
+shortcut = SubResource("Shortcut_tuw4b")
 text = "Trace"
 script = ExtResource("2_v3vkr")
 key_string = "trace"
@@ -689,6 +1332,7 @@ key_label = "Trace"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 13
+shortcut = SubResource("Shortcut_fva6h")
 text = "Full"
 script = ExtResource("2_v3vkr")
 key_string = "full"
@@ -698,6 +1342,7 @@ key_label = "Full"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
+shortcut = SubResource("Shortcut_ne0il")
 text = "Level"
 script = ExtResource("2_v3vkr")
 key_string = "level"
@@ -707,6 +1352,7 @@ key_label = "Level"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
+shortcut = SubResource("Shortcut_bch85")
 text = "QOnly
 Track"
 script = ExtResource("2_v3vkr")
@@ -718,6 +1364,7 @@ Track"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
+shortcut = SubResource("Shortcut_qv8xm")
 text = "At"
 script = ExtResource("2_v3vkr")
 key_string = "at"
@@ -737,6 +1384,7 @@ offset_right = 54.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 12
+shortcut = SubResource("Shortcut_0uxgw")
 text = "Enter"
 script = ExtResource("2_v3vkr")
 key_string = "enter"
@@ -749,6 +1397,7 @@ theme_override_constants/separation = 25
 [node name="ButtonMoreSoftkeys" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer4"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+shortcut = SubResource("Shortcut_bbt7h")
 text = "More
 SK"
 script = ExtResource("2_v3vkr")
@@ -763,6 +1412,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 13
+shortcut = SubResource("Shortcut_pxvqb")
 text = "Park"
 script = ExtResource("2_v3vkr")
 key_string = "park"
@@ -772,6 +1422,7 @@ key_label = "Park"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 9
+shortcut = SubResource("Shortcut_vvh70")
 text = "Capture"
 script = ExtResource("2_v3vkr")
 key_string = "capture"
@@ -783,6 +1434,7 @@ layout_mode = 2
 [node name="ButtonSelectLast" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer4/Panel3"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+shortcut = SubResource("Shortcut_1mpk2")
 text = "Select
 Last"
 script = ExtResource("2_v3vkr")
@@ -794,6 +1446,7 @@ Last"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 10
+shortcut = SubResource("Shortcut_3f6fj")
 text = "Select
 Manual"
 script = ExtResource("2_v3vkr")
@@ -805,6 +1458,7 @@ Manual"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 10
+shortcut = SubResource("Shortcut_fxfv6")
 text = "Select
 Active"
 script = ExtResource("2_v3vkr")
@@ -816,6 +1470,7 @@ Active"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 13
+shortcut = SubResource("Shortcut_n7ifq")
 text = "Last"
 script = ExtResource("2_v3vkr")
 key_string = "last"
@@ -825,6 +1480,7 @@ key_label = "Last"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 13
+shortcut = SubResource("Shortcut_uikg4")
 text = "Next"
 script = ExtResource("2_v3vkr")
 key_string = "next"
@@ -842,6 +1498,7 @@ columns = 3
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 13
+shortcut = SubResource("Shortcut_pf1rg")
 text = "Live"
 script = ExtResource("2_v3vkr")
 key_string = "live"
@@ -851,6 +1508,7 @@ key_label = "Live"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
+shortcut = SubResource("Shortcut_uiwn5")
 text = "Blind"
 script = ExtResource("2_v3vkr")
 key_string = "blind"
@@ -860,6 +1518,7 @@ key_label = "Blind"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
+shortcut = SubResource("Shortcut_w87q1")
 text = "Stage"
 script = ExtResource("2_v3vkr")
 key_string = "stage"
@@ -869,6 +1528,7 @@ key_label = "Stage"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 8
+shortcut = SubResource("Shortcut_nhdyp")
 text = "Displays"
 script = ExtResource("2_v3vkr")
 key_string = "displays"
@@ -882,6 +1542,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 10
+shortcut = SubResource("Shortcut_apoub")
 text = "System"
 script = ExtResource("2_v3vkr")
 key_string = "system_settings"
@@ -895,6 +1556,7 @@ columns = 3
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 13
+shortcut = SubResource("Shortcut_bjirw")
 text = "Undo"
 script = ExtResource("2_v3vkr")
 key_string = "undo"
@@ -907,6 +1569,7 @@ layout_mode = 2
 [node name="ButtonPageMode" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer5/Panel2"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+shortcut = SubResource("Shortcut_jb8i2")
 text = "Scroll
 Lock"
 script = ExtResource("2_v3vkr")
@@ -922,6 +1585,7 @@ columns = 3
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 10
+shortcut = SubResource("Shortcut_fav1u")
 text = "Escape"
 script = ExtResource("2_v3vkr")
 key_string = "escape"
@@ -930,6 +1594,7 @@ key_label = "Escape"
 [node name="ButtonPageUp" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer5/Panel3"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+shortcut = SubResource("Shortcut_hfejv")
 text = "Page
 Up"
 script = ExtResource("2_v3vkr")
@@ -941,6 +1606,7 @@ Up"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 10
+shortcut = SubResource("Shortcut_usmyp")
 text = "Select"
 script = ExtResource("2_v3vkr")
 key_string = "select"
@@ -950,6 +1616,7 @@ key_label = "Select"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 13
+shortcut = SubResource("Shortcut_mnv24")
 text = "Page
 Left"
 script = ExtResource("2_v3vkr")
@@ -961,6 +1628,7 @@ Left"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 13
+shortcut = SubResource("Shortcut_uviwl")
 text = "Page
 Down"
 script = ExtResource("2_v3vkr")
@@ -972,6 +1640,7 @@ Down"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
+shortcut = SubResource("Shortcut_mg828")
 text = "Page
 Right"
 script = ExtResource("2_v3vkr")
@@ -987,6 +1656,7 @@ columns = 3
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
+shortcut = SubResource("Shortcut_tcylv")
 text = "Tab"
 script = ExtResource("2_v3vkr")
 key_string = "tab"
@@ -996,6 +1666,7 @@ key_label = "Tab"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
+shortcut = SubResource("Shortcut_nxxr0")
 text = "Flexi"
 script = ExtResource("2_v3vkr")
 key_string = "flexichannel_mode"
@@ -1005,6 +1676,7 @@ key_label = "Flexi"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 13
+shortcut = SubResource("Shortcut_44tw7")
 text = "Time"
 script = ExtResource("2_v3vkr")
 key_string = "display_timing"
@@ -1014,6 +1686,7 @@ key_label = "Time"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 10
+shortcut = SubResource("Shortcut_0nhlw")
 text = "Format"
 script = ExtResource("2_v3vkr")
 key_string = "format"
@@ -1023,6 +1696,7 @@ key_label = "Format"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 10
+shortcut = SubResource("Shortcut_2eapa")
 text = "Expand"
 script = ExtResource("2_v3vkr")
 key_string = "expand"
@@ -1032,6 +1706,7 @@ key_label = "Expand"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 13
+shortcut = SubResource("Shortcut_m6kx0")
 text = "Data"
 script = ExtResource("2_v3vkr")
 key_string = "data"
