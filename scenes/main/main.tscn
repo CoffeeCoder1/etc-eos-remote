@@ -160,6 +160,7 @@ layout_mode = 2
 metadata/_tab_index = 1
 
 [node name="SettingsContainer" parent="PanelContainer/MarginContainer" instance=ExtResource("2_w362o")]
+unique_name_in_owner = true
 visible = false
 layout_mode = 2
 
@@ -175,4 +176,6 @@ osc_recieve_prefix = "/eos/out/user"
 target_client = NodePath("../OSCClientTCP")
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/SettingsButton" to="PanelContainer/MarginContainer/SettingsContainer" method="_on_settings_button_pressed"]
+[connection signal="ip_address_selected" from="PanelContainer/MarginContainer/SettingsContainer" to="." method="_on_settings_ip_address_selected"]
+[connection signal="port_selected" from="PanelContainer/MarginContainer/SettingsContainer" to="." method="_on_settings_port_selected"]
 [connection signal="user_selected" from="PanelContainer/MarginContainer/SettingsContainer" to="." method="_on_settings_user_selected"]
