@@ -50,6 +50,16 @@ func _ready() -> void:
 	_update_send_address()
 
 
+func _input(event: InputEvent) -> void:
+	# Button down and up signals are not emitted when the shortcut is pressed, so this catches those and calls _on_input.
+	if shortcut:
+		if shortcut.matches_event(event):
+			if event.is_pressed():
+				_on_input(true)
+			else:
+				_on_input(false)
+
+
 func _on_input(is_pressed: bool) -> void:
 	osc_element.send_message([float(is_pressed)])
 	
