@@ -16,18 +16,39 @@ extends Node
 			connect_socket(ip_address, new_port)
 		port = new_port
 var client: StreamPeerTCP = StreamPeerTCP.new()
+## How long to wait before attempting to reconnect to the server.
+@export var reconnect_timeout: float = 5.0:
+	set(new_reconnect_timeout):
+		if reconnect_timer:
+			reconnect_timer.wait_time = reconnect_timeout
+		
+		reconnect_timeout = new_reconnect_timeout
 
 ## A dictionary containing all recieved messages.
 var incoming_messages := {}
 
+# Used to attempt to reconnect after a delay.
+var reconnect_timer: Timer
+
 
 func _ready() -> void:
 	connect_socket(ip_address, port)
+	
+	reconnect_timer = Timer.new()
+	reconnect_timer.wait_time = reconnect_timeout
+	add_child(reconnect_timer)
+	reconnect_timer.timeout.connect(_reconnect_socket)
 
 
 func _process(_delta):
 	client.poll()
 	_parse()
+	
+	if (client.get_status() == StreamPeerTCP.STATUS_NONE || client.get_status() == StreamPeerTCP.STATUS_ERROR):
+		if reconnect_timer.is_stopped():
+			reconnect_timer.start()
+	else:
+		reconnect_timer.stop()
 
 
 ## Connect to an OSC server. Can only connect to one OSC server at a time.
@@ -39,6 +60,12 @@ func connect_socket(new_ip = "127.0.0.1", new_port = 4646) -> void:
 ## Disconnects from a server.
 func close_socket() -> void:
 	client.disconnect_from_host()
+
+
+## Attempts to reconnect to the configured IP and port.
+func _reconnect_socket() -> void:
+	print("Attempting reconnect!")
+	connect_socket(ip_address, port)
 
 
 ## Process a message to be sent. Returns a PackedByteArray to be sent to the server.
