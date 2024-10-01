@@ -1,0 +1,19 @@
+[gd_resource type="SyntaxHighlighter" script_class="RegExSyntaxHighlighter" load_steps=5 format=3 uid="uid://bjg7sybr1rieh"]
+
+[ext_resource type="Script" path="res://scenes/elements/regex_syntax_highlighter/regex_highlight_symbol.gd" id="1_2ok8x"]
+[ext_resource type="Script" path="res://scenes/elements/regex_syntax_highlighter/regex_syntax_highlighter.gd" id="2_tpek5"]
+
+[sub_resource type="Resource" id="Resource_6kiq1"]
+script = ExtResource("1_2ok8x")
+pattern = "((LIVE)|(BLIND)|(Patch Channel))((Cue)|(Staging Mode)|(Park)|(Preset)|(Event)|(Magic Sheet)|\\s|:)*:"
+color = Color(0.695503, 0.695503, 0.695503, 1)
+
+[sub_resource type="Resource" id="Resource_0r15m"]
+script = ExtResource("1_2ok8x")
+pattern = "(Error:).+"
+color = Color(1, 0, 0, 1)
+
+[resource]
+script = ExtResource("2_tpek5")
+patterns = Array[ExtResource("1_2ok8x")]([SubResource("Resource_6kiq1"), SubResource("Resource_0r15m")])
+default_color = Color(1, 1, 1, 1)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=199 format=3 uid="uid://lowydp6qwkqd"]
 
-[ext_resource type="Script" path="res://scenes/messages/osc_label.gd" id="2_p7so8"]
+[ext_resource type="PackedScene" uid="uid://c3jfg213w48yq" path="res://scenes/elements/command_line/command_line.tscn" id="1_uxgmw"]
 [ext_resource type="Script" path="res://scenes/messages/osc_key.gd" id="2_v3vkr"]
 [ext_resource type="Script" path="res://scenes/messages/osc_modifier_key.gd" id="3_p86lf"]
 [ext_resource type="Script" path="res://scenes/messages/osc_softkey.gd" id="4_pndv3"]
@@ -590,11 +590,8 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_h4bam")
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
 
-[node name="CommandLineDisplay" type="Label" parent="VBoxContainer"]
+[node name="CommandLine" parent="VBoxContainer" instance=ExtResource("1_uxgmw")]
 layout_mode = 2
-script = ExtResource("2_p7so8")
-feedback_mode = 1
-feedback_address = "/cmd"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2

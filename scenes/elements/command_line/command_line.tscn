@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3jfg213w48yq"]
+
+[ext_resource type="Script" path="res://scenes/elements/command_line/command_line.gd" id="1_3vmsh"]
+[ext_resource type="SyntaxHighlighter" uid="uid://bjg7sybr1rieh" path="res://scenes/elements/command_line/command_line_syntax_highlighter.tres" id="1_kq4sg"]
+
+[node name="CommandLine" type="TextEdit"]
+offset_right = 368.0
+offset_bottom = 31.0
+scroll_fit_content_height = true
+syntax_highlighter = ExtResource("1_kq4sg")
+script = ExtResource("1_3vmsh")
+feedback_mode = 1
+feedback_address = "/cmd"
