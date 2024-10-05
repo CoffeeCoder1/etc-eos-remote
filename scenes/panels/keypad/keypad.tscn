@@ -963,7 +963,7 @@ shortcut = SubResource("Shortcut_a7ef4")
 text = "GoTo
 Cue"
 script = ExtResource("2_v3vkr")
-key_string = "gotocue"
+key_string = "go_to_cue"
 key_label = "GoTo
 Cue"
 
