@@ -1,6 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://b1p8ak2bb83bq"]
+[gd_scene load_steps=19 format=3 uid="uid://b1p8ak2bb83bq"]
 
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_1fa0m"]
+[ext_resource type="FontFile" uid="uid://d4lv65tlwh51t" path="res://assets/fonts/open_sans/OpenSans-VariableFont_wdth,wght.ttf" id="1_7ra1t"]
 [ext_resource type="Script" path="res://scenes/main/panel_container.gd" id="1_ltf1v"]
 [ext_resource type="Script" path="res://scenes/messages/osc_label.gd" id="2_6h2ie"]
 [ext_resource type="PackedScene" uid="uid://cv50y2jxdoasn" path="res://scenes/panels/settings/settings.tscn" id="2_w362o"]
@@ -77,6 +78,7 @@ border_color = Color(0.4123, 0.39294, 0.440007, 1)
 corner_detail = 5
 
 [sub_resource type="Theme" id="Theme_tq8lr"]
+default_font = ExtResource("1_7ra1t")
 Button/font_sizes/font_size = 12
 Button/styles/disabled = SubResource("StyleBoxFlat_5n5nr")
 Button/styles/focus = SubResource("StyleBoxFlat_oopuq")
