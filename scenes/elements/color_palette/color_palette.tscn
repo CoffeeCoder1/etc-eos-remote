@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://dx7wtut5l7lwb"]
+
+[ext_resource type="Script" path="res://scenes/elements/color_palette/color_palette.gd" id="1_5x0pj"]
+[ext_resource type="Texture2D" uid="uid://vhavibxsqow6" path="res://assets/textures/color_palette/cursor.svg" id="2_mhuom"]
+
+[node name="ColorPalette" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 298.0
+offset_bottom = 272.0
+script = ExtResource("1_5x0pj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Cursor" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_mhuom")
+
+[node name="RelativeCursor" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.235294)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_mhuom")
