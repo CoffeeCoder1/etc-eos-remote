@@ -17,7 +17,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Globals="*res://scenes/globals.gd"
+Globals="*res://scenes/globals/globals.gd"
+OSCGlobals="*res://scenes/globals/osc_globals.tscn"
 
 [display]
 

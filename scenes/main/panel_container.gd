@@ -2,7 +2,6 @@ extends PanelContainer
 
 @export var live_color: Color
 @export var blind_color: Color
-@export var target_user: OSCUser
 
 var color_tween: Tween
 var last_state: Array
@@ -10,7 +9,7 @@ var last_state: Array
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	var state: Array = target_user.target_client.incoming_messages.get("/eos/out/event/state", [])
+	var state: Array = OSCGlobals.get_user().target_client.incoming_messages.get("/eos/out/event/state", [])
 	# Has the state changed?
 	if state != last_state:
 		# Remove old Tweens
