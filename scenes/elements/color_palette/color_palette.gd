@@ -80,6 +80,10 @@ func _gui_input(event: InputEvent) -> void:
 			start_position = color_position
 			relative_cursor.position = start_position * size
 		else:
+			# If the user didn't drag the cursor, update the position to where they clicked
+			if not drag_started:
+				color = color_position
+			
 			# End drag and reset things
 			clicked = false
 			relative_cursor.hide()
