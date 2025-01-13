@@ -1,4 +1,4 @@
-@icon("res://addons/godOSC/images/OSCReciever.svg")
+@icon("res://addons/godOSC/images/OSCReceiver.svg")
 class_name OSCClientTCP
 extends Node
 ## Client for sending and recieiving Open Sound Control messages over TCP. Use one OSCClientTCP per server you want to connect to.
