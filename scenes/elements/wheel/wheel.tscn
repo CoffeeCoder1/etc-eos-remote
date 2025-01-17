@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://cy73ew523w6b4"]
 
 [ext_resource type="Script" path="res://scenes/elements/wheel/wheel.gd" id="1_7dxjw"]
+[ext_resource type="Script" path="res://scenes/messages/osc_key.gd" id="2_1jvid"]
 [ext_resource type="Script" path="res://scenes/elements/wheel/wheel_box.gd" id="2_4k3ov"]
-[ext_resource type="Script" path="res://scenes/messages/osc_key.gd" id="2_vuptc"]
 
 [node name="Wheel" type="PanelContainer"]
 custom_minimum_size = Vector2(75, 0)
@@ -28,8 +28,8 @@ vertical_alignment = 1
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "Max"
-script = ExtResource("2_vuptc")
-key_string = "full"
+script = ExtResource("2_1jvid")
+key_string = "max"
 address_prefix = "/at"
 key_label = "Max"
 
@@ -56,7 +56,7 @@ ticks_on_borders = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "Min"
-script = ExtResource("2_vuptc")
+script = ExtResource("2_1jvid")
 key_string = "min"
 address_prefix = "/at"
 key_label = "Min"

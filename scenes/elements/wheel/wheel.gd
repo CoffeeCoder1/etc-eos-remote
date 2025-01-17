@@ -10,7 +10,14 @@ class_name Wheel extends Control
 ## Deletes the wheel if the feedback contains a type of 0 (null), which is sent when a wheel doesn't exist for the selected channel.
 @export var delete_on_null_type: bool = true
 
+@onready var max_button: OSCKey = $VBoxContainer/MaxButton
+@onready var min_button: OSCKey = $VBoxContainer/MinButton
+
 var osc_element: OSCElement
+## Parameter name for display.
+var parameter_name: String
+## Parameter name, parsed to be OSC safe.
+var osc_parameter_name: String
 
 
 # Called when the node enters the scene tree for the first time.
@@ -31,11 +38,17 @@ func _on_osc_feedback(value: Array):
 	
 	# Regex to remove value appended to property name
 	var regex = RegEx.new()
-	regex.compile(".+?(?= \\[\\d+])")
+	regex.compile(".+?(?=\\s*\\[\\d+])")
 	
-	$VBoxContainer/Label.text = regex.search(str(value[0])).get_string()
+	parameter_name = regex.search(str(value[0])).get_string()
+	osc_parameter_name = parameter_name.replace("/", "\\")
+	
+	$VBoxContainer/Label.text = parameter_name
 	$VBoxContainer/Value.text = str(round(value[2]))
 	$VBoxContainer/WheelBox/VSlider.value = value[2]
+	
+	max_button.address_prefix = "/param/" + osc_parameter_name
+	min_button.address_prefix = "/param/" + osc_parameter_name
 
 
 func _on_wheel_box_dragged(distance: float) -> void:
