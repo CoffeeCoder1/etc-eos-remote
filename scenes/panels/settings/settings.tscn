@@ -92,8 +92,8 @@ layout_mode = 2
 text = "Wheel Mode"
 
 [node name="WheelModeSelector" type="OptionButton" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/WheelModeContainer"]
+unique_name_in_owner = true
 layout_mode = 2
-selected = 1
 item_count = 2
 popup/item_0/text = "Relative"
 popup/item_1/text = "Absolute"

@@ -10,11 +10,15 @@ class_name Wheel extends Control
 ## Deletes the wheel if the feedback contains a type of 0 (null), which is sent when a wheel doesn't exist for the selected channel.
 @export var delete_on_null_type: bool = true
 ## Should the wheel be relative or absolute?
-@export var relative: bool = false:
-	set(new_relative):
+@export var wheel_mode: WheelMode = WheelMode.RELATIVE:
+	set(new_wheel_mode):
 		if is_instance_valid(wheel_box):
-			wheel_box.relative = new_relative
-		relative = new_relative
+			match new_wheel_mode:
+				WheelMode.RELATIVE:
+					wheel_box.relative = true
+				WheelMode.ABSOLUTE:
+					wheel_box.relative = false
+		wheel_mode = new_wheel_mode
 
 @onready var max_button: OSCKey = $VBoxContainer/MaxButton
 @onready var min_button: OSCKey = $VBoxContainer/MinButton
@@ -27,16 +31,29 @@ var parameter_name: String
 var osc_parameter_name: String
 
 
+## Sets the mode of the wheel.
+enum WheelMode {
+	## Proportional control over values.
+	RELATIVE,
+	## Absolute control over values.
+	ABSOLUTE,
+}
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	osc_element = OSCElement.new()
 	add_child(osc_element)
 	
 	# Set up wheel mode selection
-	relative = Globals.wheel_mode
-	Globals.set_wheel_modes.connect(_on_wheel_mode_changed)
+	wheel_mode = Globals.wheel_mode
+	Globals.wheel_modes_set.connect(_on_wheel_mode_changed)
 	
-	wheel_box.relative = relative
+	match wheel_mode:
+		WheelMode.RELATIVE:
+			wheel_box.relative = true
+		WheelMode.ABSOLUTE:
+			wheel_box.relative = false
 	osc_element.send_address = send_address + "/" + str(wheel_index)
 	osc_element.feedback_mode = OSCElement.FeedbackMode.GLOBAL
 	osc_element.recieve_address = recieve_address + "/" + str(wheel_index)
@@ -75,5 +92,5 @@ func _on_wheel_box_value_changed(value: float) -> void:
 	OSCGlobals.get_user().send_message("/param/" + osc_parameter_name + "/at", [value])
 
 
-func _on_wheel_mode_changed(mode: bool) -> void:
-	relative = mode
+func _on_wheel_mode_changed(new_wheel_mode: Wheel.WheelMode) -> void:
+	wheel_mode = new_wheel_mode

@@ -1,11 +1,17 @@
 extends Node
 
 signal key_pressed
-signal set_wheel_modes(relative: bool)
+## Emitted when the wheel mode is set.
+signal wheel_modes_set(mode: Wheel.WheelMode)
 
-## Enables relative control for wheels.
-var wheel_mode: bool
+## Switches the modes of all the wheels.
+var wheel_mode: Wheel.WheelMode
 
 
-func _on_wheel_mode_set(relative: bool) -> void:
-	wheel_mode = relative
+func set_wheel_modes(new_mode: Wheel.WheelMode) -> void:
+	wheel_mode = new_mode
+	wheel_modes_set.emit(new_mode)
+
+
+func _on_wheel_mode_set(new_wheel_mode: Wheel.WheelMode) -> void:
+	wheel_mode = new_wheel_mode
