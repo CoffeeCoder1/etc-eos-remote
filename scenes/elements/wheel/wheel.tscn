@@ -48,7 +48,6 @@ grow_vertical = 2
 size_flags_horizontal = 1
 size_flags_vertical = 3
 mouse_filter = 1
-editable = false
 tick_count = 3
 ticks_on_borders = true
 
@@ -63,3 +62,5 @@ key_label = "Min"
 
 [connection signal="dragged" from="VBoxContainer/WheelBox" to="." method="_on_wheel_box_dragged"]
 [connection signal="released" from="VBoxContainer/WheelBox" to="." method="_on_wheel_box_released"]
+[connection signal="value_changed" from="VBoxContainer/WheelBox" to="." method="_on_wheel_box_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/WheelBox/VSlider" to="VBoxContainer/WheelBox" method="_on_v_slider_value_changed"]
