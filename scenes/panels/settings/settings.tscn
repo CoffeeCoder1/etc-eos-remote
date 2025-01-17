@@ -37,57 +37,73 @@ layout_mode = 2
 layout_mode = 2
 text = "Settings"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="IPAddressContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="IPAddressLabel" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="IPAddressLabel" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/IPAddressContainer"]
 layout_mode = 2
 size_flags_vertical = 1
 text = "Board IP Address"
 vertical_alignment = 1
 
-[node name="IPAddressEdit" type="LineEdit" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="IPAddressEdit" type="LineEdit" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/IPAddressContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 placeholder_text = "127.0.0.1"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="PortContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="PortLabel" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="PortLabel" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/PortContainer"]
 layout_mode = 2
 size_flags_vertical = 1
 text = "Port"
 vertical_alignment = 1
 
-[node name="PortEdit" type="SpinBox" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="PortEdit" type="SpinBox" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/PortContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 max_value = 65535.0
 
-[node name="User" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="UserContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="UserLabel" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/User"]
+[node name="UserLabel" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/UserContainer"]
 layout_mode = 2
 size_flags_vertical = 1
 text = "User"
 vertical_alignment = 1
 
-[node name="UserEdit" type="SpinBox" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/User"]
+[node name="UserEdit" type="SpinBox" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/UserContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 min_value = -1.0
 
+[node name="WheelModeContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="WheelModeLabel" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/WheelModeContainer"]
+layout_mode = 2
+text = "Wheel Mode"
+
+[node name="WheelModeSelector" type="OptionButton" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/WheelModeContainer"]
+layout_mode = 2
+selected = 1
+item_count = 2
+popup/item_0/text = "Relative"
+popup/item_1/text = "Absolute"
+popup/item_1/id = 1
+
 [node name="CloseButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Close"
 
-[connection signal="text_submitted" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/IPAddressEdit" to="." method="_on_ip_address_submitted"]
-[connection signal="value_changed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/User/UserEdit" to="." method="_on_user_selected"]
+[connection signal="text_submitted" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/IPAddressContainer/IPAddressEdit" to="." method="_on_ip_address_submitted"]
+[connection signal="value_changed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/UserContainer/UserEdit" to="." method="_on_user_selected"]
+[connection signal="item_selected" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/WheelModeContainer/WheelModeSelector" to="." method="_on_wheel_mode_selector_item_selected"]
 [connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]

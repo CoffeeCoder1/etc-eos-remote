@@ -32,6 +32,10 @@ func _ready() -> void:
 	osc_element = OSCElement.new()
 	add_child(osc_element)
 	
+	# Set up wheel mode selection
+	relative = Globals.wheel_mode
+	Globals.set_wheel_modes.connect(_on_wheel_mode_changed)
+	
 	wheel_box.relative = relative
 	osc_element.send_address = send_address + "/" + str(wheel_index)
 	osc_element.feedback_mode = OSCElement.FeedbackMode.GLOBAL
@@ -69,3 +73,7 @@ func _on_wheel_box_released() -> void:
 
 func _on_wheel_box_value_changed(value: float) -> void:
 	OSCGlobals.get_user().send_message("/param/" + osc_parameter_name + "/at", [value])
+
+
+func _on_wheel_mode_changed(mode: bool) -> void:
+	relative = mode
