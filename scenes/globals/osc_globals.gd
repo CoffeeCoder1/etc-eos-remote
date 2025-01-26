@@ -1,10 +1,19 @@
 extends Node
 
+## Emitted when the app connects to a server
+signal connected
+## Emitted when the app disconnects from a server.
+signal disconnected
+
 @onready var osc_client_tcp: OSCClientTCP = $OSCClientTCP
 @onready var osc_user: OSCUser = $OSCUser
 
 
 func _ready() -> void:
+	# Set up signals.
+	osc_client_tcp.connected.connect(connected.emit)
+	osc_client_tcp.disconnected.connect(disconnected.emit)
+	
 	AppSettings.ip_address_set.connect(_on_settings_ip_address_set)
 	_on_settings_ip_address_set(AppSettings.get_ip_address())
 	AppSettings.port_set.connect(_on_settings_port_set)

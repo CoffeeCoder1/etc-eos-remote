@@ -24,11 +24,18 @@ var client: StreamPeerTCP = StreamPeerTCP.new()
 		
 		reconnect_timeout = new_reconnect_timeout
 
+## Emitted when a connection is made to a server and messages can be sent.
+signal connected
+## Emitted when the connection to the server is lost.
+signal disconnected
+
 ## A dictionary containing all recieved messages.
 var incoming_messages := {}
 
-# Used to attempt to reconnect after a delay.
+## Used to attempt to reconnect after a delay.
 var reconnect_timer: Timer
+## Was the server connected the last time we checked? Used so the connected signal is only sent once.
+var last_connected: bool
 
 
 func _ready() -> void:
@@ -49,6 +56,15 @@ func _process(_delta):
 			reconnect_timer.start()
 	else:
 		reconnect_timer.stop()
+	
+	# Check if a connection has just been made or lost.
+	var current_connected = client.get_status() == StreamPeerTCP.STATUS_CONNECTED
+	if (current_connected != last_connected):
+		if current_connected:
+			connected.emit()
+		else:
+			disconnected.emit()
+		last_connected = current_connected
 
 
 ## Connect to an OSC server. Can only connect to one OSC server at a time.
