@@ -5,10 +5,11 @@ class_name ColorPalette extends Control
 @export var snap_drag_threshold: float = 0.005
 @export var snap_drag_window: float = 0.25
 
-signal color_changed(color: Vector2)
+signal color_changed(color: Color)
 
 @onready var cursor: Sprite2D = $Cursor
 @onready var relative_cursor: Sprite2D = $RelativeCursor
+@onready var palette_rect: TextureRect = $PaletteRect
 
 ## Color coordinates [0-1]
 var color: Vector2
@@ -28,7 +29,7 @@ var drag_started: bool
 func _process(delta: float) -> void:
 	var mouse_position := get_local_mouse_position()
 	## Mouse position scaled to the size of the palette.
-	var color_position := mouse_position / size
+	var color_position := mouse_position / palette_rect.size
 	
 	if clicked:
 		# Find distance dragged
@@ -60,11 +61,13 @@ func _process(delta: float) -> void:
 		
 		color = color.clamp(Vector2.ZERO, Vector2.ONE)
 	
-	cursor.position = color * size
+	cursor.position = color * palette_rect.size
 	
 	# If the color changed, emit a signal saying so
 	if color != last_color:
-		color_changed.emit(color)
+		var color_rgb: Color = ColorConversions.xy_to_color(Vector2(color.x, 1.0 - color.y))
+		print(Vector2(color.x, 1.0 - color.y))
+		color_changed.emit(color_rgb)
 	last_color = color
 
 
@@ -91,5 +94,8 @@ func _gui_input(event: InputEvent) -> void:
 			drag_started = false
 
 ## Sets the color.
-func set_color(new_color: Vector2) -> void:
-	color = new_color
+func set_color(new_color: Color) -> void:
+	var color_xy: Vector2 = ColorConversions.color_to_xy(new_color)
+	color = Vector2(color_xy.x, 1.0 - color_xy.y)
+	print(color)
+	last_color = color

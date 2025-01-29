@@ -13,6 +13,7 @@ grow_vertical = 2
 script = ExtResource("1_spcom")
 
 [node name="ColorPalette" parent="." instance=ExtResource("1_n5ehn")]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,5 +22,10 @@ offset_right = 0.0
 offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+mouse_filter = 1
 
 [connection signal="color_changed" from="ColorPalette" to="." method="_on_color_changed"]
