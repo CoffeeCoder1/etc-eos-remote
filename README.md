@@ -2,6 +2,8 @@
 
 A third-party remote control app for ETC Eos family consoles.
 
+<img width="752" alt="Screenshot 2025-01-29 at 09 07 18" src="https://github.com/user-attachments/assets/05ecd14e-3802-4ec6-a879-113ae9a6de28" />
+
 ## Installation
 
 Download the [latest release](https://github.com/CoffeeCoder1/etc-eos-remote/releases/latest).
