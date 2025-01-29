@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Globals="*res://scenes/globals/globals.gd"
 OSCGlobals="*res://scenes/globals/osc_globals.tscn"
+AppSettings="*res://scenes/settings/settings.gd"
 
 [display]
 
