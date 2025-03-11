@@ -1,4 +1,4 @@
-class_name ColorPalette extends Control
+class_name CIEColorPalette extends Control
 
 ## Speed at which the cursor "chases" the mouse.
 @export var relative_movement_speed: float = 0.4

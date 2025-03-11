@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cv557earf34nf"]
 
 [ext_resource type="PackedScene" uid="uid://b2gsi71wgrev6" path="res://scenes/elements/fader/fader.tscn" id="1_84xi8"]
-[ext_resource type="Script" path="res://scenes/panels/faders/faders.gd" id="1_nnfdl"]
+[ext_resource type="Script" uid="uid://c8lje4nmh71tb" path="res://scenes/panels/faders/faders.gd" id="1_nnfdl"]
 
 [node name="Faders" type="PanelContainer"]
 script = ExtResource("1_nnfdl")

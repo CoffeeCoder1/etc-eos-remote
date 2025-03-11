@@ -9,7 +9,7 @@ class_name PaletteRect extends TextureRect
 
 
 const CIE1931_xyY_PALETTE_LINES = preload("res://assets/textures/color_palette/cie1931_palette_lines.svg")
-const CIE1931_xyY_PALETTE_SHADER = preload("res://scenes/elements/color_palette/xyY_palette.gdshader")
+const CIE1931_xyY_PALETTE_SHADER = preload("res://scenes/elements/cie_color_palette/xyY_palette.gdshader")
 
 enum PaletteType {
 	## CIE 1931 xyY palette.

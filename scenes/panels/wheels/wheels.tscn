@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://5rbtyjxu8hl4"]
 
 [ext_resource type="PackedScene" uid="uid://cy73ew523w6b4" path="res://scenes/elements/wheel/wheel.tscn" id="1_8ef50"]
-[ext_resource type="Script" path="res://scenes/panels/wheels/wheels.gd" id="1_w04ga"]
+[ext_resource type="Script" uid="uid://bwptpk1xaml78" path="res://scenes/panels/wheels/wheels.gd" id="1_w04ga"]
 
 [node name="Wheels" type="PanelContainer"]
 script = ExtResource("1_w04ga")

@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://dx7wtut5l7lwb"]
+
+[ext_resource type="Script" uid="uid://slvgq0xpfyv7" path="res://scenes/elements/cie_color_palette/cie_color_palette.gd" id="1_31vt0"]
+[ext_resource type="Shader" uid="uid://bwvl3cwc3lf50" path="res://scenes/elements/cie_color_palette/xyY_palette.gdshader" id="2_fic71"]
+[ext_resource type="Texture2D" uid="uid://bgb1yt0bkhmw4" path="res://assets/textures/color_palette/cie1931_palette_lines.svg" id="3_f2vb6"]
+[ext_resource type="Script" uid="uid://ch1ulhewy3xa7" path="res://scenes/elements/cie_color_palette/palette_rect.gd" id="4_olexp"]
+[ext_resource type="Texture2D" uid="uid://vhavibxsqow6" path="res://assets/textures/color_palette/cursor.svg" id="5_sb4ph"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ecgl8"]
+shader = ExtResource("2_fic71")
+shader_parameter/sRGB_TO_XYZ_COL0 = Vector3(0.412456, 0.212673, 0.0193339)
+shader_parameter/sRGB_TO_XYZ_COL1 = Vector3(0.357576, 0.715152, 0.119192)
+shader_parameter/sRGB_TO_XYZ_COL2 = Vector3(0.180438, 0.072175, 0.950304)
+
+[node name="ColorPalette" type="AspectRatioContainer"]
+offset_right = 298.0
+offset_bottom = 272.0
+alignment_horizontal = 0
+alignment_vertical = 0
+script = ExtResource("1_31vt0")
+
+[node name="PaletteRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_ecgl8")
+layout_mode = 2
+texture = ExtResource("3_f2vb6")
+expand_mode = 1
+stretch_mode = 4
+script = ExtResource("4_olexp")
+
+[node name="Cursor" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_sb4ph")
+
+[node name="RelativeCursor" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.235294)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_sb4ph")

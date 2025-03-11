@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://booqexkq84qy3"]
 
-[ext_resource type="Script" path="res://addons/godOSC/scripts/OSCClientTCP.gd" id="1_e80f2"]
-[ext_resource type="Script" path="res://scenes/globals/osc_globals.gd" id="1_tnmd6"]
-[ext_resource type="Script" path="res://scenes/messages/osc_user.gd" id="2_n2ngx"]
+[ext_resource type="Script" uid="uid://3p6n5o1kgkei" path="res://addons/godOSC/scripts/OSCClientTCP.gd" id="1_e80f2"]
+[ext_resource type="Script" uid="uid://b2nkfdo7qktdl" path="res://scenes/globals/osc_globals.gd" id="1_tnmd6"]
+[ext_resource type="Script" uid="uid://byulr8nxuhehf" path="res://scenes/messages/osc_user.gd" id="2_n2ngx"]
 
 [node name="OSCGlobals" type="Node"]
 script = ExtResource("1_tnmd6")

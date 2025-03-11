@@ -1,9 +1,9 @@
 [gd_scene load_steps=199 format=3 uid="uid://lowydp6qwkqd"]
 
 [ext_resource type="PackedScene" uid="uid://c3jfg213w48yq" path="res://scenes/elements/command_line/command_line.tscn" id="1_uxgmw"]
-[ext_resource type="Script" path="res://scenes/messages/osc_key.gd" id="2_v3vkr"]
-[ext_resource type="Script" path="res://scenes/messages/osc_modifier_key.gd" id="3_p86lf"]
-[ext_resource type="Script" path="res://scenes/messages/osc_softkey.gd" id="4_pndv3"]
+[ext_resource type="Script" uid="uid://23k3hiebxmue" path="res://scenes/messages/osc_key.gd" id="2_v3vkr"]
+[ext_resource type="Script" uid="uid://bmaa6vewvwt5v" path="res://scenes/messages/osc_modifier_key.gd" id="3_p86lf"]
+[ext_resource type="Script" uid="uid://cksbln4qxjewp" path="res://scenes/messages/osc_softkey.gd" id="4_pndv3"]
 [ext_resource type="PackedScene" uid="uid://cy73ew523w6b4" path="res://scenes/elements/wheel/wheel.tscn" id="6_66y7a"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h4bam"]

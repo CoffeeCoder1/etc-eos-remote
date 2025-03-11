@@ -1,7 +1,7 @@
 [gd_resource type="SyntaxHighlighter" script_class="RegExSyntaxHighlighter" load_steps=5 format=3 uid="uid://bjg7sybr1rieh"]
 
-[ext_resource type="Script" path="res://scenes/elements/regex_syntax_highlighter/regex_highlight_symbol.gd" id="1_2ok8x"]
-[ext_resource type="Script" path="res://scenes/elements/regex_syntax_highlighter/regex_syntax_highlighter.gd" id="2_tpek5"]
+[ext_resource type="Script" uid="uid://b2a32y5nqe6rt" path="res://scenes/elements/regex_syntax_highlighter/regex_highlight_symbol.gd" id="1_2ok8x"]
+[ext_resource type="Script" uid="uid://c58tchciwtatl" path="res://scenes/elements/regex_syntax_highlighter/regex_syntax_highlighter.gd" id="2_tpek5"]
 
 [sub_resource type="Resource" id="Resource_6kiq1"]
 script = ExtResource("1_2ok8x")

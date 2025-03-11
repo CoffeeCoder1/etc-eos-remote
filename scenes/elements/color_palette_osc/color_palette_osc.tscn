@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://5c4o7ev5j72d"]
 
-[ext_resource type="PackedScene" uid="uid://dx7wtut5l7lwb" path="res://scenes/elements/color_palette/color_palette.tscn" id="1_n5ehn"]
-[ext_resource type="Script" path="res://scenes/elements/color_palette_osc/color_palette_osc.gd" id="1_spcom"]
+[ext_resource type="PackedScene" uid="uid://dx7wtut5l7lwb" path="res://scenes/elements/cie_color_palette/cie_color_palette.tscn" id="1_n5ehn"]
+[ext_resource type="Script" uid="uid://elcod63v0piu" path="res://scenes/elements/color_palette_osc/color_palette_osc.gd" id="1_spcom"]
 
 [node name="ColorPaletteOSC" type="Control"]
 layout_mode = 3

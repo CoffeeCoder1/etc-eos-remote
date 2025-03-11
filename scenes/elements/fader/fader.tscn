@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b2gsi71wgrev6"]
 
-[ext_resource type="Script" path="res://scenes/elements/fader/fader.gd" id="1_ruwk7"]
+[ext_resource type="Script" uid="uid://cja62muxjbctu" path="res://scenes/elements/fader/fader.gd" id="1_ruwk7"]
 
 [node name="Fader" type="PanelContainer"]
 custom_minimum_size = Vector2(75, 0)

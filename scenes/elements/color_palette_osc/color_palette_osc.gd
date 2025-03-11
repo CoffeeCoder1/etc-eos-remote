@@ -6,7 +6,7 @@ class_name ColorPaletteOSC extends Control
 
 var osc_element: OSCElement
 
-@onready var color_palette: ColorPalette = %ColorPalette
+@onready var color_palette: CIEColorPalette = %ColorPalette
 
 
 func _ready() -> void:

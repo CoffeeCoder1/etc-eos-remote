@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cv50y2jxdoasn"]
 
-[ext_resource type="Script" path="res://scenes/panels/settings/settings_menu.gd" id="1_x2vtn"]
+[ext_resource type="Script" uid="uid://ftcp1lleiko7" path="res://scenes/panels/settings/settings_menu.gd" id="1_x2vtn"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h4bam"]
 
@@ -96,6 +96,7 @@ unique_name_in_owner = true
 layout_mode = 2
 item_count = 2
 popup/item_0/text = "Relative"
+popup/item_0/id = 0
 popup/item_1/text = "Absolute"
 popup/item_1/id = 1
 
