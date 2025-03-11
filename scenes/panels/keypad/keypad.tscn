@@ -605,81 +605,75 @@ theme_override_constants/separation = 25
 layout_mode = 2
 columns = 3
 
-[node name="ButtonSnapshot" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel1"]
+[node name="ButtonSnapshot" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel1"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 8
-shortcut = SubResource("Shortcut_0r2if")
-text = "Snapshot"
 script = ExtResource("2_v3vkr")
 key_string = "snapshot"
 key_label = "Snapshot"
+key_shortcut = SubResource("Shortcut_0r2if")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
 [node name="ButtonBlank1" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel1"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="ButtonHelp" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel1"]
+[node name="ButtonHelp" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel1"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 13
-shortcut = SubResource("Shortcut_wwwlj")
-text = "Help"
 script = ExtResource("2_v3vkr")
 key_string = "help"
 key_label = "Help"
+key_shortcut = SubResource("Shortcut_wwwlj")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonFader" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel1"]
+[node name="ButtonFader" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel1"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
-text = "Fader"
 script = ExtResource("2_v3vkr")
 key_string = "fader"
 key_label = "Fader"
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
 [node name="ButtonBlank2" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel1"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="ButtonAddressPatch" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel1"]
+[node name="ButtonAddressPatch" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel1"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-shortcut = SubResource("Shortcut_1kn8q")
-text = "Address
-Patch"
 script = ExtResource("2_v3vkr")
 key_string = "address"
 key_label = "Address
 Patch"
+key_shortcut = SubResource("Shortcut_1kn8q")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
 [node name="Panel2" type="GridContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 columns = 3
 
-[node name="ButtonMacro" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel2"]
+[node name="ButtonMacro" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel2"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
-shortcut = SubResource("Shortcut_emf1a")
-text = "Macro"
 script = ExtResource("2_v3vkr")
 key_string = "macro"
 key_label = "Macro"
+key_shortcut = SubResource("Shortcut_emf1a")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
 [node name="ButtonBlank" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel2"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="ButtonLearn" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel2"]
+[node name="ButtonLearn" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel2"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
-shortcut = SubResource("Shortcut_iawnx")
-text = "Learn"
 script = ExtResource("2_v3vkr")
 key_string = "learn"
 key_label = "Learn"
+key_shortcut = SubResource("Shortcut_iawnx")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
 [node name="Panel3" type="GridContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -697,200 +691,177 @@ layout_mode = 2
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="ButtonDelete" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel3"]
+[node name="ButtonDelete" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel3"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 10
-shortcut = SubResource("Shortcut_cgws0")
-text = "Delete"
 script = ExtResource("2_v3vkr")
 key_string = "delete"
 key_label = "Delete"
+key_shortcut = SubResource("Shortcut_cgws0")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonColorPath" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel3"]
+[node name="ButtonColorPath" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel3"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 13
-shortcut = SubResource("Shortcut_4kam5")
-text = "Path"
 script = ExtResource("2_v3vkr")
 key_string = "path"
 key_label = "Path"
+key_shortcut = SubResource("Shortcut_4kam5")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonEffect" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel3"]
+[node name="ButtonEffect" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel3"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 10
-shortcut = SubResource("Shortcut_by6d0")
-text = "Effect"
 script = ExtResource("2_v3vkr")
 key_string = "effect"
 key_label = "Effect"
+key_shortcut = SubResource("Shortcut_by6d0")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
 [node name="Panel4" type="GridContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 columns = 3
 
-[node name="ButtonPart" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel4"]
+[node name="ButtonPart" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel4"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 13
-shortcut = SubResource("Shortcut_v8wg8")
-text = "Part"
 script = ExtResource("2_v3vkr")
 key_string = "part"
 key_label = "Part"
+key_shortcut = SubResource("Shortcut_v8wg8")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonCue" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel4"]
+[node name="ButtonCue" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel4"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 14
-shortcut = SubResource("Shortcut_wyw2n")
-text = "Cue"
 script = ExtResource("2_v3vkr")
 key_string = "cue"
 key_label = "Cue"
+key_shortcut = SubResource("Shortcut_wyw2n")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonRecord" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel4"]
+[node name="ButtonRecord" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel4"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 10
-shortcut = SubResource("Shortcut_q0gud")
-text = "Record"
 script = ExtResource("2_v3vkr")
 key_string = "record"
 key_label = "Record"
+key_shortcut = SubResource("Shortcut_q0gud")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonIntensityPallete" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel4"]
+[node name="ButtonIntensityPallete" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel4"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 9
-shortcut = SubResource("Shortcut_k8g5g")
-text = "Int
-Palette"
 script = ExtResource("2_v3vkr")
 key_string = "intensity_palette"
 key_label = "Int
 Palette"
+key_shortcut = SubResource("Shortcut_k8g5g")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonFocusPalette" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel4"]
+[node name="ButtonFocusPalette" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel4"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 9
-shortcut = SubResource("Shortcut_y3pc3")
-text = "Focus
-Palette"
 script = ExtResource("2_v3vkr")
 key_string = "focus_palette"
 key_label = "Focus
 Palette"
+key_shortcut = SubResource("Shortcut_y3pc3")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonRecordOnly" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel4"]
+[node name="ButtonRecordOnly" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel4"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-shortcut = SubResource("Shortcut_c52u3")
-text = "Record
-Only"
 script = ExtResource("2_v3vkr")
 key_string = "record_only"
 key_label = "Record
 Only"
+key_shortcut = SubResource("Shortcut_c52u3")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonColorPalette" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel4"]
+[node name="ButtonColorPalette" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel4"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 9
-shortcut = SubResource("Shortcut_rrx3u")
-text = "Color
-Palette"
 script = ExtResource("2_v3vkr")
 key_string = "color_palette"
 key_label = "Color
 Palette"
+key_shortcut = SubResource("Shortcut_rrx3u")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonBeamPalette" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel4"]
+[node name="ButtonBeamPalette" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel4"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 9
-shortcut = SubResource("Shortcut_gqoxf")
-text = "Beam
-Palette"
 script = ExtResource("2_v3vkr")
 key_string = "beam_palette"
 key_label = "Beam
 Palette"
+key_shortcut = SubResource("Shortcut_gqoxf")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonUpdate" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel4"]
+[node name="ButtonUpdate" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel4"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 10
-shortcut = SubResource("Shortcut_dg1l1")
-text = "Update"
 script = ExtResource("2_v3vkr")
 key_string = "update"
 key_label = "Update"
+key_shortcut = SubResource("Shortcut_dg1l1")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonPreset" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel4"]
+[node name="ButtonPreset" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel4"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 10
-shortcut = SubResource("Shortcut_o64vq")
-text = "Preset"
 script = ExtResource("2_v3vkr")
 key_string = "preset"
 key_label = "Preset"
+key_shortcut = SubResource("Shortcut_o64vq")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonSubmaster" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel4"]
+[node name="ButtonSubmaster" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel4"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 14
-shortcut = SubResource("Shortcut_wupme")
-text = "Sub"
 script = ExtResource("2_v3vkr")
 key_string = "sub"
 key_label = "Sub"
+key_shortcut = SubResource("Shortcut_wupme")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonGroup" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel4"]
+[node name="ButtonGroup" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel4"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
-shortcut = SubResource("Shortcut_1ve50")
-text = "Group"
 script = ExtResource("2_v3vkr")
 key_string = "group"
 key_label = "Group"
+key_shortcut = SubResource("Shortcut_1ve50")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonShift" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel4"]
+[node name="ButtonShift" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel4"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
-toggle_mode = true
-shortcut = SubResource("Shortcut_7edfl")
-text = "Shift"
 script = ExtResource("3_p86lf")
 key_string = "shift"
 key_label = "Shift"
 clears_modifiers = false
+key_shortcut = SubResource("Shortcut_7edfl")
+metadata/_custom_type_script = "uid://bmaa6vewvwt5v"
 
-[node name="ButtonDelay" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel4"]
+[node name="ButtonDelay" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel4"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
-shortcut = SubResource("Shortcut_i01vp")
-text = "Delay"
 script = ExtResource("2_v3vkr")
 key_string = "delay"
 key_label = "Delay"
+key_shortcut = SubResource("Shortcut_i01vp")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonTime" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel4"]
+[node name="ButtonTime" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel4"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 13
-shortcut = SubResource("Shortcut_8cc2g")
-text = "Time"
 script = ExtResource("2_v3vkr")
 key_string = "time"
 key_label = "Time"
+key_shortcut = SubResource("Shortcut_8cc2g")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -900,246 +871,228 @@ theme_override_constants/separation = 25
 layout_mode = 2
 columns = 3
 
-[node name="Softkey1" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Softkeys"]
+[node name="Softkey1" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Softkeys"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-shortcut = SubResource("Shortcut_kgj3t")
 script = ExtResource("4_pndv3")
 softkey_index = 1
+key_shortcut = SubResource("Shortcut_kgj3t")
+metadata/_custom_type_script = "uid://cksbln4qxjewp"
 
-[node name="Softkey2" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Softkeys"]
+[node name="Softkey2" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Softkeys"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-shortcut = SubResource("Shortcut_1nuje")
 script = ExtResource("4_pndv3")
 softkey_index = 2
+key_shortcut = SubResource("Shortcut_1nuje")
+metadata/_custom_type_script = "uid://cksbln4qxjewp"
 
-[node name="Softkey3" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Softkeys"]
+[node name="Softkey3" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Softkeys"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-shortcut = SubResource("Shortcut_2q6gs")
 script = ExtResource("4_pndv3")
 softkey_index = 3
+key_shortcut = SubResource("Shortcut_2q6gs")
+metadata/_custom_type_script = "uid://cksbln4qxjewp"
 
 [node name="Panel2" type="GridContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 columns = 3
 
-[node name="ButtonQuery" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Panel2"]
+[node name="ButtonQuery" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Panel2"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
-shortcut = SubResource("Shortcut_i1svf")
-text = "Query"
 script = ExtResource("2_v3vkr")
 key_string = "query"
 key_label = "Query"
+key_shortcut = SubResource("Shortcut_i1svf")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonCopyTo" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Panel2"]
+[node name="ButtonCopyTo" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Panel2"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 10
-shortcut = SubResource("Shortcut_veset")
-text = "CopyTo"
 script = ExtResource("2_v3vkr")
 key_string = "copy_to"
 key_label = "CopyTo"
+key_shortcut = SubResource("Shortcut_veset")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonRecallFrom" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Panel2"]
+[node name="ButtonRecallFrom" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Panel2"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-shortcut = SubResource("Shortcut_0q5pt")
-text = "Recall
-From"
 script = ExtResource("2_v3vkr")
 key_string = "recall_from"
 key_label = "Recall
 From"
+key_shortcut = SubResource("Shortcut_0q5pt")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonGoToCue" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Panel2"]
+[node name="ButtonGoToCue" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Panel2"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-shortcut = SubResource("Shortcut_a7ef4")
-text = "GoTo
-Cue"
 script = ExtResource("2_v3vkr")
 key_string = "go_to_cue"
 key_label = "GoTo
 Cue"
+key_shortcut = SubResource("Shortcut_a7ef4")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonBlock" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Panel2"]
+[node name="ButtonBlock" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Panel2"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
-shortcut = SubResource("Shortcut_gkvkc")
-text = "Block"
 script = ExtResource("2_v3vkr")
 key_string = "block"
 key_label = "Block"
+key_shortcut = SubResource("Shortcut_gkvkc")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonAssert" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Panel2"]
+[node name="ButtonAssert" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Panel2"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 10
-shortcut = SubResource("Shortcut_2o635")
-text = "Assert"
 script = ExtResource("2_v3vkr")
 key_string = "assert"
 key_label = "Assert"
+key_shortcut = SubResource("Shortcut_2o635")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
 [node name="NumberPanel" type="GridContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 columns = 3
 
-[node name="ButtonPlus" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel"]
+[node name="ButtonPlus" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 16
-shortcut = SubResource("Shortcut_u1afh")
-text = "+"
 script = ExtResource("2_v3vkr")
 key_string = "+"
 key_label = "+"
+key_shortcut = SubResource("Shortcut_u1afh")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonThru" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel"]
+[node name="ButtonThru" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 13
-shortcut = SubResource("Shortcut_ripm3")
-text = "Thru"
 script = ExtResource("2_v3vkr")
 key_string = "thru"
 key_label = "Thru"
+key_shortcut = SubResource("Shortcut_ripm3")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonMinus" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel"]
+[node name="ButtonMinus" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 16
-shortcut = SubResource("Shortcut_w0c3i")
-text = "-"
 script = ExtResource("2_v3vkr")
 key_string = "-"
 key_label = "-"
+key_shortcut = SubResource("Shortcut_w0c3i")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="Button7" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel"]
+[node name="Button7" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 16
-shortcut = SubResource("Shortcut_535iy")
-text = "7"
 script = ExtResource("2_v3vkr")
 key_string = "7"
 key_label = "7"
+key_shortcut = SubResource("Shortcut_535iy")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="Button8" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel"]
+[node name="Button8" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 16
-shortcut = SubResource("Shortcut_ycpu3")
-text = "8"
 script = ExtResource("2_v3vkr")
 key_string = "8"
 key_label = "8"
+key_shortcut = SubResource("Shortcut_ycpu3")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="Button9" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel"]
+[node name="Button9" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 16
-shortcut = SubResource("Shortcut_k8irb")
-text = "9"
 script = ExtResource("2_v3vkr")
 key_string = "9"
 key_label = "9"
+key_shortcut = SubResource("Shortcut_k8irb")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="Button4" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel"]
+[node name="Button4" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 16
-shortcut = SubResource("Shortcut_v1742")
-text = "4"
 script = ExtResource("2_v3vkr")
 key_string = "4"
 key_label = "4"
+key_shortcut = SubResource("Shortcut_v1742")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="Button5" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel"]
+[node name="Button5" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 16
-shortcut = SubResource("Shortcut_4n5xe")
-text = "5"
 script = ExtResource("2_v3vkr")
 key_string = "5"
 key_label = "5"
+key_shortcut = SubResource("Shortcut_4n5xe")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="Button6" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel"]
+[node name="Button6" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 16
-shortcut = SubResource("Shortcut_7yn6l")
-text = "6"
 script = ExtResource("2_v3vkr")
 key_string = "6"
 key_label = "6"
+key_shortcut = SubResource("Shortcut_7yn6l")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="Button1" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel"]
+[node name="Button1" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 16
-shortcut = SubResource("Shortcut_cy8dt")
-text = "1"
 script = ExtResource("2_v3vkr")
 key_string = "1"
 key_label = "1"
+key_shortcut = SubResource("Shortcut_cy8dt")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="Button2" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel"]
+[node name="Button2" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 16
-shortcut = SubResource("Shortcut_h5ie8")
-text = "2"
 script = ExtResource("2_v3vkr")
 key_string = "2"
 key_label = "2"
+key_shortcut = SubResource("Shortcut_h5ie8")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="Button3" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel"]
+[node name="Button3" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 16
-shortcut = SubResource("Shortcut_p1nbo")
-text = "3"
 script = ExtResource("2_v3vkr")
 key_string = "3"
 key_label = "3"
+key_shortcut = SubResource("Shortcut_p1nbo")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonClear" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel"]
+[node name="ButtonClear" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
-shortcut = SubResource("Shortcut_b0p4f")
-text = "Clear"
 script = ExtResource("2_v3vkr")
 key_string = "clear_cmd"
 key_label = "Clear"
+key_shortcut = SubResource("Shortcut_b0p4f")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="Button0" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel"]
+[node name="Button0" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 16
-shortcut = SubResource("Shortcut_3hq6l")
-text = "0"
 script = ExtResource("2_v3vkr")
 key_string = "0"
 key_label = "0"
+key_shortcut = SubResource("Shortcut_3hq6l")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonPoint" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel"]
+[node name="ButtonPoint" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer2/NumberPanel"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 16
-shortcut = SubResource("Shortcut_tjm8m")
-text = "."
 script = ExtResource("2_v3vkr")
 key_string = "."
 key_label = "."
+key_shortcut = SubResource("Shortcut_tjm8m")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -1149,229 +1102,212 @@ theme_override_constants/separation = 25
 layout_mode = 2
 columns = 3
 
-[node name="Softkey4" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer3/Softkeys"]
+[node name="Softkey4" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer3/Softkeys"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-shortcut = SubResource("Shortcut_e25rg")
 script = ExtResource("4_pndv3")
 softkey_index = 4
+key_shortcut = SubResource("Shortcut_e25rg")
+metadata/_custom_type_script = "uid://cksbln4qxjewp"
 
-[node name="Softkey5" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer3/Softkeys"]
+[node name="Softkey5" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer3/Softkeys"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-shortcut = SubResource("Shortcut_fxb45")
 script = ExtResource("4_pndv3")
 softkey_index = 5
+key_shortcut = SubResource("Shortcut_fxb45")
+metadata/_custom_type_script = "uid://cksbln4qxjewp"
 
-[node name="Softkey6" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer3/Softkeys"]
+[node name="Softkey6" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer3/Softkeys"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-shortcut = SubResource("Shortcut_1p1x7")
 script = ExtResource("4_pndv3")
 softkey_index = 6
+key_shortcut = SubResource("Shortcut_1p1x7")
+metadata/_custom_type_script = "uid://cksbln4qxjewp"
 
 [node name="Panel2" type="GridContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer3"]
 layout_mode = 2
 columns = 3
 
-[node name="ButtonLabelNote" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer3/Panel2"]
+[node name="ButtonLabelNote" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer3/Panel2"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-shortcut = SubResource("Shortcut_1s202")
-text = "Label
-Note"
 script = ExtResource("2_v3vkr")
 key_string = "label"
 key_label = "Label
 Note"
+key_shortcut = SubResource("Shortcut_1s202")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
 [node name="ButtonBlank" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer3/Panel2"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="ButtonAbout" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer3/Panel2"]
+[node name="ButtonAbout" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer3/Panel2"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
-shortcut = SubResource("Shortcut_j2u8y")
-text = "About"
 script = ExtResource("2_v3vkr")
 key_string = "about"
 key_label = "About"
+key_shortcut = SubResource("Shortcut_j2u8y")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonOffset" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer3/Panel2"]
+[node name="ButtonOffset" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer3/Panel2"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 10
-shortcut = SubResource("Shortcut_sfyw8")
-text = "Offset"
 script = ExtResource("2_v3vkr")
 key_string = "offset"
 key_label = "Offset"
+key_shortcut = SubResource("Shortcut_sfyw8")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonHighlight" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer3/Panel2"]
+[node name="ButtonHighlight" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer3/Panel2"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 13
-shortcut = SubResource("Shortcut_ki5to")
-text = "High"
 script = ExtResource("2_v3vkr")
 key_string = "highlight"
 key_label = "High"
+key_shortcut = SubResource("Shortcut_ki5to")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonFan" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer3/Panel2"]
+[node name="ButtonFan" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer3/Panel2"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 14
-shortcut = SubResource("Shortcut_5v83c")
-text = "Fan"
 script = ExtResource("2_v3vkr")
 key_string = "fan_"
 key_label = "Fan"
+key_shortcut = SubResource("Shortcut_5v83c")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
 [node name="Panel3" type="GridContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer3"]
 layout_mode = 2
 columns = 3
 
-[node name="ButtonSlash" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer3/Panel3"]
+[node name="ButtonSlash" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer3/Panel3"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 16
-shortcut = SubResource("Shortcut_ewxwi")
-text = "/"
 script = ExtResource("2_v3vkr")
 key_string = "\\"
 key_label = "/"
+key_shortcut = SubResource("Shortcut_ewxwi")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonMark" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer3/Panel3"]
+[node name="ButtonMark" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer3/Panel3"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 13
-shortcut = SubResource("Shortcut_4bojq")
-text = "Mark"
 script = ExtResource("2_v3vkr")
 key_string = "mark"
 key_label = "Mark"
+key_shortcut = SubResource("Shortcut_4bojq")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonSneak" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer3/Panel3"]
+[node name="ButtonSneak" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer3/Panel3"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
-shortcut = SubResource("Shortcut_1l3ip")
-text = "Sneak"
 script = ExtResource("2_v3vkr")
 key_string = "sneak"
 key_label = "Sneak"
+key_shortcut = SubResource("Shortcut_1l3ip")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonRemDim" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer3/Panel3"]
+[node name="ButtonRemDim" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer3/Panel3"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 14
-shortcut = SubResource("Shortcut_tgkp5")
-text = "Rem
-Dim"
 script = ExtResource("2_v3vkr")
 key_string = "rem_dim"
 key_label = "Rem
 Dim"
+key_shortcut = SubResource("Shortcut_tgkp5")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonPlus10" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer3/Panel3"]
+[node name="ButtonPlus10" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer3/Panel3"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 15
-shortcut = SubResource("Shortcut_sa5v6")
-text = "+%"
 script = ExtResource("2_v3vkr")
 key_string = "+%"
 key_label = "+%"
+key_shortcut = SubResource("Shortcut_sa5v6")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonHome" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer3/Panel3"]
+[node name="ButtonHome" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer3/Panel3"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 13
-shortcut = SubResource("Shortcut_fvqca")
-text = "Home"
 script = ExtResource("2_v3vkr")
 key_string = "home"
 key_label = "Home"
+key_shortcut = SubResource("Shortcut_fvqca")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonOut" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer3/Panel3"]
+[node name="ButtonOut" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer3/Panel3"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 14
-shortcut = SubResource("Shortcut_sqfhc")
-text = "Out"
 script = ExtResource("2_v3vkr")
 key_string = "out"
 key_label = "Out"
+key_shortcut = SubResource("Shortcut_sqfhc")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonMinus10" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer3/Panel3"]
+[node name="ButtonMinus10" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer3/Panel3"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 15
-shortcut = SubResource("Shortcut_lcasb")
-text = "-%"
 script = ExtResource("2_v3vkr")
 key_string = "-%"
 key_label = "-%"
+key_shortcut = SubResource("Shortcut_lcasb")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonTrace" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer3/Panel3"]
+[node name="ButtonTrace" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer3/Panel3"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
-shortcut = SubResource("Shortcut_tuw4b")
-text = "Trace"
 script = ExtResource("2_v3vkr")
 key_string = "trace"
 key_label = "Trace"
+key_shortcut = SubResource("Shortcut_tuw4b")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonFull" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer3/Panel3"]
+[node name="ButtonFull" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer3/Panel3"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 13
-shortcut = SubResource("Shortcut_fva6h")
-text = "Full"
 script = ExtResource("2_v3vkr")
 key_string = "full"
 key_label = "Full"
+key_shortcut = SubResource("Shortcut_fva6h")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonLevel" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer3/Panel3"]
+[node name="ButtonLevel" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer3/Panel3"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
-shortcut = SubResource("Shortcut_ne0il")
-text = "Level"
 script = ExtResource("2_v3vkr")
 key_string = "level"
 key_label = "Level"
+key_shortcut = SubResource("Shortcut_ne0il")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonCueOnlyTrack" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer3/Panel3"]
+[node name="ButtonCueOnlyTrack" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer3/Panel3"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
-shortcut = SubResource("Shortcut_bch85")
-text = "QOnly
-Track"
 script = ExtResource("2_v3vkr")
 key_string = "cueonlytrack"
 key_label = "QOnly
 Track"
+key_shortcut = SubResource("Shortcut_bch85")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonAt" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer3/Panel3"]
+[node name="ButtonAt" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer3/Panel3"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 15
-shortcut = SubResource("Shortcut_qv8xm")
-text = "At"
 script = ExtResource("2_v3vkr")
 key_string = "at"
 key_label = "At"
+key_shortcut = SubResource("Shortcut_qv8xm")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
 [node name="Control" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer3/Panel3"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="ButtonEnter" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer3/Panel3/Control"]
+[node name="ButtonEnter" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer3/Panel3/Control"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 1
 anchors_preset = 15
@@ -1380,108 +1316,97 @@ anchor_bottom = 1.0
 offset_right = 54.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 12
-shortcut = SubResource("Shortcut_0uxgw")
-text = "Enter"
 script = ExtResource("2_v3vkr")
 key_string = "enter"
 key_label = "Enter"
+key_shortcut = SubResource("Shortcut_0uxgw")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
 [node name="VBoxContainer4" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 25
 
-[node name="ButtonMoreSoftkeys" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer4"]
+[node name="ButtonMoreSoftkeys" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer4"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-shortcut = SubResource("Shortcut_bbt7h")
-text = "More
-SK"
 script = ExtResource("2_v3vkr")
 key_string = "more_softkeys"
 key_label = "More
 SK"
+key_shortcut = SubResource("Shortcut_bbt7h")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
 [node name="Panel2" type="GridContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer4"]
 layout_mode = 2
 
-[node name="ButtonPark" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer4/Panel2"]
+[node name="ButtonPark" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer4/Panel2"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 13
-shortcut = SubResource("Shortcut_pxvqb")
-text = "Park"
 script = ExtResource("2_v3vkr")
 key_string = "park"
 key_label = "Park"
+key_shortcut = SubResource("Shortcut_pxvqb")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonCapture" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer4/Panel2"]
+[node name="ButtonCapture" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer4/Panel2"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 9
-shortcut = SubResource("Shortcut_vvh70")
-text = "Capture"
 script = ExtResource("2_v3vkr")
 key_string = "capture"
 key_label = "Capture"
+key_shortcut = SubResource("Shortcut_vvh70")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
 [node name="Panel3" type="GridContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer4"]
 layout_mode = 2
 
-[node name="ButtonSelectLast" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer4/Panel3"]
+[node name="ButtonSelectLast" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer4/Panel3"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-shortcut = SubResource("Shortcut_1mpk2")
-text = "Select
-Last"
 script = ExtResource("2_v3vkr")
 key_string = "select_last"
 key_label = "Select
 Last"
+key_shortcut = SubResource("Shortcut_1mpk2")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonSelectManual" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer4/Panel3"]
+[node name="ButtonSelectManual" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer4/Panel3"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 10
-shortcut = SubResource("Shortcut_3f6fj")
-text = "Select
-Manual"
 script = ExtResource("2_v3vkr")
 key_string = "select_manual"
 key_label = "Select
 Manual"
+key_shortcut = SubResource("Shortcut_3f6fj")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonSelectActive" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer4/Panel3"]
+[node name="ButtonSelectActive" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer4/Panel3"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 10
-shortcut = SubResource("Shortcut_fxfv6")
-text = "Select
-Active"
 script = ExtResource("2_v3vkr")
 key_string = "select_active"
 key_label = "Select
 Active"
+key_shortcut = SubResource("Shortcut_fxfv6")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonLast" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer4/Panel3"]
+[node name="ButtonLast" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer4/Panel3"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 13
-shortcut = SubResource("Shortcut_n7ifq")
-text = "Last"
 script = ExtResource("2_v3vkr")
 key_string = "last"
 key_label = "Last"
+key_shortcut = SubResource("Shortcut_n7ifq")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonNext" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer4/Panel3"]
+[node name="ButtonNext" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer4/Panel3"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 13
-shortcut = SubResource("Shortcut_uikg4")
-text = "Next"
 script = ExtResource("2_v3vkr")
 key_string = "next"
 key_label = "Next"
+key_shortcut = SubResource("Shortcut_uikg4")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
 [node name="VBoxContainer5" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -1491,223 +1416,201 @@ theme_override_constants/separation = 25
 layout_mode = 2
 columns = 3
 
-[node name="ButtonLive" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer5/Panel1"]
+[node name="ButtonLive" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer5/Panel1"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 13
-shortcut = SubResource("Shortcut_pf1rg")
-text = "Live"
 script = ExtResource("2_v3vkr")
 key_string = "live"
 key_label = "Live"
+key_shortcut = SubResource("Shortcut_pf1rg")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonBlind" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer5/Panel1"]
+[node name="ButtonBlind" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer5/Panel1"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
-shortcut = SubResource("Shortcut_uiwn5")
-text = "Blind"
 script = ExtResource("2_v3vkr")
 key_string = "blind"
 key_label = "Blind"
+key_shortcut = SubResource("Shortcut_uiwn5")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonStage" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer5/Panel1"]
+[node name="ButtonStage" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer5/Panel1"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
-shortcut = SubResource("Shortcut_w87q1")
-text = "Stage"
 script = ExtResource("2_v3vkr")
 key_string = "staging_mode"
 key_label = "Stage"
+key_shortcut = SubResource("Shortcut_w87q1")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonDisplays" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer5/Panel1"]
+[node name="ButtonDisplays" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer5/Panel1"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 8
-shortcut = SubResource("Shortcut_nhdyp")
-text = "Displays"
 script = ExtResource("2_v3vkr")
 key_string = "displays"
 key_label = "Displays"
+key_shortcut = SubResource("Shortcut_nhdyp")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
 [node name="ButtonBlank" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer5/Panel1"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="ButtonSystemSettings" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer5/Panel1"]
+[node name="ButtonSystemSettings" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer5/Panel1"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 10
-shortcut = SubResource("Shortcut_apoub")
-text = "System"
 script = ExtResource("2_v3vkr")
 key_string = "system_settings"
 key_label = "System"
+key_shortcut = SubResource("Shortcut_apoub")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
 [node name="Panel2" type="GridContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer5"]
 layout_mode = 2
 columns = 3
 
-[node name="ButtonUndo" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer5/Panel2"]
+[node name="ButtonUndo" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer5/Panel2"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 13
-shortcut = SubResource("Shortcut_bjirw")
-text = "Undo"
 script = ExtResource("2_v3vkr")
 key_string = "undo"
 key_label = "Undo"
+key_shortcut = SubResource("Shortcut_bjirw")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
 [node name="ButtonBlank" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer5/Panel2"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="ButtonPageMode" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer5/Panel2"]
+[node name="ButtonPageMode" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer5/Panel2"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-shortcut = SubResource("Shortcut_jb8i2")
-text = "Scroll
-Lock"
 script = ExtResource("2_v3vkr")
 key_string = "page_mode"
 key_label = "Scroll
 Lock"
+key_shortcut = SubResource("Shortcut_jb8i2")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
 [node name="Panel3" type="GridContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer5"]
 layout_mode = 2
 columns = 3
 
-[node name="ButtonEscape" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer5/Panel3"]
+[node name="ButtonEscape" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer5/Panel3"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 10
-shortcut = SubResource("Shortcut_fav1u")
-text = "Escape"
 script = ExtResource("2_v3vkr")
 key_string = "escape"
 key_label = "Escape"
+key_shortcut = SubResource("Shortcut_fav1u")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonPageUp" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer5/Panel3"]
+[node name="ButtonPageUp" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer5/Panel3"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-shortcut = SubResource("Shortcut_hfejv")
-text = "Page
-Up"
 script = ExtResource("2_v3vkr")
 key_string = "page_up"
 key_label = "Page
 Up"
+key_shortcut = SubResource("Shortcut_hfejv")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonSelect" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer5/Panel3"]
+[node name="ButtonSelect" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer5/Panel3"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 10
-shortcut = SubResource("Shortcut_usmyp")
-text = "Select"
 script = ExtResource("2_v3vkr")
 key_string = "select"
 key_label = "Select"
+key_shortcut = SubResource("Shortcut_usmyp")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonPageLeft" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer5/Panel3"]
+[node name="ButtonPageLeft" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer5/Panel3"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 13
-shortcut = SubResource("Shortcut_mnv24")
-text = "Page
-Left"
 script = ExtResource("2_v3vkr")
 key_string = "page_left"
 key_label = "Page
 Left"
+key_shortcut = SubResource("Shortcut_mnv24")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonPageDown" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer5/Panel3"]
+[node name="ButtonPageDown" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer5/Panel3"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 13
-shortcut = SubResource("Shortcut_uviwl")
-text = "Page
-Down"
 script = ExtResource("2_v3vkr")
 key_string = "arrow_down"
 key_label = "Page
 Down"
+key_shortcut = SubResource("Shortcut_uviwl")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonPageRight" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer5/Panel3"]
+[node name="ButtonPageRight" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer5/Panel3"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
-shortcut = SubResource("Shortcut_mg828")
-text = "Page
-Right"
 script = ExtResource("2_v3vkr")
 key_string = "page_right"
 key_label = "Page
 Right"
+key_shortcut = SubResource("Shortcut_mg828")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
 [node name="Panel4" type="GridContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer5"]
 layout_mode = 2
 columns = 3
 
-[node name="ButtonTab" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer5/Panel4"]
+[node name="ButtonTab" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer5/Panel4"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 14
-shortcut = SubResource("Shortcut_tcylv")
-text = "Tab"
 script = ExtResource("2_v3vkr")
 key_string = "tab"
 key_label = "Tab"
+key_shortcut = SubResource("Shortcut_tcylv")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonFlexi" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer5/Panel4"]
+[node name="ButtonFlexi" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer5/Panel4"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
-shortcut = SubResource("Shortcut_nxxr0")
-text = "Flexi"
 script = ExtResource("2_v3vkr")
 key_string = "flexichannel_mode"
 key_label = "Flexi"
+key_shortcut = SubResource("Shortcut_nxxr0")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonDisplayTiming" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer5/Panel4"]
+[node name="ButtonDisplayTiming" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer5/Panel4"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 13
-shortcut = SubResource("Shortcut_44tw7")
-text = "Time"
 script = ExtResource("2_v3vkr")
 key_string = "display_timing"
 key_label = "Time"
+key_shortcut = SubResource("Shortcut_44tw7")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonFormat" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer5/Panel4"]
+[node name="ButtonFormat" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer5/Panel4"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 10
-shortcut = SubResource("Shortcut_0nhlw")
-text = "Format"
 script = ExtResource("2_v3vkr")
 key_string = "format"
 key_label = "Format"
+key_shortcut = SubResource("Shortcut_0nhlw")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonExpand" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer5/Panel4"]
+[node name="ButtonExpand" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer5/Panel4"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 10
-shortcut = SubResource("Shortcut_2eapa")
-text = "Expand"
 script = ExtResource("2_v3vkr")
 key_string = "expand"
 key_label = "Expand"
+key_shortcut = SubResource("Shortcut_2eapa")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="ButtonData" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer5/Panel4"]
+[node name="ButtonData" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer5/Panel4"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 13
-shortcut = SubResource("Shortcut_m6kx0")
-text = "Data"
 script = ExtResource("2_v3vkr")
 key_string = "data"
 key_label = "Data"
+key_shortcut = SubResource("Shortcut_m6kx0")
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
 [node name="Wheel" parent="VBoxContainer/HBoxContainer" instance=ExtResource("6_66y7a")]
 layout_mode = 2

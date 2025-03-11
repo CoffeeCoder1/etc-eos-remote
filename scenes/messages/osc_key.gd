@@ -1,5 +1,5 @@
 @tool
-class_name OSCKey extends Button
+class_name OSCKey extends Control
 
 @export var key_string: String:
 	set(new_key_string):
@@ -21,11 +21,15 @@ class_name OSCKey extends Button
 				remove_theme_font_size_override("font_size")
 		
 		key_label = new_label
-		text = new_label
+		label.text = new_label
 ## Should clicking this button clear any selected modifiers?
 @export var clears_modifiers: bool = true
+## Shortcut used for the key.
+@export var key_shortcut: Shortcut
 
 var osc_element: OSCElement
+var panel_container: PanelContainer
+var label: Label
 
 
 ## Updates the OSCElement's send address. Not intended to be called outside of this class.
@@ -34,33 +38,50 @@ func _update_send_address() -> void:
 		osc_element.send_address = address_prefix + "/" + key_string
 
 
-## Sets up the button signals.
-func _setup_button() -> void:
-	button_down.connect(_on_input.bind(true))
-	button_up.connect(_on_input.bind(false))
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
+func _init() -> void:
 	if not Engine.is_editor_hint():
 		osc_element = OSCElement.new()
 		add_child(osc_element)
 	
-	_setup_button()
+	panel_container = PanelContainer.new()
+	panel_container.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	panel_container.set_anchors_preset(Control.PRESET_FULL_RECT)
+	add_child(panel_container)
+	
+	label = Label.new()
+	label.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	label.set_anchors_preset(Control.PRESET_FULL_RECT)
+	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	panel_container.add_child(label)
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	label.add_theme_stylebox_override("normal", StyleBoxEmpty.new())
+	panel_container.add_theme_stylebox_override("panel", get_theme_stylebox("normal", "Button"))
 	_update_send_address()
 
 
 func _input(event: InputEvent) -> void:
-	# Button down and up signals are not emitted when the shortcut is pressed, so this catches those and calls _on_input.
-	if shortcut:
-		if shortcut.matches_event(event):
-			if event.is_pressed():
-				_on_input(true)
-			else:
-				_on_input(false)
+	# Shortcut key
+	if key_shortcut:
+		if key_shortcut.matches_event(event):
+			_on_input(event.is_pressed())
 
 
+func _gui_input(event: InputEvent) -> void:
+	# Mouse click
+	if event is InputEventMouseButton:
+		_on_input(event.is_pressed())
+
+
+## Handles an input and updates the button accordingly.
 func _on_input(is_pressed: bool) -> void:
+	if is_pressed:
+		panel_container.add_theme_stylebox_override("panel", get_theme_stylebox("pressed", "Button"))
+	else:
+		panel_container.add_theme_stylebox_override("panel", get_theme_stylebox("normal", "Button"))
+	
 	osc_element.send_message([float(is_pressed)])
 	
 	# Emit a signal signaling that a key has been pressed

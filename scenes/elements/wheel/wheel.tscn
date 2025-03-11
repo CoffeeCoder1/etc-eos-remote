@@ -24,14 +24,13 @@ layout_mode = 2
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MaxButton" type="Button" parent="VBoxContainer"]
+[node name="MaxButton" type="Control" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 14
-text = "Max"
 script = ExtResource("2_1jvid")
 key_string = "max"
 address_prefix = "/at"
 key_label = "Max"
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
 [node name="WheelBox" type="Control" parent="VBoxContainer"]
 layout_mode = 2
@@ -51,14 +50,13 @@ mouse_filter = 1
 tick_count = 3
 ticks_on_borders = true
 
-[node name="MinButton" type="Button" parent="VBoxContainer"]
+[node name="MinButton" type="Control" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 14
-text = "Min"
 script = ExtResource("2_1jvid")
 key_string = "min"
 address_prefix = "/at"
 key_label = "Min"
+metadata/_custom_type_script = "uid://23k3hiebxmue"
 
 [connection signal="dragged" from="VBoxContainer/WheelBox" to="." method="_on_wheel_box_dragged"]
 [connection signal="released" from="VBoxContainer/WheelBox" to="." method="_on_wheel_box_released"]

@@ -1,10 +1,5 @@
 @tool
-extends OSCKey
-
-
-func _setup_button():
-	toggle_mode = true
-	toggled.connect(_on_input)
+class_name OSCModifierKey extends OSCKey
 
 
 # Called when the node enters the scene tree for the first time.
@@ -18,4 +13,17 @@ func _ready() -> void:
 
 
 func _clear_modifier() -> void:
-	button_pressed = false
+	pass
+	#button_pressed = false
+
+
+func _input(event: InputEvent) -> void:
+	# Button down and up signals are not emitted when the shortcut is pressed, so this catches those and calls _on_input.
+	if key_shortcut:
+		if key_shortcut.matches_event(event):
+			if event.is_pressed():
+				#button_pressed = true
+				_on_input(true)
+			else:
+				#button_pressed = false
+				_on_input(false)
