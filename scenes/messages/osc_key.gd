@@ -24,6 +24,9 @@ class_name OSCKey extends Control
 		label.text = new_label
 ## Should clicking this button clear any selected modifiers?
 @export var clears_modifiers: bool = true
+## Should this button latch? This is effectively the same as default toggle buttons, but more tailored
+## for modifier keys.
+@export var latching: bool = false
 ## Shortcut used for the key.
 @export var key_shortcut: Shortcut
 
@@ -44,6 +47,11 @@ var panel_container: PanelContainer
 var label: Label
 ## The current mode to draw the button in.
 var draw_mode: DrawMode = DrawMode.DRAW_NORMAL
+## Is the button currently pressed?
+var pressed: bool
+## Is the button forced to be on (ie. by a keyboard key)? This prevents the latch state from being
+## cleared by other buttons.
+var force_on: bool
 ## Is the mouse hovering over the button?
 var hovering: bool
 
@@ -73,6 +81,9 @@ func _init() -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if not Engine.is_editor_hint():
+		Globals.key_pressed.connect(_clear_latch)
+	
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exited)
 	
@@ -88,13 +99,19 @@ func _input(event: InputEvent) -> void:
 	# Shortcut key
 	if key_shortcut:
 		if key_shortcut.matches_event(event):
+			force_on = event.is_pressed()
 			_on_input(event.is_pressed())
 
 
 func _gui_input(event: InputEvent) -> void:
 	# Mouse click
 	if event is InputEventMouseButton:
-		_on_input(event.is_pressed())
+		if latching:
+			# Toggle latching button
+			if event.is_pressed():
+				_on_input(!pressed)
+		else:
+			_on_input(event.is_pressed())
 
 
 ## Gets the current draw mode.
@@ -134,6 +151,8 @@ func _on_mouse_exited() -> void:
 
 ## Handles an input and updates the button accordingly.
 func _on_input(is_pressed: bool) -> void:
+	pressed = is_pressed
+	
 	if is_pressed:
 		draw_mode = DrawMode.DRAW_PRESSED
 	else:
@@ -146,3 +165,9 @@ func _on_input(is_pressed: bool) -> void:
 	# Emit a signal signaling that a key has been pressed
 	if is_pressed and clears_modifiers:
 		Globals.emit_signal("key_pressed")
+
+
+## Unpresses the button if latched on.
+func _clear_latch() -> void:
+	if latching and pressed and not force_on:
+		_on_input(false)
