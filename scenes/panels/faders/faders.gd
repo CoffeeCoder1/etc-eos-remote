@@ -6,8 +6,12 @@ var osc_element: OSCElement
 
 
 func _ready() -> void:
+	OSCGlobals.connected.connect(_setup)
 	osc_element = OSCElement.new()
 	add_child(osc_element)
-	
-	osc_element.send_address = send_address
-	osc_element.send_message([4])
+
+
+## Set up the fader bank.
+func _setup() -> void:
+	osc_element.send_address = send_address + "/4"
+	osc_element.send_message([])
