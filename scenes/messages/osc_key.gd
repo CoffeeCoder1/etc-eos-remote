@@ -27,9 +27,25 @@ class_name OSCKey extends Control
 ## Shortcut used for the key.
 @export var key_shortcut: Shortcut
 
+## Modes the button can be drawn in.
+enum DrawMode {
+	## Disabled.
+	DRAW_DISABLED,
+	## Normal. Replaced by DRAW_HOVER when hovering.
+	DRAW_NORMAL,
+	## Hovering (not pressed).
+	DRAW_HOVER,
+	## Pressed.
+	DRAW_PRESSED,
+}
+
 var osc_element: OSCElement
 var panel_container: PanelContainer
 var label: Label
+## The current mode to draw the button in.
+var draw_mode: DrawMode = DrawMode.DRAW_NORMAL
+## Is the mouse hovering over the button?
+var hovering: bool
 
 
 ## Updates the OSCElement's send address. Not intended to be called outside of this class.
@@ -57,8 +73,10 @@ func _init() -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	mouse_entered.connect(_on_mouse_entered)
+	mouse_exited.connect(_on_mouse_exited)
+	
 	label.add_theme_stylebox_override("normal", StyleBoxEmpty.new())
-	panel_container.add_theme_stylebox_override("panel", get_theme_stylebox("normal", "Button"))
 	_update_send_address()
 
 
@@ -79,12 +97,49 @@ func _gui_input(event: InputEvent) -> void:
 		_on_input(event.is_pressed())
 
 
+## Gets the current draw mode.
+## Substitutes DRAW_HOVER in place of DRAW_NORMAL when hovering.
+func get_draw_mode() -> DrawMode:
+	match draw_mode:
+		DrawMode.DRAW_NORMAL:
+			if hovering:
+				return DrawMode.DRAW_HOVER
+			else:
+				return DrawMode.DRAW_NORMAL
+		_:
+			return draw_mode
+
+
+func _draw() -> void:
+	match get_draw_mode():
+		DrawMode.DRAW_DISABLED:
+			panel_container.add_theme_stylebox_override("panel", get_theme_stylebox("disabled", "Button"))
+		DrawMode.DRAW_NORMAL:
+			panel_container.add_theme_stylebox_override("panel", get_theme_stylebox("normal", "Button"))
+		DrawMode.DRAW_HOVER:
+			panel_container.add_theme_stylebox_override("panel", get_theme_stylebox("hover", "Button"))
+		DrawMode.DRAW_PRESSED:
+			panel_container.add_theme_stylebox_override("panel", get_theme_stylebox("pressed", "Button"))
+
+
+func _on_mouse_entered() -> void:
+	hovering = true
+	queue_redraw()
+
+
+func _on_mouse_exited() -> void:
+	hovering = false
+	queue_redraw()
+
+
 ## Handles an input and updates the button accordingly.
 func _on_input(is_pressed: bool) -> void:
 	if is_pressed:
-		panel_container.add_theme_stylebox_override("panel", get_theme_stylebox("pressed", "Button"))
+		draw_mode = DrawMode.DRAW_PRESSED
 	else:
-		panel_container.add_theme_stylebox_override("panel", get_theme_stylebox("normal", "Button"))
+		draw_mode = DrawMode.DRAW_NORMAL
+	
+	queue_redraw()
 	
 	osc_element.send_message([float(is_pressed)])
 	
