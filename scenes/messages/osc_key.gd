@@ -62,6 +62,10 @@ func _ready() -> void:
 	_update_send_address()
 
 
+func _get_minimum_size() -> Vector2:
+	return panel_container.size
+
+
 func _input(event: InputEvent) -> void:
 	# Shortcut key
 	if key_shortcut:
