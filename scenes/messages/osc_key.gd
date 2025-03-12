@@ -11,17 +11,8 @@ class_name OSCKey extends Control
 		_update_send_address()
 @export_multiline var key_label: String:
 	set(new_label):
-		# Iterate through label lines
-		for line in new_label.split("\n"):
-			# Find a good font size, and, if it's smaller than the current one, set it as the font size override
-			var font_size: int = 12 - ((line.length() - 5) * 1.05)
-			if font_size <= get_theme_font_size("font_size"):
-				add_theme_font_size_override("font_size", font_size)
-			else:
-				remove_theme_font_size_override("font_size")
-		
-		key_label = new_label
 		label.text = new_label
+		key_label = new_label
 ## Should clicking this button clear any selected modifiers?
 @export var clears_modifiers: bool = true
 ## Should this button latch? This is effectively the same as default toggle buttons, but more tailored
@@ -44,7 +35,7 @@ enum DrawMode {
 
 var osc_element: OSCElement
 var panel_container: PanelContainer
-var label: Label
+var label: AutoSizeLabel
 ## The current mode to draw the button in.
 var draw_mode: DrawMode = DrawMode.DRAW_NORMAL
 ## Is the button currently pressed?
@@ -72,11 +63,12 @@ func _init() -> void:
 	panel_container.set_anchors_preset(Control.PRESET_FULL_RECT)
 	add_child(panel_container, false, Node.INTERNAL_MODE_FRONT)
 	
-	label = Label.new()
+	label = AutoSizeLabel.new()
 	label.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	label.set_anchors_preset(Control.PRESET_FULL_RECT)
-	label.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
+	label.size_flags_vertical = Control.SIZE_FILL
+	label.size_flags_horizontal = Control.SIZE_FILL
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	panel_container.add_child(label, false, Node.INTERNAL_MODE_FRONT)
 
 
