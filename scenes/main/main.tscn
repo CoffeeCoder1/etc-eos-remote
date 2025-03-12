@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b1p8ak2bb83bq"]
+[gd_scene load_steps=19 format=3 uid="uid://b1p8ak2bb83bq"]
 
 [ext_resource type="Script" uid="uid://drhpx2eyg21j" path="res://scenes/main/panel_container.gd" id="1_ltf1v"]
 [ext_resource type="FontFile" uid="uid://df16t0vkt0ont" path="res://assets/fonts/noto_sans/NotoSans-VariableFont_wdth,wght.ttf" id="1_yyfjg"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://5rbtyjxu8hl4" path="res://scenes/panels/wheels/wheels.tscn" id="4_jlbm2"]
 [ext_resource type="PackedScene" uid="uid://lowydp6qwkqd" path="res://scenes/panels/keypad/keypad.tscn" id="5_j6y4i"]
 [ext_resource type="PackedScene" uid="uid://cv557earf34nf" path="res://scenes/panels/faders/faders.tscn" id="7_ecdne"]
-[ext_resource type="PackedScene" uid="uid://bqlyeywbdcjhn" path="res://scenes/panels/debug/debug.tscn" id="8_5bu4l"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5n5nr"]
 content_margin_left = 4.0
@@ -167,11 +166,6 @@ metadata/_tab_index = 1
 visible = false
 layout_mode = 2
 metadata/_tab_index = 2
-
-[node name="Debug" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer" instance=ExtResource("8_5bu4l")]
-visible = false
-layout_mode = 2
-metadata/_tab_index = 3
 
 [node name="SettingsContainer" parent="PanelContainer/MarginContainer" instance=ExtResource("2_w362o")]
 unique_name_in_owner = true
