@@ -8,7 +8,7 @@ var osc_element: OSCElement
 
 func _ready() -> void:
 	osc_element = OSCElement.new()
-	add_child(osc_element)
+	add_child(osc_element, false, Node.INTERNAL_MODE_FRONT)
 	
 	osc_element.recieve_address = feedback_address
 	osc_element.feedback_recieved.connect(_on_osc_feedback)

@@ -40,12 +40,12 @@ func _init() -> void:
 	value_element = OSCElement.new()
 	value_element.feedback_mode = OSCElement.FeedbackMode.GLOBAL
 	value_element.feedback_recieved.connect(_on_value_feedback)
-	add_child(value_element)
+	add_child(value_element, false, Node.INTERNAL_MODE_FRONT)
 	
 	label_element = OSCElement.new()
 	label_element.feedback_mode = OSCElement.FeedbackMode.GLOBAL
 	label_element.feedback_recieved.connect(_on_label_feedback)
-	add_child(label_element)
+	add_child(label_element, false, Node.INTERNAL_MODE_FRONT)
 
 
 func _ready() -> void:

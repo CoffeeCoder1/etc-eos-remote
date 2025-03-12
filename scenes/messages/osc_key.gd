@@ -65,18 +65,19 @@ func _update_send_address() -> void:
 func _init() -> void:
 	if not Engine.is_editor_hint():
 		osc_element = OSCElement.new()
-		add_child(osc_element)
+		add_child(osc_element, false, Node.INTERNAL_MODE_FRONT)
 	
 	panel_container = PanelContainer.new()
 	panel_container.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	panel_container.set_anchors_preset(Control.PRESET_FULL_RECT)
-	add_child(panel_container)
+	add_child(panel_container, false, Node.INTERNAL_MODE_FRONT)
 	
 	label = Label.new()
 	label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	label.set_anchors_preset(Control.PRESET_FULL_RECT)
+	label.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	panel_container.add_child(label)
+	panel_container.add_child(label, false, Node.INTERNAL_MODE_FRONT)
 
 
 # Called when the node enters the scene tree for the first time.

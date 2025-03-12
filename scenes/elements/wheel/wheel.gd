@@ -43,7 +43,7 @@ enum WheelMode {
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	osc_element = OSCElement.new()
-	add_child(osc_element)
+	add_child(osc_element, false, Node.INTERNAL_MODE_FRONT)
 	
 	# Set up wheel mode selection
 	wheel_mode = Globals.wheel_mode

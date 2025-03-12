@@ -16,7 +16,7 @@ var osc_element: OSCElement
 func _ready() -> void:
 	OSCGlobals.connected.connect(_setup)
 	osc_element = OSCElement.new()
-	add_child(osc_element)
+	add_child(osc_element, false, Node.INTERNAL_MODE_FRONT)
 	
 	_set_fader_count(16)
 
