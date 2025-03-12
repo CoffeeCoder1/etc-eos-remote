@@ -38,5 +38,5 @@ func _set_fader_count(count: int) -> void:
 			# Add missing faders
 			for i in count - container.get_child_count():
 				var fader: Fader = FADER.instantiate()
-				fader.fader_index = i + container.get_child_count()
+				fader.fader_index = container.get_child_count() + 1
 				container.add_child(fader)
