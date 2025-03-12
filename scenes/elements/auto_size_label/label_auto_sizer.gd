@@ -42,5 +42,7 @@ static func update_font_size_by_height(label: AutoSizeLabel) -> void:
 	
 	# Detect if lines got clipped. If yes, force it to reduce size to fit inside the original.
 	#while label.get_visible_line_count() < label.get_line_count():
-	#	font_size_range.x -= 1
-	#	label.add_theme_font_size_override("font_size", font_size_range.x)
+		#font_size_range.x -= 1
+		#if font_size_range.x < label.min_font_size:
+			#break
+		#label.add_theme_font_size_override("font_size", font_size_range.x)

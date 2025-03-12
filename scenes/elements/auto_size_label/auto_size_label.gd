@@ -5,7 +5,7 @@ class_name AutoSizeLabel extends Label
 	set(v):
 		min_font_size = clampi(v, 1, max_font_size)
 		update()
-@export var max_font_size := 12:
+@export var max_font_size := 16:
 	set(v):
 		max_font_size = clampi(v, min_font_size, 191)
 		update()
