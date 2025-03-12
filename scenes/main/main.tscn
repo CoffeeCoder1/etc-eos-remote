@@ -1,8 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://b1p8ak2bb83bq"]
+[gd_scene load_steps=20 format=3 uid="uid://b1p8ak2bb83bq"]
 
-[ext_resource type="FontFile" uid="uid://d4lv65tlwh51t" path="res://assets/fonts/open_sans/OpenSans-VariableFont_wdth,wght.ttf" id="1_7ra1t"]
 [ext_resource type="Script" uid="uid://drhpx2eyg21j" path="res://scenes/main/panel_container.gd" id="1_ltf1v"]
+[ext_resource type="FontFile" uid="uid://df16t0vkt0ont" path="res://assets/fonts/noto_sans/NotoSans-VariableFont_wdth,wght.ttf" id="1_yyfjg"]
 [ext_resource type="Script" uid="uid://c2cwigs4cceo4" path="res://scenes/messages/osc_label.gd" id="2_6h2ie"]
+[ext_resource type="FontFile" uid="uid://dpqtehi0nif5p" path="res://assets/fonts/noto_emoji/NotoEmoji-VariableFont_wght.ttf" id="2_b1x3f"]
 [ext_resource type="PackedScene" uid="uid://cv50y2jxdoasn" path="res://scenes/panels/settings/settings.tscn" id="2_w362o"]
 [ext_resource type="PackedScene" uid="uid://5rbtyjxu8hl4" path="res://scenes/panels/wheels/wheels.tscn" id="4_jlbm2"]
 [ext_resource type="PackedScene" uid="uid://lowydp6qwkqd" path="res://scenes/panels/keypad/keypad.tscn" id="5_j6y4i"]
@@ -76,8 +77,12 @@ border_width_bottom = 1
 border_color = Color(0.4123, 0.39294, 0.440007, 1)
 corner_detail = 5
 
+[sub_resource type="FontVariation" id="FontVariation_a8run"]
+fallbacks = Array[Font]([ExtResource("2_b1x3f")])
+base_font = ExtResource("1_yyfjg")
+
 [sub_resource type="Theme" id="Theme_tq8lr"]
-default_font = ExtResource("1_7ra1t")
+default_font = SubResource("FontVariation_a8run")
 Button/font_sizes/font_size = 12
 Button/styles/disabled = SubResource("StyleBoxFlat_5n5nr")
 Button/styles/focus = SubResource("StyleBoxFlat_oopuq")
