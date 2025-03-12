@@ -25,6 +25,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="MaxButton" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 script = ExtResource("2_1jvid")
 key_string = "max"
@@ -51,6 +52,7 @@ tick_count = 3
 ticks_on_borders = true
 
 [node name="MinButton" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 script = ExtResource("2_1jvid")
 key_string = "min"
