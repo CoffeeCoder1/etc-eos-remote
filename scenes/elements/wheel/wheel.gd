@@ -89,7 +89,7 @@ func _on_wheel_box_released() -> void:
 
 
 func _on_wheel_box_value_changed(value: float) -> void:
-	OSCGlobals.get_user().send_message("/param/" + osc_parameter_name + "/at", [value])
+	OSCGlobals.get_user().send_message("/param/" + osc_parameter_name, [value])
 
 
 func _on_wheel_mode_changed(new_wheel_mode: Wheel.WheelMode) -> void:
