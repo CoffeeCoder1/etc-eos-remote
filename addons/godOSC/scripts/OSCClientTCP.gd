@@ -1,7 +1,8 @@
 @icon("res://addons/godOSC/images/OSCReceiver.svg")
 class_name OSCClientTCP
 extends Node
-## Client for sending and recieiving Open Sound Control messages over TCP. Use one OSCClientTCP per server you want to connect to.
+## Client for sending and recieiving Open Sound Control messages over TCP. Use one OSCClientTCP per
+## server you want to connect to.
 
 ## The IP Address of the server to connect to.
 @export var ip_address: String = "127.0.0.1":
@@ -15,14 +16,10 @@ extends Node
 		if port != new_port:
 			connect_socket(ip_address, new_port)
 		port = new_port
-var client: StreamPeerTCP = StreamPeerTCP.new()
 ## How long to wait before attempting to reconnect to the server.
 @export var reconnect_timeout: float = 5.0:
 	set(new_reconnect_timeout):
-		if reconnect_timer:
-			reconnect_timer.wait_time = reconnect_timeout
-		
-		reconnect_timeout = new_reconnect_timeout
+		reconnect_timeout = _on_reconnect_timeout_change(new_reconnect_timeout)
 
 ## Emitted when a connection is made to a server and messages can be sent.
 signal connected
@@ -32,25 +29,35 @@ signal disconnected
 ## A dictionary containing all recieved messages.
 var incoming_messages := {}
 
+## The StreamPeer used to communicate with the server.
+var client: StreamPeerTCP
 ## Used to attempt to reconnect after a delay.
 var reconnect_timer: Timer
 ## Was the server connected the last time we checked? Used so the connected signal is only sent once.
 var last_connected: bool
 
 
-func _ready() -> void:
-	connect_socket(ip_address, port)
+func _init() -> void:
+	client = StreamPeerTCP.new()
 	
 	reconnect_timer = Timer.new()
-	reconnect_timer.wait_time = reconnect_timeout
 	add_child(reconnect_timer)
 	reconnect_timer.timeout.connect(_reconnect_socket)
+
+
+func _ready() -> void:
+	# Initialize things
+	_on_reconnect_timeout_change(reconnect_timeout)
+	
+	# Try to connect to the server
+	connect_socket(ip_address, port)
 
 
 func _process(_delta):
 	client.poll()
 	_parse()
 	
+	# Start the reconnection timer if disconnected from the server
 	if (client.get_status() == StreamPeerTCP.STATUS_NONE || client.get_status() == StreamPeerTCP.STATUS_ERROR):
 		if reconnect_timer.is_stopped():
 			reconnect_timer.start()
@@ -60,6 +67,7 @@ func _process(_delta):
 	# Check if a connection has just been made or lost.
 	var current_connected = client.get_status() == StreamPeerTCP.STATUS_CONNECTED
 	if (current_connected != last_connected):
+		# If it has been, emit the corresponding signal.
 		if current_connected:
 			connected.emit()
 		else:
@@ -140,13 +148,13 @@ func _prepare_message(osc_address : String, args : Array) -> PackedByteArray:
 
 
 ## Send an OSC message over TCP.
-func send_message(osc_address : String, args : Array):
+func send_message(osc_address : String, args : Array) -> void:
 	var packet = _prepare_message(osc_address, args)
 	client.put_data(packet)
 
 
-## Parses an OSC packet. This is not intended to be called directly outside of the OSCServerTCP
-func _parse():
+## Parses an OSC packet. This is not intended to be called directly outside of the OSCServerTCP.
+func _parse() -> void:
 	if client.get_status() == StreamPeerTCP.STATUS_CONNECTED:
 		if client.get_available_bytes() > 0:
 			var data = client.get_data(client.get_available_bytes())
@@ -206,3 +214,11 @@ func _parse_message(packet: PackedByteArray):
 				vals.append(args)
 	
 	incoming_messages[address] = vals
+
+
+## Sets the reconnect timeout.
+func _on_reconnect_timeout_change(timeout: float) -> float:
+	if is_instance_valid(reconnect_timer):
+			reconnect_timer.wait_time = reconnect_timeout
+	
+	return timeout
