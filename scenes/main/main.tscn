@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://b1p8ak2bb83bq"]
+[gd_scene load_steps=20 format=3 uid="uid://b1p8ak2bb83bq"]
 
 [ext_resource type="Script" uid="uid://drhpx2eyg21j" path="res://scenes/main/panel_container.gd" id="1_ltf1v"]
 [ext_resource type="FontFile" uid="uid://df16t0vkt0ont" path="res://assets/fonts/noto_sans/NotoSans-VariableFont_wdth,wght.ttf" id="1_yyfjg"]
@@ -6,11 +6,9 @@
 [ext_resource type="FontFile" uid="uid://dpqtehi0nif5p" path="res://assets/fonts/noto_emoji/NotoEmoji-VariableFont_wght.ttf" id="2_b1x3f"]
 [ext_resource type="PackedScene" uid="uid://cv50y2jxdoasn" path="res://scenes/panels/settings/settings.tscn" id="2_w362o"]
 [ext_resource type="PackedScene" uid="uid://5rbtyjxu8hl4" path="res://scenes/panels/wheels/wheels.tscn" id="4_jlbm2"]
-[ext_resource type="PackedScene" uid="uid://c3jfg213w48yq" path="res://scenes/elements/command_line/command_line.tscn" id="5_blune"]
 [ext_resource type="PackedScene" uid="uid://lowydp6qwkqd" path="res://scenes/panels/keypad/keypad.tscn" id="5_j6y4i"]
-[ext_resource type="Script" uid="uid://b2a32y5nqe6rt" path="res://scenes/elements/regex_syntax_highlighter/regex_highlight_symbol.gd" id="6_th5th"]
-[ext_resource type="Script" uid="uid://c58tchciwtatl" path="res://scenes/elements/regex_syntax_highlighter/regex_syntax_highlighter.gd" id="7_7smn1"]
 [ext_resource type="PackedScene" uid="uid://cv557earf34nf" path="res://scenes/panels/faders/faders.tscn" id="7_ecdne"]
+[ext_resource type="Script" uid="uid://bf2setmvp6xd6" path="res://scenes/elements/command_line/command_line.gd" id="7_ouso4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5n5nr"]
 content_margin_left = 4.0
@@ -99,21 +97,6 @@ bg_color = Color(0.149475, 0.149475, 0.149474, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hoj37"]
 
-[sub_resource type="Resource" id="Resource_6kiq1"]
-script = ExtResource("6_th5th")
-pattern = "((LIVE)|(BLIND)|(Patch Channel))((Cue)|(Staging Mode)|(Park)|(Preset)|(Event)|(Magic Sheet)|\\s|:)*:"
-color = Color(0.695503, 0.695503, 0.695503, 1)
-
-[sub_resource type="Resource" id="Resource_0r15m"]
-script = ExtResource("6_th5th")
-pattern = "(Error:).+"
-color = Color(1, 0, 0, 1)
-
-[sub_resource type="SyntaxHighlighter" id="SyntaxHighlighter_raeie"]
-script = ExtResource("7_7smn1")
-patterns = Array[ExtResource("6_th5th")]([SubResource("Resource_6kiq1"), SubResource("Resource_0r15m")])
-default_color = Color(1, 1, 1, 1)
-
 [node name="Main" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -166,9 +149,11 @@ layout_mode = 2
 size_flags_horizontal = 10
 text = "App Settings"
 
-[node name="CommandLine" parent="PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("5_blune")]
+[node name="CommandLine" type="TextEdit" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-syntax_highlighter = SubResource("SyntaxHighlighter_raeie")
+scroll_fit_content_height = true
+script = ExtResource("7_ouso4")
+metadata/_custom_type_script = "uid://bf2setmvp6xd6"
 
 [node name="TabContainer" type="TabContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
