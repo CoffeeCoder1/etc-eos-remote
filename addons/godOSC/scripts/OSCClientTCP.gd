@@ -20,34 +20,65 @@ extends Node
 @export var reconnect_timeout: float = 5.0:
 	set(new_reconnect_timeout):
 		reconnect_timeout = _on_reconnect_timeout_change(new_reconnect_timeout)
+## Regular expression that causes matched addresses to not be written to the [member _incoming_messages]
+## dictionary.
+@export var ignore_expression: String:
+	set(new_ignore_expression):
+		ignore_expression = _on_ignore_expression_change(new_ignore_expression)
 
 ## Emitted when a connection is made to a server and messages can be sent.
 signal connected
 ## Emitted when the connection to the server is lost.
 signal disconnected
+## Emitted when a message has been recieved from the server.
+signal message_recieved(address: String, args: Array)
 
 ## A dictionary containing all recieved messages.
-var incoming_messages := {}
+var _incoming_messages := {}
+## A mutex used to block access to the [member _incoming_messages] dictionary.
+var _messages_mutex: Mutex
 
+## General mutex used for signalling things to threads.
+var _mutex: Mutex
+## Tells threads to exit.
+var _exit_threads: bool = false
+## Used to store data that's waiting to be parsed.
+var _incoming_packets: Array[PackedByteArray]
+## Mutex used for the [member _incoming_packets] array
+var _incoming_packets_mutex: Mutex
 ## The StreamPeer used to communicate with the server.
 var client: StreamPeerTCP
+## Thread used for parsing messages.
+var parser_thread: Thread
 ## Used to attempt to reconnect after a delay.
 var reconnect_timer: Timer
 ## Was the server connected the last time we checked? Used so the connected signal is only sent once.
 var last_connected: bool
+## Used to ignore certain addresses when writing to the [member incoming_messages] dictionary.
+var ignore_regex: RegEx
 
 
 func _init() -> void:
 	client = StreamPeerTCP.new()
 	
+	_mutex = Mutex.new()
+	_messages_mutex = Mutex.new()
+	_incoming_packets_mutex = Mutex.new()
+	parser_thread = Thread.new()
+	
 	reconnect_timer = Timer.new()
 	add_child(reconnect_timer)
 	reconnect_timer.timeout.connect(_reconnect_socket)
+	
+	ignore_regex = RegEx.new()
 
 
 func _ready() -> void:
 	# Initialize things
 	_on_reconnect_timeout_change(reconnect_timeout)
+	
+	# Start the parser thread
+	parser_thread.start(_parse)
 	
 	# Try to connect to the server
 	connect_socket(ip_address, port)
@@ -55,7 +86,16 @@ func _ready() -> void:
 
 func _process(_delta):
 	client.poll()
-	_parse()
+	
+	if client.get_status() == StreamPeerTCP.STATUS_CONNECTED:
+		if client.get_available_bytes() > 0:
+			var data = client.get_data(client.get_available_bytes())
+			# Parse data if it was recieved correctly
+			if data[0] == Error.OK:
+				var packets: Array[PackedByteArray] = _parse_packets(data[1])
+				_incoming_packets_mutex.lock()
+				_incoming_packets.append_array(packets)
+				_incoming_packets_mutex.unlock()
 	
 	# Start the reconnection timer if disconnected from the server
 	if (client.get_status() == StreamPeerTCP.STATUS_NONE || client.get_status() == StreamPeerTCP.STATUS_ERROR):
@@ -69,10 +109,21 @@ func _process(_delta):
 	if (current_connected != last_connected):
 		# If it has been, emit the corresponding signal.
 		if current_connected:
+			print("Connected to server")
 			connected.emit()
 		else:
+			print("Disconnected from server!")
 			disconnected.emit()
 		last_connected = current_connected
+
+
+func _exit_tree():
+	# Tell threads to exit
+	_mutex.lock()
+	_exit_threads = true
+	_mutex.unlock()
+	
+	parser_thread.wait_to_finish()
 
 
 ## Connect to an OSC server. Can only connect to one OSC server at a time.
@@ -90,6 +141,23 @@ func close_socket() -> void:
 func _reconnect_socket() -> void:
 	print("Attempting reconnect!")
 	connect_socket(ip_address, port)
+
+
+## Parses incoming OSC packets. This is intended to be run in a thread internal to OSCServerTCP.
+func _parse() -> void:
+	while true:
+		_mutex.lock()
+		var should_exit = _exit_threads
+		_mutex.unlock()
+		
+		if should_exit:
+			break
+		
+		while !_incoming_packets.is_empty():
+			_incoming_packets_mutex.lock()
+			var packet = _incoming_packets.pop_front()
+			_incoming_packets_mutex.unlock()
+			call_thread_safe("_parse_message", packet)
 
 
 ## Process a message to be sent. Returns a PackedByteArray to be sent to the server.
@@ -153,16 +221,12 @@ func send_message(osc_address : String, args : Array) -> void:
 	client.put_data(packet)
 
 
-## Parses an OSC packet. This is not intended to be called directly outside of the OSCServerTCP.
-func _parse() -> void:
-	if client.get_status() == StreamPeerTCP.STATUS_CONNECTED:
-		if client.get_available_bytes() > 0:
-			var data = client.get_data(client.get_available_bytes())
-			# Parse data if it was recieved correctly
-			if data[0] == Error.OK:
-				var packets: Array[PackedByteArray] = _parse_packets(data[1])
-				for packet in packets:
-					_parse_message(packet)
+## Gets the [member _incoming_messages] dictionary.
+func get_incoming_messages() -> Dictionary:
+	_messages_mutex.lock()
+	var messages = _incoming_messages
+	_messages_mutex.unlock()
+	return messages
 
 
 ## Parses packets out of SLIP encoded data.
@@ -185,8 +249,8 @@ func _parse_packets(data: PackedByteArray) -> Array[PackedByteArray]:
 ## Parses the data out of an OSC packet.
 func _parse_message(packet: PackedByteArray):
 	var comma_index = packet.find(44)
-	var address = packet.slice(0, comma_index).get_string_from_ascii()
-	var args = packet.slice(comma_index, packet.size())
+	var address: String = packet.slice(0, comma_index).get_string_from_ascii()
+	var args := packet.slice(comma_index, packet.size())
 	var tags = args.get_string_from_ascii()
 	var vals = []
 
@@ -213,12 +277,25 @@ func _parse_message(packet: PackedByteArray):
 			98:  #b: blob
 				vals.append(args)
 	
-	incoming_messages[address] = vals
+	message_recieved.emit(address, vals)
+	
+	if not ignore_regex.search(address):
+		_messages_mutex.lock()
+		_incoming_messages[address] = vals
+		_messages_mutex.unlock()
 
 
 ## Sets the reconnect timeout.
 func _on_reconnect_timeout_change(timeout: float) -> float:
 	if is_instance_valid(reconnect_timer):
-			reconnect_timer.wait_time = reconnect_timeout
+			reconnect_timer.wait_time = timeout
 	
 	return timeout
+
+
+## Sets the ignore regex.
+func _on_ignore_expression_change(regex: String) -> String:
+	if is_instance_valid(reconnect_timer):
+			ignore_regex.compile(regex)
+	
+	return regex
