@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6uvcbcgtv8pl"]
+
+[ext_resource type="Script" uid="uid://c137rf533q5c4" path="res://scenes/elements/channel_fader/channel_fader.gd" id="1_bkaqq"]
+
+[node name="ChannelFader" type="PanelContainer"]
+custom_minimum_size = Vector2(75, 0)
+script = ExtResource("1_bkaqq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Slider" type="VSlider" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 3
+
+[connection signal="value_changed" from="VBoxContainer/Slider" to="." method="_on_slider_value_changed"]

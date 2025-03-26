@@ -1,6 +1,5 @@
-[gd_scene load_steps=198 format=3 uid="uid://lowydp6qwkqd"]
+[gd_scene load_steps=197 format=3 uid="uid://lowydp6qwkqd"]
 
-[ext_resource type="PackedScene" uid="uid://c3jfg213w48yq" path="res://scenes/elements/command_line/command_line.tscn" id="1_uxgmw"]
 [ext_resource type="Script" uid="uid://23k3hiebxmue" path="res://scenes/messages/osc_key.gd" id="2_v3vkr"]
 [ext_resource type="Script" uid="uid://cksbln4qxjewp" path="res://scenes/messages/osc_softkey.gd" id="4_pndv3"]
 [ext_resource type="PackedScene" uid="uid://cy73ew523w6b4" path="res://scenes/elements/wheel/wheel.tscn" id="6_66y7a"]
@@ -587,9 +586,6 @@ events = [SubResource("InputEventAction_2p0so")]
 theme_override_styles/panel = SubResource("StyleBoxEmpty_h4bam")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 2
-
-[node name="CommandLine" parent="VBoxContainer" instance=ExtResource("1_uxgmw")]
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
