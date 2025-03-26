@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cv50y2jxdoasn"]
+[gd_scene load_steps=6 format=3 uid="uid://cv50y2jxdoasn"]
 
 [ext_resource type="Script" uid="uid://ftcp1lleiko7" path="res://scenes/panels/settings/settings_menu.gd" id="1_x2vtn"]
+[ext_resource type="Script" uid="uid://cgch7g48jivtg" path="res://scenes/elements/status_label/status_label.gd" id="2_cqeos"]
+[ext_resource type="Script" uid="uid://bp8o3n3xjh53g" path="res://scenes/elements/ping_label/ping_label.gd" id="3_7iyln"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h4bam"]
 
@@ -67,6 +69,21 @@ custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 max_value = 65535.0
+
+[node name="StatusContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="StatusLabel" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/StatusContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+vertical_alignment = 1
+script = ExtResource("2_cqeos")
+metadata/_custom_type_script = "uid://cgch7g48jivtg"
+
+[node name="PingLabel" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/StatusContainer"]
+layout_mode = 2
+script = ExtResource("3_7iyln")
+metadata/_custom_type_script = "uid://bp8o3n3xjh53g"
 
 [node name="UserContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
