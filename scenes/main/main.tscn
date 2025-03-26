@@ -1,9 +1,7 @@
-[gd_scene load_steps=22 format=3 uid="uid://b1p8ak2bb83bq"]
+[gd_scene load_steps=12 format=3 uid="uid://b1p8ak2bb83bq"]
 
 [ext_resource type="Script" uid="uid://drhpx2eyg21j" path="res://scenes/main/panel_container.gd" id="1_ltf1v"]
-[ext_resource type="FontFile" uid="uid://df16t0vkt0ont" path="res://assets/fonts/noto_sans/NotoSans-VariableFont_wdth,wght.ttf" id="1_yyfjg"]
 [ext_resource type="Script" uid="uid://c2cwigs4cceo4" path="res://scenes/messages/osc_label.gd" id="2_6h2ie"]
-[ext_resource type="FontFile" uid="uid://dpqtehi0nif5p" path="res://assets/fonts/noto_emoji/NotoEmoji-VariableFont_wght.ttf" id="2_b1x3f"]
 [ext_resource type="PackedScene" uid="uid://cv50y2jxdoasn" path="res://scenes/panels/settings/settings.tscn" id="2_w362o"]
 [ext_resource type="PackedScene" uid="uid://5rbtyjxu8hl4" path="res://scenes/panels/wheels/wheels.tscn" id="4_jlbm2"]
 [ext_resource type="PackedScene" uid="uid://lowydp6qwkqd" path="res://scenes/panels/keypad/keypad.tscn" id="5_j6y4i"]
@@ -11,88 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://cv557earf34nf" path="res://scenes/panels/faders/faders.tscn" id="7_ecdne"]
 [ext_resource type="Script" uid="uid://bf2setmvp6xd6" path="res://scenes/elements/command_line/command_line.gd" id="7_ouso4"]
 [ext_resource type="PackedScene" uid="uid://b67u4htf1iop4" path="res://scenes/panels/channels/channels.tscn" id="8_b1x3f"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5n5nr"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.1, 0.1, 0.1, 0.3)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.8, 0.8, 0.8, 0.184314)
-corner_detail = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oopuq"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(1, 1, 1, 0.75)
-draw_center = false
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-corner_detail = 5
-expand_margin_left = 2.0
-expand_margin_top = 2.0
-expand_margin_right = 2.0
-expand_margin_bottom = 2.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j64ox"]
-bg_color = Color(0.167451, 0.167451, 0.167451, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.4123, 0.39294, 0.440007, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4f643"]
-bg_color = Color(0, 0, 0, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.4123, 0.39294, 0.440007, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_80rpq"]
-bg_color = Color(0.163861, 0.163861, 0.163861, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.74127, 0.446711, 5.77569e-07, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_11fej"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.1, 0.1, 0.1, 0.6)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.4123, 0.39294, 0.440007, 1)
-corner_detail = 5
-
-[sub_resource type="FontVariation" id="FontVariation_a8run"]
-fallbacks = Array[Font]([ExtResource("2_b1x3f")])
-base_font = ExtResource("1_yyfjg")
-
-[sub_resource type="Theme" id="Theme_tq8lr"]
-default_font = SubResource("FontVariation_a8run")
-Button/font_sizes/font_size = 12
-Button/styles/disabled = SubResource("StyleBoxFlat_5n5nr")
-Button/styles/focus = SubResource("StyleBoxFlat_oopuq")
-Button/styles/hover = SubResource("StyleBoxFlat_j64ox")
-Button/styles/normal = SubResource("StyleBoxFlat_4f643")
-Button/styles/pressed = SubResource("StyleBoxFlat_80rpq")
-Label/styles/normal = SubResource("StyleBoxFlat_4f643")
-LineEdit/styles/normal = SubResource("StyleBoxFlat_11fej")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_45cpf"]
 bg_color = Color(0.149475, 0.149475, 0.149474, 1)
@@ -106,7 +22,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_tq8lr")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1

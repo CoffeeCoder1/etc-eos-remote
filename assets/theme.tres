@@ -1,0 +1,86 @@
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://dyscxbc331e2o"]
+
+[ext_resource type="FontFile" uid="uid://df16t0vkt0ont" path="res://assets/fonts/noto_sans/NotoSans-VariableFont_wdth,wght.ttf" id="1_wl1kw"]
+[ext_resource type="FontFile" uid="uid://dpqtehi0nif5p" path="res://assets/fonts/noto_emoji/NotoEmoji-VariableFont_wght.ttf" id="2_lu33j"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5n5nr"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.3)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.8, 0.8, 0.8, 0.184314)
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oopuq"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j64ox"]
+bg_color = Color(0.167451, 0.167451, 0.167451, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.4123, 0.39294, 0.440007, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4f643"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.4123, 0.39294, 0.440007, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_80rpq"]
+bg_color = Color(0.163861, 0.163861, 0.163861, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.74127, 0.446711, 5.77569e-07, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_11fej"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.4123, 0.39294, 0.440007, 1)
+corner_detail = 5
+
+[sub_resource type="FontVariation" id="FontVariation_a8run"]
+fallbacks = Array[Font]([ExtResource("2_lu33j")])
+base_font = ExtResource("1_wl1kw")
+
+[resource]
+default_font = SubResource("FontVariation_a8run")
+Button/font_sizes/font_size = 12
+Button/styles/disabled = SubResource("StyleBoxFlat_5n5nr")
+Button/styles/focus = SubResource("StyleBoxFlat_oopuq")
+Button/styles/hover = SubResource("StyleBoxFlat_j64ox")
+Button/styles/normal = SubResource("StyleBoxFlat_4f643")
+Button/styles/pressed = SubResource("StyleBoxFlat_80rpq")
+Label/styles/normal = SubResource("StyleBoxFlat_4f643")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_11fej")

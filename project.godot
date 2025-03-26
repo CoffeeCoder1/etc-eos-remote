@@ -32,6 +32,10 @@ window/stretch/aspect="expand"
 
 enabled=PackedStringArray("res://addons/godOSC/plugin.cfg")
 
+[gui]
+
+theme/custom="uid://dyscxbc331e2o"
+
 [input]
 
 keypad_snapshot={
