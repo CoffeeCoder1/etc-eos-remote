@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cxyrlypvigh4a"]
+[gd_scene load_steps=7 format=3 uid="uid://cxyrlypvigh4a"]
 
 [ext_resource type="Script" uid="uid://23k3hiebxmue" path="res://scenes/messages/osc_key.gd" id="2_67du2"]
+[ext_resource type="Script" uid="uid://c2cwigs4cceo4" path="res://scenes/messages/osc_label.gd" id="4_helww"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_oqvbd"]
 action = &"keypad_back"
@@ -22,11 +23,27 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_tab_index = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 2
-alignment = 1
+columns = 2
 
-[node name="BackKey" type="Control" parent="VBoxContainer"]
+[node name="ActiveCueLabel" type="Label" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("4_helww")
+feedback_mode = 2
+feedback_address = "/eos/out/active/cue/text"
+metadata/_custom_type_script = "uid://c2cwigs4cceo4"
+
+[node name="PendingCueLabel" type="Label" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("4_helww")
+feedback_mode = 2
+feedback_address = "/eos/out/pending/cue/text"
+metadata/_custom_type_script = "uid://c2cwigs4cceo4"
+
+[node name="BackKey" type="Control" parent="GridContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 script = ExtResource("2_67du2")
@@ -35,9 +52,8 @@ key_label = "Stop / Back"
 key_shortcut = SubResource("Shortcut_helww")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
-[node name="GoKey" type="Control" parent="VBoxContainer"]
+[node name="GoKey" type="Control" parent="GridContainer"]
 layout_mode = 2
-size_flags_vertical = 3
 script = ExtResource("2_67du2")
 key_string = "go_0"
 key_label = "Go"
