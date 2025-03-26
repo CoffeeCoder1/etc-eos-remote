@@ -1,6 +1,6 @@
 extends Node
 
-## Emitted when the app connects to a server
+## Emitted when the app connects to a server.
 signal connected
 ## Emitted when the app disconnects from a server.
 signal disconnected
@@ -12,6 +12,7 @@ signal disconnected
 func _ready() -> void:
 	# Set up signals.
 	osc_client_tcp.connected.connect(connected.emit)
+	osc_client_tcp.connected.connect(_setup)
 	osc_client_tcp.disconnected.connect(disconnected.emit)
 	
 	AppSettings.ip_address_set.connect(_on_settings_ip_address_set)
@@ -40,3 +41,8 @@ func _on_settings_port_set(new_port: int) -> void:
 
 func _on_settings_user_id_set(new_user_id: int) -> void:
 	osc_user.user_number = new_user_id
+
+
+## Sends setup messages to the EOS console. This sets up connection details like feedback.
+func _setup() -> void:
+	osc_client_tcp.send_message("/eos/subscribe", [1])
