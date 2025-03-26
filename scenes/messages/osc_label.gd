@@ -16,4 +16,4 @@ func _ready() -> void:
 
 
 func _on_osc_feedback(value):
-	text = value[0]
+	text = str(value[0])
