@@ -9,7 +9,7 @@ var last_state: Array
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	var state: Array = OSCGlobals.get_user().target_client.incoming_messages.get("/eos/out/event/state", [])
+	var state: Array = OSCGlobals.get_client().get_incoming_messages().get("/eos/out/event/state", [])
 	# Has the state changed?
 	if state != last_state:
 		# Remove old Tweens

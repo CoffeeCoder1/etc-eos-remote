@@ -28,13 +28,13 @@ func send_message(osc_message: String, args: Array) -> void:
 
 
 func get_feedback(osc_address: String) -> Array:
-	return target_client.incoming_messages.get(osc_recieve_prefix + "/" + str(user_number) + osc_address, [])
+	return target_client.get_incoming_messages().get(osc_recieve_prefix + "/" + str(user_number) + osc_address, [])
 
 
 ## Returns feedback for the osc address prefixed with the user that the console has sent out with the address `/eos/out/user`.
 func get_user_feedback(osc_address: String) -> Array:
-	return target_client.incoming_messages.get(osc_recieve_prefix + "/" + str(feedback_user) + osc_address, [])
+	return target_client.get_incoming_messages().get(osc_recieve_prefix + "/" + str(feedback_user) + osc_address, [])
 
 
 func get_global_feedback(osc_address: String) -> Array:
-	return target_client.incoming_messages.get(osc_address, [])
+	return target_client.get_incoming_messages().get(osc_address, [])
