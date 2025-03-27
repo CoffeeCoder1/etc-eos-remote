@@ -4,18 +4,6 @@ extends Node
 ## Client for sending and recieiving Open Sound Control messages over TCP. Use one OSCClientTCP per
 ## server you want to connect to.
 
-## The IP Address of the server to connect to.
-@export var ip_address: String = "127.0.0.1":
-	set(new_ip_address):
-		if ip_address != new_ip_address:
-			connect_socket(new_ip_address, port)
-		ip_address = new_ip_address
-## The port to connect to.
-@export var port: int = 4646:
-	set(new_port):
-		if port != new_port:
-			connect_socket(ip_address, new_port)
-		port = new_port
 ## How long to wait before attempting to reconnect to the server.
 @export var reconnect_timeout: float = 5.0:
 	set(new_reconnect_timeout):
@@ -25,6 +13,7 @@ extends Node
 @export var ignore_expression: String:
 	set(new_ignore_expression):
 		ignore_expression = _on_ignore_expression_change(new_ignore_expression)
+
 
 ## Emitted when a connection is made to a server and messages can be sent.
 signal connected
@@ -52,10 +41,16 @@ var client: StreamPeerTCP
 var parser_thread: Thread
 ## Used to attempt to reconnect after a delay.
 var reconnect_timer: Timer
+## Should the client attempt to reconnect to the server?
+var reconnect_timer_enabled: bool = false
 ## Was the server connected the last time we checked? Used so the connected signal is only sent once.
 var last_connected: bool
 ## Used to ignore certain addresses when writing to the [member incoming_messages] dictionary.
 var ignore_regex: RegEx
+## The IP Address of the server to connect to.
+var _ip_address: String
+## The port to connect to.
+var _port: int
 
 
 func _init() -> void:
@@ -79,9 +74,6 @@ func _ready() -> void:
 	
 	# Start the parser thread
 	parser_thread.start(_parse)
-	
-	# Try to connect to the server
-	connect_socket(ip_address, port)
 
 
 func _process(_delta):
@@ -99,7 +91,7 @@ func _process(_delta):
 	
 	# Start the reconnection timer if disconnected from the server
 	if (client.get_status() == StreamPeerTCP.STATUS_NONE || client.get_status() == StreamPeerTCP.STATUS_ERROR):
-		if reconnect_timer.is_stopped():
+		if reconnect_timer.is_stopped() and reconnect_timer_enabled:
 			reconnect_timer.start()
 	else:
 		reconnect_timer.stop()
@@ -128,19 +120,29 @@ func _exit_tree():
 
 ## Connect to an OSC server. Can only connect to one OSC server at a time.
 func connect_socket(new_ip = "127.0.0.1", new_port = 4646) -> void:
+	_ip_address = new_ip
+	_port = new_port
+	_connect_socket(new_ip, new_port)
+
+
+func _connect_socket(new_ip = "127.0.0.1", new_port = 4646) -> void:
 	close_socket()
 	client.connect_to_host(new_ip, new_port)
+	reconnect_timer_enabled = true
 
 
 ## Disconnects from a server.
 func close_socket() -> void:
+	reconnect_timer_enabled = false
+	reconnect_timer.stop()
 	client.disconnect_from_host()
 
 
 ## Attempts to reconnect to the configured IP and port.
 func _reconnect_socket() -> void:
-	print("Attempting reconnect!")
-	connect_socket(ip_address, port)
+	if reconnect_timer_enabled:
+		print("Attempting reconnect!")
+		connect_socket(_ip_address, _port)
 
 
 ## Parses incoming OSC packets. This is intended to be run in a thread internal to OSCServerTCP.
