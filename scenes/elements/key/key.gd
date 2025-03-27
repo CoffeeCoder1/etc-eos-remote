@@ -14,7 +14,7 @@ class_name Key extends Control
 ## Enables the hold action.
 @export var hold_enabled: bool = false
 ## The time to wait before triggering a hold action.
-@export var hold_time: float = 2.0
+@export var hold_time: float = 1.5
 ## Shortcut used for the key.
 @export var key_shortcut: Shortcut
 ## Determines when the key is considered pressed.
