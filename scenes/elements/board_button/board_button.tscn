@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cmi6732dib0yf"]
 
 [ext_resource type="Script" uid="uid://v3hs13bjmojl" path="res://scenes/elements/board_button/board_button.gd" id="1_5eqg4"]
-[ext_resource type="StyleBox" uid="uid://3ie5kkauxydk" path="res://assets/styles/bordered_panel.tres" id="2_dd0wq"]
+[ext_resource type="Script" uid="uid://ddlrj8b0ww7ka" path="res://scenes/elements/key/key.gd" id="2_dd0wq"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5eqg4"]
 
@@ -22,14 +22,12 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+[node name="Key" type="Control" parent="MarginContainer"]
 layout_mode = 2
-theme_override_styles/panel = ExtResource("2_dd0wq")
+script = ExtResource("2_dd0wq")
+hold_enabled = true
+hold_time = null
+metadata/_custom_type_script = "uid://ddlrj8b0ww7ka"
 
-[node name="Button" type="Button" parent="MarginContainer/PanelContainer"]
-layout_mode = 2
-text = "Test Board"
-flat = true
-
-[connection signal="gui_input" from="MarginContainer/PanelContainer/Button" to="." method="_on_button_gui_input"]
-[connection signal="pressed" from="MarginContainer/PanelContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="held" from="MarginContainer/Key" to="." method="_on_key_held"]
+[connection signal="pressed" from="MarginContainer/Key" to="." method="_on_button_pressed"]

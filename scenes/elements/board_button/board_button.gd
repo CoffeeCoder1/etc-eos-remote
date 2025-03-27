@@ -5,7 +5,7 @@ signal board_selected
 ## Emitted when this board is selected for editing.
 signal board_edit
 
-@onready var button: Button = $MarginContainer/PanelContainer/Button
+@onready var key: Key = $MarginContainer/Key
 
 
 func _on_button_pressed() -> void:
@@ -13,10 +13,8 @@ func _on_button_pressed() -> void:
 
 
 func set_board(board: BoardSettings) -> void:
-	button.text = board.get_board_name()
+	key.text = board.get_board_name()
 
 
-func _on_button_gui_input(event: InputEvent) -> void:
-	if event is InputEventMouseButton:
-		if event.is_pressed() and event.button_index == MOUSE_BUTTON_RIGHT:
-			board_edit.emit()
+func _on_key_held() -> void:
+	board_edit.emit()

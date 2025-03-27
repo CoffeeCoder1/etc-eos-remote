@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cov5i5dcdtxb4"]
+[gd_scene load_steps=3 format=3 uid="uid://cov5i5dcdtxb4"]
 
 [ext_resource type="Script" uid="uid://c3sqxgw7bhvjs" path="res://scenes/elements/board_list/board_list.gd" id="1_iai02"]
+[ext_resource type="Script" uid="uid://ddlrj8b0ww7ka" path="res://scenes/elements/key/key.gd" id="2_0s2f0"]
 
 [node name="BoardList" type="PanelContainer"]
 offset_right = 82.0
@@ -18,10 +19,14 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="NewBoardButton" type="Button" parent="VBoxContainer/MarginContainer"]
-custom_minimum_size = Vector2(0, 50)
+[node name="NewBoardButton" type="Control" parent="VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
+script = ExtResource("2_0s2f0")
 text = "New Board"
+hold_enabled = null
+hold_time = null
+metadata/_custom_type_script = "uid://ddlrj8b0ww7ka"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
 layout_mode = 2

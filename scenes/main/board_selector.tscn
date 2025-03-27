@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dijj37wh3tb1q"]
+[gd_scene load_steps=5 format=3 uid="uid://dijj37wh3tb1q"]
 
 [ext_resource type="Script" uid="uid://bdmj31a7op7sm" path="res://scenes/main/board_selector.gd" id="1_0wjf1"]
 [ext_resource type="PackedScene" uid="uid://cov5i5dcdtxb4" path="res://scenes/elements/board_list/board_list.tscn" id="1_1h431"]
+[ext_resource type="Script" uid="uid://ddlrj8b0ww7ka" path="res://scenes/elements/key/key.gd" id="2_vgvjv"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hoj37"]
 
@@ -22,10 +23,15 @@ vertical_alignment = 1
 [node name="HBoxContainer" type="HBoxContainer" parent="HeaderContainer"]
 layout_mode = 2
 
-[node name="SettingsButton" type="Button" parent="HeaderContainer/HBoxContainer"]
+[node name="SettingsButton" type="Control" parent="HeaderContainer/HBoxContainer"]
+custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
 size_flags_horizontal = 10
+script = ExtResource("2_vgvjv")
 text = "App Settings"
+hold_enabled = null
+hold_time = null
+metadata/_custom_type_script = "uid://ddlrj8b0ww7ka"
 
 [node name="BoardList" parent="." instance=ExtResource("1_1h431")]
 layout_mode = 2

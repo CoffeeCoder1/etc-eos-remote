@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cv50y2jxdoasn"]
+[gd_scene load_steps=6 format=3 uid="uid://cv50y2jxdoasn"]
 
 [ext_resource type="Script" uid="uid://ftcp1lleiko7" path="res://scenes/menu/settings_menu/settings_menu.gd" id="1_hcp8u"]
 [ext_resource type="StyleBox" uid="uid://3ie5kkauxydk" path="res://assets/styles/bordered_panel.tres" id="2_xyafp"]
 [ext_resource type="Script" uid="uid://cgch7g48jivtg" path="res://scenes/elements/status_label/status_label.gd" id="3_l1dv6"]
 [ext_resource type="Script" uid="uid://bp8o3n3xjh53g" path="res://scenes/elements/ping_label/ping_label.gd" id="4_tnjte"]
+[ext_resource type="Script" uid="uid://ddlrj8b0ww7ka" path="res://scenes/elements/key/key.gd" id="5_qkvte"]
 
 [node name="SettingsMenu" type="PanelContainer"]
 theme_override_styles/panel = ExtResource("2_xyafp")
@@ -22,6 +23,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Settings"
+horizontal_alignment = 1
 
 [node name="StatusContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -70,9 +72,14 @@ popup/item_0/id = 0
 popup/item_1/text = "Absolute"
 popup/item_1/id = 1
 
-[node name="CloseButton" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="CloseButton" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
+script = ExtResource("5_qkvte")
 text = "Close"
+hold_enabled = null
+hold_time = null
+metadata/_custom_type_script = "uid://ddlrj8b0ww7ka"
 
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/UserContainer/UserEdit" to="." method="_on_user_selected"]
 [connection signal="item_selected" from="MarginContainer/VBoxContainer/WheelModeContainer/WheelModeSelector" to="." method="_on_wheel_mode_selector_item_selected"]

@@ -1,10 +1,12 @@
 @tool
 class_name AutoSizeLabel extends Label
 
+## The minimum font size to shrink to.
 @export var min_font_size := 8:
 	set(v):
 		min_font_size = clampi(v, 1, max_font_size)
 		update()
+## The maximum font size to expand to.
 @export var max_font_size := 16:
 	set(v):
 		max_font_size = clampi(v, min_font_size, 191)

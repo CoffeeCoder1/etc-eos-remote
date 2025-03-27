@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c6gfo3s3obep"]
+[gd_scene load_steps=4 format=3 uid="uid://c6gfo3s3obep"]
 
 [ext_resource type="Script" uid="uid://cxu8rxlrcyq0k" path="res://scenes/menu/board_menu/board_menu.gd" id="1_eotmk"]
 [ext_resource type="StyleBox" uid="uid://3ie5kkauxydk" path="res://assets/styles/bordered_panel.tres" id="2_n8qkb"]
+[ext_resource type="Script" uid="uid://ddlrj8b0ww7ka" path="res://scenes/elements/key/key.gd" id="3_er4sk"]
 
 [node name="BoardMenu" type="PanelContainer"]
 theme_override_styles/panel = ExtResource("2_n8qkb")
@@ -20,24 +21,38 @@ layout_mode = 2
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Menu"
+horizontal_alignment = 1
 
 [node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 columns = 2
 
-[node name="SettingsButton" type="Button" parent="MarginContainer/VBoxContainer/GridContainer"]
+[node name="SettingsButton" type="Control" parent="MarginContainer/VBoxContainer/GridContainer"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
+script = ExtResource("3_er4sk")
 text = "Settings"
+hold_enabled = null
+hold_time = null
+metadata/_custom_type_script = "uid://ddlrj8b0ww7ka"
 
-[node name="DisconnectButton" type="Button" parent="MarginContainer/VBoxContainer/GridContainer"]
+[node name="DisconnectButton" type="Control" parent="MarginContainer/VBoxContainer/GridContainer"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
+script = ExtResource("3_er4sk")
 text = "Disconnect"
+hold_enabled = null
+hold_time = null
+metadata/_custom_type_script = "uid://ddlrj8b0ww7ka"
 
-[node name="CloseButton" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="CloseButton" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
+script = ExtResource("3_er4sk")
 text = "Close"
+hold_enabled = null
+hold_time = null
+metadata/_custom_type_script = "uid://ddlrj8b0ww7ka"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/GridContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/GridContainer/DisconnectButton" to="." method="_on_disconnect_button_pressed"]

@@ -43,6 +43,7 @@ layout_mode = 2
 
 [node name="InterfaceContainer" parent="ModePanel/MarginContainer" instance=ExtResource("4_ow5a4")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 
 [node name="MenuContainer" parent="ModePanel" instance=ExtResource("7_hujxm")]

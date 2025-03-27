@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://48xlq7yvv4w8"]
+[gd_scene load_steps=11 format=3 uid="uid://48xlq7yvv4w8"]
 
 [ext_resource type="Script" uid="uid://c2cwigs4cceo4" path="res://scenes/elements/osc_label/osc_label.gd" id="1_s3137"]
 [ext_resource type="Script" uid="uid://b38w0b7qo5k54" path="res://scenes/main/interface.gd" id="1_yk08a"]
 [ext_resource type="Script" uid="uid://bf2setmvp6xd6" path="res://scenes/elements/command_line/command_line.gd" id="2_yk08a"]
+[ext_resource type="Script" uid="uid://ddlrj8b0ww7ka" path="res://scenes/elements/key/key.gd" id="3_3i7l4"]
 [ext_resource type="PackedScene" uid="uid://lowydp6qwkqd" path="res://scenes/panels/keypad/keypad.tscn" id="3_of58j"]
 [ext_resource type="PackedScene" uid="uid://cxyrlypvigh4a" path="res://scenes/panels/playback/playback.tscn" id="4_3i7l4"]
 [ext_resource type="PackedScene" uid="uid://5rbtyjxu8hl4" path="res://scenes/panels/wheels/wheels.tscn" id="5_kbwm3"]
@@ -12,7 +13,6 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hoj37"]
 
 [node name="Interface" type="VBoxContainer"]
-visible = false
 script = ExtResource("1_yk08a")
 
 [node name="HeaderContainer" type="PanelContainer" parent="."]
@@ -32,10 +32,15 @@ metadata/_custom_type_script = "uid://c2cwigs4cceo4"
 [node name="HBoxContainer" type="HBoxContainer" parent="HeaderContainer"]
 layout_mode = 2
 
-[node name="MenuButton" type="Button" parent="HeaderContainer/HBoxContainer"]
+[node name="MenuButton" type="Control" parent="HeaderContainer/HBoxContainer"]
+custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
 size_flags_horizontal = 10
+script = ExtResource("3_3i7l4")
 text = "Menu"
+hold_enabled = null
+hold_time = null
+metadata/_custom_type_script = "uid://ddlrj8b0ww7ka"
 
 [node name="CommandLine" type="TextEdit" parent="."]
 layout_mode = 2
