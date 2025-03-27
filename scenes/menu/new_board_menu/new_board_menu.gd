@@ -8,6 +8,7 @@ class_name NewBoardMenu extends Menu
 ## Emitted when a board is created and should be added to the list.
 signal create_board(board: BoardSettings)
 
+@onready var name_edit: LineEdit = %NameEdit
 @onready var ip_address_edit: LineEdit = %IPAddressEdit
 @onready var port_edit: SpinBox = %PortEdit
 
@@ -24,6 +25,7 @@ func _on_cancel_button_pressed() -> void:
 
 func _on_create_button_pressed() -> void:
 	var board := BoardSettings.new()
+	board.set_board_name(name_edit.text)
 	board.set_ip_address(ip_address_edit.text)
 	board.set_port(port_edit.value)
 	create_board.emit(board)

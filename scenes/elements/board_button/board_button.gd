@@ -13,7 +13,7 @@ func _on_button_pressed() -> void:
 
 
 func set_board(board: BoardSettings) -> void:
-	button.text = board.get_ip_address()
+	button.text = board.get_board_name()
 
 
 func _on_button_gui_input(event: InputEvent) -> void:
