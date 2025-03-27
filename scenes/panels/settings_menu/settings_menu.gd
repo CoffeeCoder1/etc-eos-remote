@@ -1,21 +1,20 @@
-extends PanelContainer
+class_name SettingsMenu extends Menu
 
 @onready var user_edit: SpinBox = %UserEdit
 @onready var wheel_mode_selector: OptionButton = %WheelModeSelector
 
 
-func _on_settings_button_pressed() -> void:
+func _ready() -> void:
 	user_edit.set_value_no_signal(AppSettings.settings.get_user_id())
 	match AppSettings.settings.get_wheel_mode():
 		Wheel.WheelMode.RELATIVE:
 			wheel_mode_selector.select(0)
 		Wheel.WheelMode.ABSOLUTE:
 			wheel_mode_selector.select(1)
-	show()
 
 
 func _on_close_button_pressed() -> void:
-	hide()
+	close()
 
 
 func _on_user_selected(user_number: int) -> void:

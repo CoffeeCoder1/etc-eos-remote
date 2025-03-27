@@ -1,4 +1,4 @@
-extends PanelContainer
+class_name NewBoardMenu extends Menu
 
 ## The port to show by default when displaying the menu.
 @export var default_port: int = 3037
@@ -14,17 +14,12 @@ signal create_board(board: BoardSettings)
 
 func _ready() -> void:
 	ip_address_edit.placeholder_text = default_ip_address
-
-
-## Sets up the menu and displays it.
-func _on_new_board_button_pressed() -> void:
-	port_edit.set_value_no_signal(default_port)
 	ip_address_edit.text = default_ip_address
-	show()
+	port_edit.set_value_no_signal(default_port)
 
 
 func _on_cancel_button_pressed() -> void:
-	hide()
+	close()
 
 
 func _on_create_button_pressed() -> void:
@@ -33,4 +28,4 @@ func _on_create_button_pressed() -> void:
 	board.set_port(port_edit.value)
 	create_board.emit(board)
 	
-	hide()
+	close()

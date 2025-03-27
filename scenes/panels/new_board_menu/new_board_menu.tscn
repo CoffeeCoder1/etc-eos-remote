@@ -3,70 +3,64 @@
 [ext_resource type="Script" uid="uid://ctpk1kf5uo5qr" path="res://scenes/panels/new_board_menu/new_board_menu.gd" id="1_ws166"]
 [ext_resource type="StyleBox" uid="uid://3ie5kkauxydk" path="res://assets/styles/bordered_panel.tres" id="2_b12uc"]
 
-[node name="NewBoardMenuContainer" type="PanelContainer"]
+[node name="NewBoardMenu" type="PanelContainer"]
+theme_override_styles/panel = ExtResource("2_b12uc")
 script = ExtResource("1_ws166")
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-layout_mode = 2
-
-[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
-layout_mode = 2
-theme_override_styles/panel = ExtResource("2_b12uc")
-
-[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Add Board"
 
-[node name="IPAddressContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="IPAddressContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="IPAddressLabel" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/IPAddressContainer"]
+[node name="IPAddressLabel" type="Label" parent="MarginContainer/VBoxContainer/IPAddressContainer"]
 layout_mode = 2
 text = "IP Address"
 
-[node name="IPAddressEdit" type="LineEdit" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/IPAddressContainer"]
+[node name="IPAddressEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/IPAddressContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 placeholder_text = "127.0.0.1"
 
-[node name="PortContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="PortContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="PortLabel" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/PortContainer"]
+[node name="PortLabel" type="Label" parent="MarginContainer/VBoxContainer/PortContainer"]
 layout_mode = 2
 text = "Port"
 
-[node name="PortEdit" type="SpinBox" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/PortContainer"]
+[node name="PortEdit" type="SpinBox" parent="MarginContainer/VBoxContainer/PortContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 max_value = 65535.0
 
-[node name="ButtonContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="ButtonContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 
-[node name="CancelButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonContainer"]
+[node name="CancelButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Close"
 
-[node name="CreateButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonContainer"]
+[node name="CreateButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Add"
 
-[connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonContainer/CancelButton" to="." method="_on_cancel_button_pressed"]
-[connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonContainer/CreateButton" to="." method="_on_create_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonContainer/CancelButton" to="." method="_on_cancel_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonContainer/CreateButton" to="." method="_on_create_button_pressed"]

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://f7ijs561m2xy"]
+
+[ext_resource type="Script" uid="uid://du5j223rouots" path="res://scenes/menu/menu_container/menu_container.gd" id="1_4tc88"]
+
+[node name="MenuContainer" type="PanelContainer"]
+visible = false
+script = ExtResource("1_4tc88")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 2
