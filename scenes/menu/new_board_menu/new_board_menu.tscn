@@ -77,8 +77,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 script = ExtResource("3_4ey6c")
 text = "Close"
-hold_enabled = null
-hold_time = null
 metadata/_custom_type_script = "uid://ddlrj8b0ww7ka"
 
 [node name="CreateButton" type="Control" parent="MarginContainer/VBoxContainer/ButtonContainer"]
@@ -86,8 +84,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 script = ExtResource("3_4ey6c")
 text = "Add"
-hold_enabled = null
-hold_time = null
 metadata/_custom_type_script = "uid://ddlrj8b0ww7ka"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonContainer/CancelButton" to="." method="_on_cancel_button_pressed"]

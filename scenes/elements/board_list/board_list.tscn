@@ -24,8 +24,6 @@ custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 script = ExtResource("2_0s2f0")
 text = "New Board"
-hold_enabled = null
-hold_time = null
 metadata/_custom_type_script = "uid://ddlrj8b0ww7ka"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]

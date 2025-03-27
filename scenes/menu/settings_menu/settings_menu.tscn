@@ -77,8 +77,6 @@ custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 script = ExtResource("5_qkvte")
 text = "Close"
-hold_enabled = null
-hold_time = null
 metadata/_custom_type_script = "uid://ddlrj8b0ww7ka"
 
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/UserContainer/UserEdit" to="." method="_on_user_selected"]

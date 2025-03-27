@@ -32,8 +32,6 @@ custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 script = ExtResource("3_er4sk")
 text = "Settings"
-hold_enabled = null
-hold_time = null
 metadata/_custom_type_script = "uid://ddlrj8b0ww7ka"
 
 [node name="DisconnectButton" type="Control" parent="MarginContainer/VBoxContainer/GridContainer"]
@@ -41,8 +39,6 @@ custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 script = ExtResource("3_er4sk")
 text = "Disconnect"
-hold_enabled = null
-hold_time = null
 metadata/_custom_type_script = "uid://ddlrj8b0ww7ka"
 
 [node name="CloseButton" type="Control" parent="MarginContainer/VBoxContainer"]
@@ -50,8 +46,6 @@ custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 script = ExtResource("3_er4sk")
 text = "Close"
-hold_enabled = null
-hold_time = null
 metadata/_custom_type_script = "uid://ddlrj8b0ww7ka"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/GridContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
