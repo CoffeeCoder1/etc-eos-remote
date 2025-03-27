@@ -74,7 +74,7 @@ func _on_osc_feedback(value: Array):
 	
 	$VBoxContainer/Label.text = parameter_name
 	$VBoxContainer/Value.text = str(round(value[2]))
-	$VBoxContainer/WheelBox/VSlider.set_value_no_signal(value[2])
+	wheel_box.set_value_feedback(value[2])
 	
 	max_button.address_prefix = "/param/" + osc_parameter_name
 	min_button.address_prefix = "/param/" + osc_parameter_name

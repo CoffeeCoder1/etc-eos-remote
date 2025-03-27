@@ -7,6 +7,7 @@ extends Control
 			v_slider.editable = not new_relative
 		if drag_active:
 			released.emit()
+		_absolute_held = false
 		relative = new_relative
 
 signal dragged(distance: float)
@@ -16,6 +17,10 @@ signal released
 @onready var v_slider: VSlider = $VSlider
 
 var drag_active: bool
+## The current value.
+var _value: float
+## Is the slider currently being held in absolute mode?
+var _absolute_held: bool
 
 
 func _ready() -> void:
@@ -34,6 +39,13 @@ func _gui_input(event: InputEvent):
 		elif event is InputEventMouseButton:
 			if not event.is_pressed():
 				released.emit()
+				
+				if not relative:
+					v_slider.set_value_no_signal(_value)
+	
+	if event is InputEventMouseButton:
+		if not relative:
+			_absolute_held = event.is_pressed()
 
 
 func _on_v_slider_value_changed(value: float) -> void:
@@ -48,3 +60,12 @@ func _on_dragged(distance: float) -> void:
 
 func _on_released() -> void:
 	drag_active = false
+
+
+## Sets the value feedback. Displayed immediately if in relative mode, waits until mouse release to
+## be displayed in absolute mode.
+func set_value_feedback(new_value: float) -> void:
+	_value = new_value
+	
+	if relative or not _absolute_held:
+		v_slider.set_value_no_signal(new_value)
