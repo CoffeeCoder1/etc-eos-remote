@@ -12,10 +12,13 @@ func _init() -> void:
 
 
 func _ready() -> void:
-	hide()
+	if OSCGlobals.get_client().is_connected:
+		_on_connected()
+	else:
+		_on_disconnected()
 	
-	OSCGlobals.get_client().connected.connect(_on_connected)
-	OSCGlobals.get_client().disconnected.connect(_on_disconnected)
+	OSCGlobals.connected.connect(_on_connected)
+	OSCGlobals.disconnected.connect(_on_disconnected)
 	OSCGlobals.get_client().message_recieved.connect(_on_message_recieved)
 	
 	timer.timeout.connect(_on_timer_timeout)

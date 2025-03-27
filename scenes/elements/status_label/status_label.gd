@@ -5,8 +5,13 @@ class_name StatusLabel extends Label
 
 
 func _ready() -> void:
-	OSCGlobals.get_client().connected.connect(_on_connected)
-	OSCGlobals.get_client().disconnected.connect(_on_disconnected)
+	if OSCGlobals.get_client().is_connected:
+		_on_connected()
+	else:
+		_on_disconnected()
+	
+	OSCGlobals.connected.connect(_on_connected)
+	OSCGlobals.disconnected.connect(_on_disconnected)
 
 
 func _on_connected() -> void:
