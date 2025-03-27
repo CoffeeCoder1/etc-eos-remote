@@ -18,4 +18,4 @@ func save_settings() -> void:
 
 func load_settings() -> void:
 	if FileAccess.file_exists(FILE_PATH):
-		settings = ResourceLoader.load(FILE_PATH)
+		settings = ResourceLoader.load(FILE_PATH, "Settings")

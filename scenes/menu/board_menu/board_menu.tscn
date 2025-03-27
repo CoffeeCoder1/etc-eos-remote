@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c6gfo3s3obep"]
 
-[ext_resource type="Script" uid="uid://cxu8rxlrcyq0k" path="res://scenes/panels/board_menu/board_menu.gd" id="1_eotmk"]
+[ext_resource type="Script" uid="uid://cxu8rxlrcyq0k" path="res://scenes/menu/board_menu/board_menu.gd" id="1_eotmk"]
 [ext_resource type="StyleBox" uid="uid://3ie5kkauxydk" path="res://assets/styles/bordered_panel.tres" id="2_n8qkb"]
 
 [node name="BoardMenu" type="PanelContainer"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cxyrlypvigh4a"]
 
-[ext_resource type="Script" uid="uid://23k3hiebxmue" path="res://scenes/messages/osc_key.gd" id="2_67du2"]
-[ext_resource type="Script" uid="uid://c2cwigs4cceo4" path="res://scenes/messages/osc_label.gd" id="4_helww"]
+[ext_resource type="Script" uid="uid://23k3hiebxmue" path="res://scenes/elements/osc_key/osc_key.gd" id="2_67du2"]
+[ext_resource type="Script" uid="uid://c2cwigs4cceo4" path="res://scenes/elements/osc_label/osc_label.gd" id="4_helww"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_oqvbd"]
 action = &"keypad_back"

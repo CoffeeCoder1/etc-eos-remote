@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://48xlq7yvv4w8"]
 
-[ext_resource type="Script" uid="uid://c2cwigs4cceo4" path="res://scenes/messages/osc_label.gd" id="1_s3137"]
+[ext_resource type="Script" uid="uid://c2cwigs4cceo4" path="res://scenes/elements/osc_label/osc_label.gd" id="1_s3137"]
 [ext_resource type="Script" uid="uid://b38w0b7qo5k54" path="res://scenes/main/interface.gd" id="1_yk08a"]
 [ext_resource type="Script" uid="uid://bf2setmvp6xd6" path="res://scenes/elements/command_line/command_line.gd" id="2_yk08a"]
 [ext_resource type="PackedScene" uid="uid://lowydp6qwkqd" path="res://scenes/panels/keypad/keypad.tscn" id="3_of58j"]
@@ -11,7 +11,7 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hoj37"]
 
-[node name="InterfaceContainer" type="VBoxContainer"]
+[node name="Interface" type="VBoxContainer"]
 visible = false
 script = ExtResource("1_yk08a")
 

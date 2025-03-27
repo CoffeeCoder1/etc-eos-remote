@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cov5i5dcdtxb4"]
 
-[ext_resource type="Script" uid="uid://c3sqxgw7bhvjs" path="res://scenes/panels/board_list/board_list.gd" id="1_iai02"]
+[ext_resource type="Script" uid="uid://c3sqxgw7bhvjs" path="res://scenes/elements/board_list/board_list.gd" id="1_iai02"]
 
 [node name="BoardList" type="PanelContainer"]
 offset_right = 82.0

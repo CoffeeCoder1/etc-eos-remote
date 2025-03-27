@@ -1,11 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://dijj37wh3tb1q"]
 
 [ext_resource type="Script" uid="uid://bdmj31a7op7sm" path="res://scenes/main/board_selector.gd" id="1_0wjf1"]
-[ext_resource type="PackedScene" uid="uid://cov5i5dcdtxb4" path="res://scenes/panels/board_list/board_list.tscn" id="1_1h431"]
+[ext_resource type="PackedScene" uid="uid://cov5i5dcdtxb4" path="res://scenes/elements/board_list/board_list.tscn" id="1_1h431"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hoj37"]
 
-[node name="BoardSelectorContainer" type="VBoxContainer"]
+[node name="BoardSelector" type="VBoxContainer"]
 script = ExtResource("1_0wjf1")
 
 [node name="HeaderContainer" type="PanelContainer" parent="."]
