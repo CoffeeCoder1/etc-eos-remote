@@ -1,7 +1,9 @@
-extends PanelContainer
+class_name ModePanel extends PanelContainer
 
-@export var live_color: Color
-@export var blind_color: Color
+## The UI color when in live mode.
+@export var live_color: Color = Color(0.149475, 0.149475, 0.149474, 1)
+## The UI color when in blind mode.
+@export var blind_color: Color = Color(0.0833569, 0.197115, 0.238439, 1)
 
 var color_tween: Tween
 var last_state: Array

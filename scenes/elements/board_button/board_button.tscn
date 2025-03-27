@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmi6732dib0yf"]
+
+[ext_resource type="Script" uid="uid://v3hs13bjmojl" path="res://scenes/elements/board_button/board_button.gd" id="1_5eqg4"]
+[ext_resource type="StyleBox" uid="uid://3ie5kkauxydk" path="res://assets/styles/bordered_panel.tres" id="2_dd0wq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5eqg4"]
+
+[node name="BoardButton" type="PanelContainer"]
+custom_minimum_size = Vector2(0, 75)
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 95.0
+offset_bottom = 80.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_5eqg4")
+script = ExtResource("1_5eqg4")
+metadata/_custom_type_script = "uid://v3hs13bjmojl"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_dd0wq")
+
+[node name="Button" type="Button" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+text = "Test Board"
+flat = true
+
+[connection signal="pressed" from="MarginContainer/PanelContainer/Button" to="." method="_on_button_pressed"]

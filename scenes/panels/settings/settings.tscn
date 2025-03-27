@@ -1,18 +1,11 @@
 [gd_scene load_steps=6 format=3 uid="uid://cv50y2jxdoasn"]
 
+[ext_resource type="StyleBox" uid="uid://3ie5kkauxydk" path="res://assets/styles/bordered_panel.tres" id="1_n7pth"]
 [ext_resource type="Script" uid="uid://ftcp1lleiko7" path="res://scenes/panels/settings/settings_menu.gd" id="1_x2vtn"]
 [ext_resource type="Script" uid="uid://cgch7g48jivtg" path="res://scenes/elements/status_label/status_label.gd" id="2_cqeos"]
 [ext_resource type="Script" uid="uid://bp8o3n3xjh53g" path="res://scenes/elements/ping_label/ping_label.gd" id="3_7iyln"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h4bam"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_we45e"]
-bg_color = Color(0.114897, 0.114897, 0.114897, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.521141, 0.521141, 0.52114, 1)
 
 [node name="SettingsContainer" type="PanelContainer"]
 theme_override_styles/panel = SubResource("StyleBoxEmpty_h4bam")
@@ -23,7 +16,7 @@ layout_mode = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_we45e")
+theme_override_styles/panel = ExtResource("1_n7pth")
 
 [node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer"]
 layout_mode = 2

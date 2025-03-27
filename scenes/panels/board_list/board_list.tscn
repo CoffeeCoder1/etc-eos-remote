@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://cov5i5dcdtxb4"]
+
+[ext_resource type="Script" uid="uid://c3sqxgw7bhvjs" path="res://scenes/panels/board_list/board_list.gd" id="1_iai02"]
+
+[node name="BoardList" type="PanelContainer"]
+offset_right = 82.0
+size_flags_vertical = 3
+script = ExtResource("1_iai02")
+metadata/_custom_type_script = "uid://c3sqxgw7bhvjs"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="BoardContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
