@@ -26,7 +26,6 @@ theme_override_constants/margin_bottom = 5
 layout_mode = 2
 script = ExtResource("2_dd0wq")
 hold_enabled = true
-hold_time = null
 metadata/_custom_type_script = "uid://ddlrj8b0ww7ka"
 
 [connection signal="held" from="MarginContainer/Key" to="." method="_on_key_held"]

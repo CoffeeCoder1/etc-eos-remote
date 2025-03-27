@@ -29,8 +29,6 @@ layout_mode = 2
 size_flags_horizontal = 10
 script = ExtResource("2_vgvjv")
 text = "App Settings"
-hold_enabled = null
-hold_time = null
 metadata/_custom_type_script = "uid://ddlrj8b0ww7ka"
 
 [node name="BoardList" parent="." instance=ExtResource("1_1h431")]

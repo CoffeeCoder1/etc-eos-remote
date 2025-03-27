@@ -55,7 +55,14 @@ var _force_on: bool
 ## Is the mouse hovering over the button?
 var hovering: bool
 ## Incremented to time the hold action.
-var _hold_timer: float = 0.0
+var _hold_timer: float = 0.0:
+	set(_new_hold_timer):
+		if is_instance_valid(_hold_progress_bar):
+			_hold_progress_bar.value = _new_hold_timer / hold_time
+		
+		_hold_timer = _new_hold_timer
+## ProgressBar used to show the hold timer progress.
+var _hold_progress_bar: ProgressBar
 
 
 func _init() -> void:
@@ -71,6 +78,15 @@ func _init() -> void:
 	_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	_panel_container.add_child(_label, false, Node.INTERNAL_MODE_FRONT)
+	
+	_hold_progress_bar = ProgressBar.new()
+	_hold_progress_bar.max_value = 1.0
+	_hold_progress_bar.show_percentage = false
+	_hold_progress_bar.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_hold_progress_bar.size_flags_vertical = Control.SIZE_FILL
+	_hold_progress_bar.size_flags_horizontal = Control.SIZE_FILL
+	_hold_progress_bar.add_theme_stylebox_override("background", StyleBoxEmpty.new())
+	_panel_container.add_child(_hold_progress_bar, false, Node.INTERNAL_MODE_FRONT)
 
 
 # Called when the node enters the scene tree for the first time.
@@ -173,6 +189,7 @@ func _on_input(is_pressed: bool) -> void:
 		draw_mode = DrawMode.DRAW_PRESSED
 	else:
 		draw_mode = DrawMode.DRAW_NORMAL
+		_hold_timer = 0.0
 	
 	queue_redraw()
 	
