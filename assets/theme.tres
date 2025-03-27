@@ -1,7 +1,9 @@
-[gd_resource type="Theme" load_steps=10 format=3 uid="uid://dyscxbc331e2o"]
+[gd_resource type="Theme" load_steps=13 format=3 uid="uid://dyscxbc331e2o"]
 
 [ext_resource type="FontFile" uid="uid://df16t0vkt0ont" path="res://assets/fonts/noto_sans/NotoSans-VariableFont_wdth,wght.ttf" id="1_wl1kw"]
+[ext_resource type="Texture2D" uid="uid://bmbd538xy75dd" path="res://assets/textures/fader/fader_knob_normal.svg" id="1_wycmq"]
 [ext_resource type="FontFile" uid="uid://dpqtehi0nif5p" path="res://assets/fonts/noto_emoji/NotoEmoji-VariableFont_wght.ttf" id="2_lu33j"]
+[ext_resource type="Texture2D" uid="uid://vaxw3mtb11up" path="res://assets/textures/fader/fader_knob_higlighted.svg" id="2_x2pqw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5n5nr"]
 content_margin_left = 4.0
@@ -70,6 +72,18 @@ border_width_bottom = 1
 border_color = Color(0.4123, 0.39294, 0.440007, 1)
 corner_detail = 5
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wycmq"]
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 6
+
 [sub_resource type="FontVariation" id="FontVariation_a8run"]
 fallbacks = Array[Font]([ExtResource("2_lu33j")])
 base_font = ExtResource("1_wl1kw")
@@ -84,3 +98,6 @@ Button/styles/normal = SubResource("StyleBoxFlat_4f643")
 Button/styles/pressed = SubResource("StyleBoxFlat_80rpq")
 Label/styles/normal = SubResource("StyleBoxFlat_4f643")
 LineEdit/styles/normal = SubResource("StyleBoxFlat_11fej")
+VSlider/icons/grabber = ExtResource("1_wycmq")
+VSlider/icons/grabber_highlight = ExtResource("2_x2pqw")
+VSlider/styles/slider = SubResource("StyleBoxFlat_wycmq")
