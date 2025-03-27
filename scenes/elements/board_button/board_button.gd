@@ -10,5 +10,5 @@ func _on_button_pressed() -> void:
 	board_selected.emit()
 
 
-func set_label(label: String) -> void:
-	button.text = label
+func set_board(board: BoardSettings) -> void:
+	button.text = board.get_ip_address()

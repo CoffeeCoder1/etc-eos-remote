@@ -48,7 +48,6 @@ theme_override_constants/margin_bottom = 10
 
 [node name="BoardSelectorContainer" type="VBoxContainer" parent="ModePanel/MarginContainer"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 
 [node name="HeaderContainer" type="PanelContainer" parent="ModePanel/MarginContainer/BoardSelectorContainer"]
@@ -75,6 +74,7 @@ layout_mode = 2
 
 [node name="InterfaceContainer" type="VBoxContainer" parent="ModePanel/MarginContainer"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 
 [node name="HeaderContainer" type="PanelContainer" parent="ModePanel/MarginContainer/InterfaceContainer"]
