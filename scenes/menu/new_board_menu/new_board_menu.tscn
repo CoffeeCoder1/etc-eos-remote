@@ -1,8 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://ytvtt68trcr8"]
+[gd_scene load_steps=8 format=3 uid="uid://ytvtt68trcr8"]
 
 [ext_resource type="Script" uid="uid://ctpk1kf5uo5qr" path="res://scenes/menu/new_board_menu/new_board_menu.gd" id="1_ws166"]
 [ext_resource type="StyleBox" uid="uid://3ie5kkauxydk" path="res://assets/styles/bordered_panel.tres" id="2_b12uc"]
 [ext_resource type="Script" uid="uid://ddlrj8b0ww7ka" path="res://scenes/elements/key/key.gd" id="3_4ey6c"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_xbgbx"]
+action = &"menu_cancel"
+
+[sub_resource type="Shortcut" id="Shortcut_04b5y"]
+events = [SubResource("InputEventAction_xbgbx")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_4ey6c"]
+action = &"menu_accept"
+
+[sub_resource type="Shortcut" id="Shortcut_xbgbx"]
+events = [SubResource("InputEventAction_4ey6c")]
 
 [node name="NewBoardMenu" type="PanelContainer"]
 theme_override_styles/panel = ExtResource("2_b12uc")
@@ -77,6 +89,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 script = ExtResource("3_4ey6c")
 text = "Close"
+key_shortcut = SubResource("Shortcut_04b5y")
 metadata/_custom_type_script = "uid://ddlrj8b0ww7ka"
 
 [node name="CreateButton" type="Control" parent="MarginContainer/VBoxContainer/ButtonContainer"]
@@ -84,6 +97,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 script = ExtResource("3_4ey6c")
 text = "Add"
+key_shortcut = SubResource("Shortcut_xbgbx")
 metadata/_custom_type_script = "uid://ddlrj8b0ww7ka"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonContainer/CancelButton" to="." method="_on_cancel_button_pressed"]
