@@ -43,6 +43,8 @@ var parser_thread: Thread
 var reconnect_timer: Timer
 ## Should the client attempt to reconnect to the server?
 var reconnect_timer_enabled: bool = false
+## Is the server currently connected?
+var is_connected: bool = false
 ## Was the server connected the last time we checked? Used so the connected signal is only sent once.
 var last_connected: bool
 ## Used to ignore certain addresses when writing to the [member incoming_messages] dictionary.
@@ -106,6 +108,7 @@ func _process(_delta):
 		else:
 			print("Disconnected from server!")
 			disconnected.emit()
+		is_connected = current_connected
 		last_connected = current_connected
 
 
