@@ -1,0 +1,74 @@
+[gd_scene load_steps=10 format=3 uid="uid://48xlq7yvv4w8"]
+
+[ext_resource type="Script" uid="uid://c2cwigs4cceo4" path="res://scenes/messages/osc_label.gd" id="1_s3137"]
+[ext_resource type="Script" uid="uid://b38w0b7qo5k54" path="res://scenes/main/interface.gd" id="1_yk08a"]
+[ext_resource type="Script" uid="uid://bf2setmvp6xd6" path="res://scenes/elements/command_line/command_line.gd" id="2_yk08a"]
+[ext_resource type="PackedScene" uid="uid://lowydp6qwkqd" path="res://scenes/panels/keypad/keypad.tscn" id="3_of58j"]
+[ext_resource type="PackedScene" uid="uid://cxyrlypvigh4a" path="res://scenes/panels/playback/playback.tscn" id="4_3i7l4"]
+[ext_resource type="PackedScene" uid="uid://5rbtyjxu8hl4" path="res://scenes/panels/wheels/wheels.tscn" id="5_kbwm3"]
+[ext_resource type="PackedScene" uid="uid://cv557earf34nf" path="res://scenes/panels/faders/faders.tscn" id="6_ngs4g"]
+[ext_resource type="PackedScene" uid="uid://b67u4htf1iop4" path="res://scenes/panels/channels/channels.tscn" id="7_g06vk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hoj37"]
+
+[node name="InterfaceContainer" type="VBoxContainer"]
+visible = false
+script = ExtResource("1_yk08a")
+
+[node name="HeaderContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+
+[node name="ShowNameLabel" type="Label" parent="HeaderContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hoj37")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_s3137")
+feedback_mode = 2
+feedback_address = "/eos/out/show/name"
+metadata/_custom_type_script = "uid://c2cwigs4cceo4"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HeaderContainer"]
+layout_mode = 2
+
+[node name="MenuButton" type="Button" parent="HeaderContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Menu"
+
+[node name="CommandLine" type="TextEdit" parent="."]
+layout_mode = 2
+scroll_fit_content_height = true
+script = ExtResource("2_yk08a")
+metadata/_custom_type_script = "uid://bf2setmvp6xd6"
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+current_tab = 0
+
+[node name="Keypad" parent="TabContainer" instance=ExtResource("3_of58j")]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Playback" parent="TabContainer" instance=ExtResource("4_3i7l4")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Wheels" parent="TabContainer" instance=ExtResource("5_kbwm3")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="Faders" parent="TabContainer" instance=ExtResource("6_ngs4g")]
+visible = false
+layout_mode = 2
+
+[node name="Channels" parent="TabContainer" instance=ExtResource("7_g06vk")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 4
+
+[connection signal="pressed" from="HeaderContainer/HBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]

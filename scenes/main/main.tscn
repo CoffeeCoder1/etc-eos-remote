@@ -1,22 +1,14 @@
-[gd_scene load_steps=15 format=3 uid="uid://b1p8ak2bb83bq"]
+[gd_scene load_steps=8 format=3 uid="uid://b1p8ak2bb83bq"]
 
 [ext_resource type="Script" uid="uid://drhpx2eyg21j" path="res://scenes/elements/mode_panel/mode_panel.gd" id="1_b1x3f"]
 [ext_resource type="Script" uid="uid://ekp0mc7qb8vd" path="res://scenes/main/main.gd" id="1_ouso4"]
-[ext_resource type="Script" uid="uid://c2cwigs4cceo4" path="res://scenes/messages/osc_label.gd" id="2_a8run"]
 [ext_resource type="PackedScene" uid="uid://cv50y2jxdoasn" path="res://scenes/panels/settings/settings.tscn" id="2_iuonh"]
-[ext_resource type="PackedScene" uid="uid://cov5i5dcdtxb4" path="res://scenes/panels/board_list/board_list.tscn" id="3_blune"]
-[ext_resource type="Script" uid="uid://bf2setmvp6xd6" path="res://scenes/elements/command_line/command_line.gd" id="3_ouso4"]
-[ext_resource type="PackedScene" uid="uid://lowydp6qwkqd" path="res://scenes/panels/keypad/keypad.tscn" id="4_blune"]
-[ext_resource type="PackedScene" uid="uid://cxyrlypvigh4a" path="res://scenes/panels/playback/playback.tscn" id="5_th5th"]
-[ext_resource type="PackedScene" uid="uid://5rbtyjxu8hl4" path="res://scenes/panels/wheels/wheels.tscn" id="6_7smn1"]
-[ext_resource type="PackedScene" uid="uid://cv557earf34nf" path="res://scenes/panels/faders/faders.tscn" id="7_raeie"]
-[ext_resource type="PackedScene" uid="uid://b67u4htf1iop4" path="res://scenes/panels/channels/channels.tscn" id="8_hxu8e"]
+[ext_resource type="PackedScene" uid="uid://dijj37wh3tb1q" path="res://scenes/main/board_selector.tscn" id="3_blune"]
+[ext_resource type="PackedScene" uid="uid://48xlq7yvv4w8" path="res://scenes/main/interface.tscn" id="4_ow5a4"]
 [ext_resource type="PackedScene" uid="uid://c6gfo3s3obep" path="res://scenes/panels/menu/menu.tscn" id="9_a8run"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_45cpf"]
 bg_color = Color(0.149475, 0.149475, 0.149474, 1)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hoj37"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -46,92 +38,13 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="BoardSelectorContainer" type="VBoxContainer" parent="ModePanel/MarginContainer"]
+[node name="BoardSelectorContainer" parent="ModePanel/MarginContainer" instance=ExtResource("3_blune")]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="HeaderContainer" type="PanelContainer" parent="ModePanel/MarginContainer/BoardSelectorContainer"]
-layout_mode = 2
-
-[node name="TitleLabel" type="Label" parent="ModePanel/MarginContainer/BoardSelectorContainer/HeaderContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_styles/normal = SubResource("StyleBoxEmpty_hoj37")
-text = "ETC Eos Remote"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="ModePanel/MarginContainer/BoardSelectorContainer/HeaderContainer"]
-layout_mode = 2
-
-[node name="SettingsButton" type="Button" parent="ModePanel/MarginContainer/BoardSelectorContainer/HeaderContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 10
-text = "App Settings"
-
-[node name="BoardList" parent="ModePanel/MarginContainer/BoardSelectorContainer" instance=ExtResource("3_blune")]
-layout_mode = 2
-
-[node name="InterfaceContainer" type="VBoxContainer" parent="ModePanel/MarginContainer"]
+[node name="InterfaceContainer" parent="ModePanel/MarginContainer" instance=ExtResource("4_ow5a4")]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
-
-[node name="HeaderContainer" type="PanelContainer" parent="ModePanel/MarginContainer/InterfaceContainer"]
-layout_mode = 2
-
-[node name="ShowNameLabel" type="Label" parent="ModePanel/MarginContainer/InterfaceContainer/HeaderContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_styles/normal = SubResource("StyleBoxEmpty_hoj37")
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("2_a8run")
-feedback_mode = 2
-feedback_address = "/eos/out/show/name"
-metadata/_custom_type_script = "uid://c2cwigs4cceo4"
-
-[node name="HBoxContainer" type="HBoxContainer" parent="ModePanel/MarginContainer/InterfaceContainer/HeaderContainer"]
-layout_mode = 2
-
-[node name="MenuButton" type="Button" parent="ModePanel/MarginContainer/InterfaceContainer/HeaderContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 10
-text = "Menu"
-
-[node name="CommandLine" type="TextEdit" parent="ModePanel/MarginContainer/InterfaceContainer"]
-layout_mode = 2
-scroll_fit_content_height = true
-script = ExtResource("3_ouso4")
-metadata/_custom_type_script = "uid://bf2setmvp6xd6"
-
-[node name="TabContainer" type="TabContainer" parent="ModePanel/MarginContainer/InterfaceContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-current_tab = 0
-
-[node name="Keypad" parent="ModePanel/MarginContainer/InterfaceContainer/TabContainer" instance=ExtResource("4_blune")]
-layout_mode = 2
-metadata/_tab_index = 0
-
-[node name="Playback" parent="ModePanel/MarginContainer/InterfaceContainer/TabContainer" instance=ExtResource("5_th5th")]
-visible = false
-layout_mode = 2
-metadata/_tab_index = 1
-
-[node name="Wheels" parent="ModePanel/MarginContainer/InterfaceContainer/TabContainer" instance=ExtResource("6_7smn1")]
-visible = false
-layout_mode = 2
-metadata/_tab_index = 2
-
-[node name="Faders" parent="ModePanel/MarginContainer/InterfaceContainer/TabContainer" instance=ExtResource("7_raeie")]
-visible = false
-layout_mode = 2
-
-[node name="Channels" parent="ModePanel/MarginContainer/InterfaceContainer/TabContainer" instance=ExtResource("8_hxu8e")]
-visible = false
-layout_mode = 2
-metadata/_tab_index = 4
 
 [node name="MenuContainer" parent="ModePanel/MarginContainer" instance=ExtResource("9_a8run")]
 visible = false
@@ -142,6 +55,6 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 2
 
-[connection signal="pressed" from="ModePanel/MarginContainer/BoardSelectorContainer/HeaderContainer/HBoxContainer/SettingsButton" to="ModePanel/MarginContainer/SettingsContainer" method="_on_settings_button_pressed"]
-[connection signal="pressed" from="ModePanel/MarginContainer/InterfaceContainer/HeaderContainer/HBoxContainer/MenuButton" to="ModePanel/MarginContainer/MenuContainer" method="_on_menu_button_pressed"]
+[connection signal="settings_button_pressed" from="ModePanel/MarginContainer/BoardSelectorContainer" to="ModePanel/MarginContainer/SettingsContainer" method="_on_settings_button_pressed"]
+[connection signal="menu_button_pressed" from="ModePanel/MarginContainer/InterfaceContainer" to="ModePanel/MarginContainer/MenuContainer" method="_on_menu_button_pressed"]
 [connection signal="settings_pressed" from="ModePanel/MarginContainer/MenuContainer" to="ModePanel/MarginContainer/SettingsContainer" method="_on_settings_button_pressed"]

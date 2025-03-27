@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://dijj37wh3tb1q"]
+
+[ext_resource type="Script" uid="uid://bdmj31a7op7sm" path="res://scenes/main/board_selector.gd" id="1_0wjf1"]
+[ext_resource type="PackedScene" uid="uid://cov5i5dcdtxb4" path="res://scenes/panels/board_list/board_list.tscn" id="1_1h431"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hoj37"]
+
+[node name="BoardSelectorContainer" type="VBoxContainer"]
+script = ExtResource("1_0wjf1")
+
+[node name="HeaderContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="HeaderContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hoj37")
+text = "ETC Eos Remote"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HeaderContainer"]
+layout_mode = 2
+
+[node name="SettingsButton" type="Button" parent="HeaderContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "App Settings"
+
+[node name="BoardList" parent="." instance=ExtResource("1_1h431")]
+layout_mode = 2
+
+[connection signal="pressed" from="HeaderContainer/HBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
