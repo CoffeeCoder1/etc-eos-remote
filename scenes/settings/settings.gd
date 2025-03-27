@@ -44,3 +44,8 @@ func get_board_list() -> Array[BoardSettings]:
 func add_board(board: BoardSettings) -> void:
 	board_list.append(board)
 	settings_updated.emit()
+
+
+func remove_board(board: BoardSettings) -> void:
+	board_list.erase(board)
+	settings_updated.emit()

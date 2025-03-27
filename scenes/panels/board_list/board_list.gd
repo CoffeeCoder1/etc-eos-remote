@@ -22,11 +22,17 @@ func _add_board(board: BoardSettings) -> void:
 	board_container.add_child(button)
 	
 	button.board_selected.connect(_board_button_pressed.bind(board))
+	button.board_edit.connect(_board_edit_button_pressed.bind(board, button))
 	button.set_board(board)
 
 
 func _board_button_pressed(board: BoardSettings) -> void:
 	OSCGlobals.get_client().connect_socket(board.get_ip_address(), board.get_port())
+
+
+func _board_edit_button_pressed(board: BoardSettings, board_button: BoardButton) -> void:
+	AppSettings.settings.remove_board(board)
+	board_button.queue_free()
 
 
 func _on_new_board_button_pressed() -> void:

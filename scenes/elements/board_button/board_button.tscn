@@ -31,4 +31,5 @@ layout_mode = 2
 text = "Test Board"
 flat = true
 
+[connection signal="gui_input" from="MarginContainer/PanelContainer/Button" to="." method="_on_button_gui_input"]
 [connection signal="pressed" from="MarginContainer/PanelContainer/Button" to="." method="_on_button_pressed"]
