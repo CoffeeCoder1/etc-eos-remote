@@ -39,3 +39,8 @@ func set_user_id(new_user_id: int) -> void:
 
 func get_board_list() -> Array[BoardSettings]:
 	return board_list
+
+
+func add_board(board: BoardSettings) -> void:
+	board_list.append(board)
+	settings_updated.emit()

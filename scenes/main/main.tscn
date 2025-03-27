@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://b1p8ak2bb83bq"]
+[gd_scene load_steps=9 format=3 uid="uid://b1p8ak2bb83bq"]
 
 [ext_resource type="Script" uid="uid://drhpx2eyg21j" path="res://scenes/elements/mode_panel/mode_panel.gd" id="1_b1x3f"]
 [ext_resource type="Script" uid="uid://ekp0mc7qb8vd" path="res://scenes/main/main.gd" id="1_ouso4"]
 [ext_resource type="PackedScene" uid="uid://cv50y2jxdoasn" path="res://scenes/panels/settings/settings.tscn" id="2_iuonh"]
 [ext_resource type="PackedScene" uid="uid://dijj37wh3tb1q" path="res://scenes/main/board_selector.tscn" id="3_blune"]
 [ext_resource type="PackedScene" uid="uid://48xlq7yvv4w8" path="res://scenes/main/interface.tscn" id="4_ow5a4"]
+[ext_resource type="PackedScene" uid="uid://ytvtt68trcr8" path="res://scenes/panels/new_board_menu/new_board_menu.tscn" id="7_hujxm"]
 [ext_resource type="PackedScene" uid="uid://c6gfo3s3obep" path="res://scenes/panels/menu/menu.tscn" id="9_a8run"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_45cpf"]
@@ -55,6 +56,12 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 2
 
+[node name="NewBoardMenuContainer" parent="ModePanel/MarginContainer" instance=ExtResource("7_hujxm")]
+visible = false
+layout_mode = 2
+
+[connection signal="new_board_button_pressed" from="ModePanel/MarginContainer/BoardSelectorContainer" to="ModePanel/MarginContainer/NewBoardMenuContainer" method="_on_new_board_button_pressed"]
 [connection signal="settings_button_pressed" from="ModePanel/MarginContainer/BoardSelectorContainer" to="ModePanel/MarginContainer/SettingsContainer" method="_on_settings_button_pressed"]
 [connection signal="menu_button_pressed" from="ModePanel/MarginContainer/InterfaceContainer" to="ModePanel/MarginContainer/MenuContainer" method="_on_menu_button_pressed"]
 [connection signal="settings_pressed" from="ModePanel/MarginContainer/MenuContainer" to="ModePanel/MarginContainer/SettingsContainer" method="_on_settings_button_pressed"]
+[connection signal="create_board" from="ModePanel/MarginContainer/NewBoardMenuContainer" to="ModePanel/MarginContainer/BoardSelectorContainer" method="add_board"]

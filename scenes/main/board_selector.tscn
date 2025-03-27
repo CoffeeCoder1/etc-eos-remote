@@ -31,3 +31,4 @@ text = "App Settings"
 layout_mode = 2
 
 [connection signal="pressed" from="HeaderContainer/HBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="new_board_button_pressed" from="BoardList" to="." method="_on_new_board_button_pressed"]
