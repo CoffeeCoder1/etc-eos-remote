@@ -118,7 +118,8 @@ func _get_minimum_size() -> Vector2:
 func _input(event: InputEvent) -> void:
 	# Shortcut key
 	if key_shortcut:
-		if key_shortcut.matches_event(event):
+		# Allow TextEdit nodes to grab focus
+		if key_shortcut.matches_event(event) and not (get_viewport().gui_get_focus_owner() is TextEdit):
 			_force_on = event.is_pressed()
 			_on_input(event.is_pressed())
 

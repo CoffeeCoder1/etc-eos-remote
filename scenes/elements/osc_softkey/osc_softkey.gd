@@ -19,4 +19,4 @@ func _ready() -> void:
 
 
 func _on_osc_feedback(value: Array):
-	key_label = str(value[0]).replace(" ", "\n")
+	text = str(value[0]).replace(" ", "\n")

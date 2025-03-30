@@ -48,7 +48,7 @@ layout_mode = 2
 size_flags_vertical = 3
 script = ExtResource("2_67du2")
 key_string = "stop"
-key_label = "Stop / Back"
+text = "Stop / Back"
 key_shortcut = SubResource("Shortcut_helww")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -56,6 +56,6 @@ metadata/_custom_type_script = "uid://23k3hiebxmue"
 layout_mode = 2
 script = ExtResource("2_67du2")
 key_string = "go_0"
-key_label = "Go"
+text = "Go"
 key_shortcut = SubResource("Shortcut_oqvbd")
 metadata/_custom_type_script = "uid://23k3hiebxmue"

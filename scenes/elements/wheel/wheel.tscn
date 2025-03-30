@@ -30,7 +30,7 @@ layout_mode = 2
 script = ExtResource("2_1jvid")
 key_string = "max"
 address_prefix = "/at"
-key_label = "Max"
+text = "Max"
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
 [node name="WheelBox" type="Control" parent="VBoxContainer"]
@@ -57,7 +57,7 @@ layout_mode = 2
 script = ExtResource("2_1jvid")
 key_string = "min"
 address_prefix = "/at"
-key_label = "Min"
+text = "Min"
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
 [connection signal="dragged" from="VBoxContainer/WheelBox" to="." method="_on_wheel_box_dragged"]

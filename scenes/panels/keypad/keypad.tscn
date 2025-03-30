@@ -605,7 +605,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "snapshot"
-key_label = "Snapshot"
+text = "Snapshot"
 key_shortcut = SubResource("Shortcut_0r2if")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -618,7 +618,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "help"
-key_label = "Help"
+text = "Help"
 key_shortcut = SubResource("Shortcut_wwwlj")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -627,7 +627,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "fader"
-key_label = "Fader"
+text = "Fader"
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
 [node name="ButtonBlank2" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/Panel1"]
@@ -639,7 +639,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "address"
-key_label = "Address
+text = "Address
 Patch"
 key_shortcut = SubResource("Shortcut_1kn8q")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
@@ -653,7 +653,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "macro"
-key_label = "Macro"
+text = "Macro"
 key_shortcut = SubResource("Shortcut_emf1a")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -666,7 +666,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "learn"
-key_label = "Learn"
+text = "Learn"
 key_shortcut = SubResource("Shortcut_iawnx")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -691,7 +691,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "delete"
-key_label = "Delete"
+text = "Delete"
 key_shortcut = SubResource("Shortcut_cgws0")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -700,7 +700,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "path"
-key_label = "Path"
+text = "Path"
 key_shortcut = SubResource("Shortcut_4kam5")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -709,7 +709,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "effect"
-key_label = "Effect"
+text = "Effect"
 key_shortcut = SubResource("Shortcut_by6d0")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -722,7 +722,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "part"
-key_label = "Part"
+text = "Part"
 key_shortcut = SubResource("Shortcut_v8wg8")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -731,7 +731,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "cue"
-key_label = "Cue"
+text = "Cue"
 key_shortcut = SubResource("Shortcut_wyw2n")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -740,7 +740,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "record"
-key_label = "Record"
+text = "Record"
 key_shortcut = SubResource("Shortcut_q0gud")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -749,7 +749,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "intensity_palette"
-key_label = "Int
+text = "Int
 Palette"
 key_shortcut = SubResource("Shortcut_k8g5g")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
@@ -759,7 +759,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "focus_palette"
-key_label = "Focus
+text = "Focus
 Palette"
 key_shortcut = SubResource("Shortcut_y3pc3")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
@@ -769,7 +769,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "record_only"
-key_label = "Record
+text = "Record
 Only"
 key_shortcut = SubResource("Shortcut_c52u3")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
@@ -779,7 +779,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "color_palette"
-key_label = "Color
+text = "Color
 Palette"
 key_shortcut = SubResource("Shortcut_rrx3u")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
@@ -789,7 +789,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "beam_palette"
-key_label = "Beam
+text = "Beam
 Palette"
 key_shortcut = SubResource("Shortcut_gqoxf")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
@@ -799,7 +799,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "update"
-key_label = "Update"
+text = "Update"
 key_shortcut = SubResource("Shortcut_dg1l1")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -808,7 +808,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "preset"
-key_label = "Preset"
+text = "Preset"
 key_shortcut = SubResource("Shortcut_o64vq")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -817,7 +817,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "sub"
-key_label = "Sub"
+text = "Sub"
 key_shortcut = SubResource("Shortcut_wupme")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -826,7 +826,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "group"
-key_label = "Group"
+text = "Group"
 key_shortcut = SubResource("Shortcut_1ve50")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -835,7 +835,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "shift"
-key_label = "Shift"
+text = "Shift"
 clears_modifiers = false
 latching = true
 key_shortcut = SubResource("Shortcut_7edfl")
@@ -846,7 +846,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "delay"
-key_label = "Delay"
+text = "Delay"
 key_shortcut = SubResource("Shortcut_i01vp")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -855,7 +855,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "time"
-key_label = "Time"
+text = "Time"
 key_shortcut = SubResource("Shortcut_8cc2g")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -900,7 +900,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "query"
-key_label = "Query"
+text = "Query"
 key_shortcut = SubResource("Shortcut_i1svf")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -909,7 +909,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "copy_to"
-key_label = "CopyTo"
+text = "CopyTo"
 key_shortcut = SubResource("Shortcut_veset")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -918,7 +918,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "recall_from"
-key_label = "Recall
+text = "Recall
 From"
 key_shortcut = SubResource("Shortcut_0q5pt")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
@@ -928,7 +928,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "go_to_cue"
-key_label = "GoTo
+text = "GoTo
 Cue"
 key_shortcut = SubResource("Shortcut_a7ef4")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
@@ -938,7 +938,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "block"
-key_label = "Block"
+text = "Block"
 key_shortcut = SubResource("Shortcut_gkvkc")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -947,7 +947,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "assert"
-key_label = "Assert"
+text = "Assert"
 key_shortcut = SubResource("Shortcut_2o635")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -960,7 +960,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "+"
-key_label = "+"
+text = "+"
 key_shortcut = SubResource("Shortcut_u1afh")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -969,7 +969,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "thru"
-key_label = "Thru"
+text = "Thru"
 key_shortcut = SubResource("Shortcut_ripm3")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -978,7 +978,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "-"
-key_label = "-"
+text = "-"
 key_shortcut = SubResource("Shortcut_w0c3i")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -987,7 +987,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "7"
-key_label = "7"
+text = "7"
 key_shortcut = SubResource("Shortcut_535iy")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -996,7 +996,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "8"
-key_label = "8"
+text = "8"
 key_shortcut = SubResource("Shortcut_ycpu3")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -1005,7 +1005,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "9"
-key_label = "9"
+text = "9"
 key_shortcut = SubResource("Shortcut_k8irb")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -1014,7 +1014,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "4"
-key_label = "4"
+text = "4"
 key_shortcut = SubResource("Shortcut_v1742")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -1023,7 +1023,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "5"
-key_label = "5"
+text = "5"
 key_shortcut = SubResource("Shortcut_4n5xe")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -1032,7 +1032,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "6"
-key_label = "6"
+text = "6"
 key_shortcut = SubResource("Shortcut_7yn6l")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -1041,7 +1041,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "1"
-key_label = "1"
+text = "1"
 key_shortcut = SubResource("Shortcut_cy8dt")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -1050,7 +1050,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "2"
-key_label = "2"
+text = "2"
 key_shortcut = SubResource("Shortcut_h5ie8")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -1059,7 +1059,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "3"
-key_label = "3"
+text = "3"
 key_shortcut = SubResource("Shortcut_p1nbo")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -1068,7 +1068,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "clear_cmd"
-key_label = "Clear"
+text = "Clear"
 key_shortcut = SubResource("Shortcut_b0p4f")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -1077,7 +1077,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "0"
-key_label = "0"
+text = "0"
 key_shortcut = SubResource("Shortcut_3hq6l")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -1086,7 +1086,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "."
-key_label = "."
+text = "."
 key_shortcut = SubResource("Shortcut_tjm8m")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -1131,7 +1131,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "label"
-key_label = "Label
+text = "Label
 Note"
 key_shortcut = SubResource("Shortcut_1s202")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
@@ -1145,7 +1145,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "about"
-key_label = "About"
+text = "About"
 key_shortcut = SubResource("Shortcut_j2u8y")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -1154,7 +1154,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "offset"
-key_label = "Offset"
+text = "Offset"
 key_shortcut = SubResource("Shortcut_sfyw8")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -1163,7 +1163,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "highlight"
-key_label = "High"
+text = "High"
 key_shortcut = SubResource("Shortcut_ki5to")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -1172,7 +1172,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "fan_"
-key_label = "Fan"
+text = "Fan"
 key_shortcut = SubResource("Shortcut_5v83c")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -1185,7 +1185,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "\\"
-key_label = "/"
+text = "/"
 key_shortcut = SubResource("Shortcut_ewxwi")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -1194,7 +1194,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "mark"
-key_label = "Mark"
+text = "Mark"
 key_shortcut = SubResource("Shortcut_4bojq")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -1203,7 +1203,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "sneak"
-key_label = "Sneak"
+text = "Sneak"
 key_shortcut = SubResource("Shortcut_1l3ip")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -1212,7 +1212,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "rem_dim"
-key_label = "Rem
+text = "Rem
 Dim"
 key_shortcut = SubResource("Shortcut_tgkp5")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
@@ -1222,7 +1222,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "+%"
-key_label = "+%"
+text = "+%"
 key_shortcut = SubResource("Shortcut_sa5v6")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -1231,7 +1231,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "home"
-key_label = "Home"
+text = "Home"
 key_shortcut = SubResource("Shortcut_fvqca")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -1240,7 +1240,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "out"
-key_label = "Out"
+text = "Out"
 key_shortcut = SubResource("Shortcut_sqfhc")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -1249,7 +1249,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "-%"
-key_label = "-%"
+text = "-%"
 key_shortcut = SubResource("Shortcut_lcasb")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -1258,7 +1258,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "trace"
-key_label = "Trace"
+text = "Trace"
 key_shortcut = SubResource("Shortcut_tuw4b")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -1267,7 +1267,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "full"
-key_label = "Full"
+text = "Full"
 key_shortcut = SubResource("Shortcut_fva6h")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -1276,7 +1276,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "level"
-key_label = "Level"
+text = "Level"
 key_shortcut = SubResource("Shortcut_ne0il")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -1285,7 +1285,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "cueonlytrack"
-key_label = "QOnly
+text = "QOnly
 Track"
 key_shortcut = SubResource("Shortcut_bch85")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
@@ -1295,7 +1295,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "at"
-key_label = "At"
+text = "At"
 key_shortcut = SubResource("Shortcut_qv8xm")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -1314,7 +1314,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_v3vkr")
 key_string = "enter"
-key_label = "Enter"
+text = "Enter"
 key_shortcut = SubResource("Shortcut_0uxgw")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -1327,7 +1327,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "more_softkeys"
-key_label = "More
+text = "More
 SK"
 key_shortcut = SubResource("Shortcut_bbt7h")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
@@ -1340,7 +1340,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "park"
-key_label = "Park"
+text = "Park"
 key_shortcut = SubResource("Shortcut_pxvqb")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -1349,7 +1349,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "capture"
-key_label = "Capture"
+text = "Capture"
 key_shortcut = SubResource("Shortcut_vvh70")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -1361,7 +1361,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "select_last"
-key_label = "Select
+text = "Select
 Last"
 key_shortcut = SubResource("Shortcut_1mpk2")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
@@ -1371,7 +1371,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "select_manual"
-key_label = "Select
+text = "Select
 Manual"
 key_shortcut = SubResource("Shortcut_3f6fj")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
@@ -1381,7 +1381,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "select_active"
-key_label = "Select
+text = "Select
 Active"
 key_shortcut = SubResource("Shortcut_fxfv6")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
@@ -1391,7 +1391,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "last"
-key_label = "Last"
+text = "Last"
 key_shortcut = SubResource("Shortcut_n7ifq")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -1400,7 +1400,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "next"
-key_label = "Next"
+text = "Next"
 key_shortcut = SubResource("Shortcut_uikg4")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -1417,7 +1417,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "live"
-key_label = "Live"
+text = "Live"
 key_shortcut = SubResource("Shortcut_pf1rg")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -1426,7 +1426,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "blind"
-key_label = "Blind"
+text = "Blind"
 key_shortcut = SubResource("Shortcut_uiwn5")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -1435,7 +1435,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "staging_mode"
-key_label = "Stage"
+text = "Stage"
 key_shortcut = SubResource("Shortcut_w87q1")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -1444,7 +1444,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "displays"
-key_label = "Displays"
+text = "Displays"
 key_shortcut = SubResource("Shortcut_nhdyp")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -1457,7 +1457,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "system_settings"
-key_label = "System"
+text = "System"
 key_shortcut = SubResource("Shortcut_apoub")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -1470,7 +1470,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "undo"
-key_label = "Undo"
+text = "Undo"
 key_shortcut = SubResource("Shortcut_bjirw")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -1483,7 +1483,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "page_mode"
-key_label = "Scroll
+text = "Scroll
 Lock"
 key_shortcut = SubResource("Shortcut_jb8i2")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
@@ -1497,7 +1497,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "escape"
-key_label = "Escape"
+text = "Escape"
 key_shortcut = SubResource("Shortcut_fav1u")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -1506,7 +1506,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "page_up"
-key_label = "Page
+text = "Page
 Up"
 key_shortcut = SubResource("Shortcut_hfejv")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
@@ -1516,7 +1516,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "select"
-key_label = "Select"
+text = "Select"
 key_shortcut = SubResource("Shortcut_usmyp")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -1525,7 +1525,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "page_left"
-key_label = "Page
+text = "Page
 Left"
 key_shortcut = SubResource("Shortcut_mnv24")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
@@ -1535,7 +1535,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "arrow_down"
-key_label = "Page
+text = "Page
 Down"
 key_shortcut = SubResource("Shortcut_uviwl")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
@@ -1545,7 +1545,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "page_right"
-key_label = "Page
+text = "Page
 Right"
 key_shortcut = SubResource("Shortcut_mg828")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
@@ -1559,7 +1559,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "tab"
-key_label = "Tab"
+text = "Tab"
 key_shortcut = SubResource("Shortcut_tcylv")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -1568,7 +1568,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "flexichannel_mode"
-key_label = "Flexi"
+text = "Flexi"
 key_shortcut = SubResource("Shortcut_nxxr0")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -1577,7 +1577,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "display_timing"
-key_label = "Time"
+text = "Time"
 key_shortcut = SubResource("Shortcut_44tw7")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -1586,7 +1586,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "format"
-key_label = "Format"
+text = "Format"
 key_shortcut = SubResource("Shortcut_0nhlw")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -1595,7 +1595,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "expand"
-key_label = "Expand"
+text = "Expand"
 key_shortcut = SubResource("Shortcut_2eapa")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
@@ -1604,7 +1604,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("2_v3vkr")
 key_string = "data"
-key_label = "Data"
+text = "Data"
 key_shortcut = SubResource("Shortcut_m6kx0")
 metadata/_custom_type_script = "uid://23k3hiebxmue"
 
