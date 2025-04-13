@@ -35,4 +35,5 @@ metadata/_custom_type_script = "uid://ddlrj8b0ww7ka"
 layout_mode = 2
 
 [connection signal="pressed" from="HeaderContainer/HBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="board_button_pressed" from="BoardList" to="." method="_on_board_list_board_button_pressed"]
 [connection signal="new_board_button_pressed" from="BoardList" to="." method="_on_new_board_button_pressed"]

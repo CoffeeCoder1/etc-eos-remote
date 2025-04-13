@@ -1,6 +1,9 @@
 class_name BoardList extends PanelContainer
 
+## Emitted when the new board button is pressed.
 signal new_board_button_pressed
+## Emitted when a board button is pressed.
+signal board_button_pressed(board: BoardSettings)
 
 const BOARD_BUTTON = preload("res://scenes/elements/board_button/board_button.tscn")
 
@@ -22,12 +25,13 @@ func _add_board(board: BoardSettings) -> void:
 	board_container.add_child(button)
 	
 	button.board_selected.connect(_board_button_pressed.bind(board))
+	button.board_selected.connect(board_button_pressed.emit.bind(board))
 	button.board_edit.connect(_board_edit_button_pressed.bind(board, button))
 	button.set_board(board)
 
 
 func _board_button_pressed(board: BoardSettings) -> void:
-	OSCGlobals.get_client().connect_socket(board.get_ip_address(), board.get_port())
+	OSCGlobals.connect_board(board)
 
 
 func _board_edit_button_pressed(board: BoardSettings, board_button: BoardButton) -> void:

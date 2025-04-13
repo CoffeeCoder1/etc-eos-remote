@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b1p8ak2bb83bq"]
+[gd_scene load_steps=8 format=3 uid="uid://b1p8ak2bb83bq"]
 
 [ext_resource type="Script" uid="uid://drhpx2eyg21j" path="res://scenes/elements/mode_panel/mode_panel.gd" id="1_b1x3f"]
 [ext_resource type="Script" uid="uid://ekp0mc7qb8vd" path="res://scenes/main/main.gd" id="1_ouso4"]
@@ -8,6 +8,8 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_45cpf"]
 bg_color = Color(0.149475, 0.149475, 0.149474, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6q06x"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -50,6 +52,56 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 
+[node name="ConnectingMessage" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="ConnectingMessage"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="ConnectingMessage/PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ConnectingMessage/PanelContainer/CenterContainer"]
+layout_mode = 2
+
+[node name="ConnectingLabel" type="Label" parent="ConnectingMessage/PanelContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6q06x")
+text = "Connecting..."
+
+[node name="Control" type="Control" parent="ConnectingMessage/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="DisconnectButton" type="Button" parent="ConnectingMessage"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.857
+anchor_right = 0.5
+anchor_bottom = 0.857
+offset_left = -50.0
+offset_top = -17.04
+offset_right = 50.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Disconnect"
+
 [connection signal="new_board_button_pressed" from="ModePanel/MarginContainer/BoardSelectorContainer" to="." method="_on_new_board_button_pressed"]
 [connection signal="settings_button_pressed" from="ModePanel/MarginContainer/BoardSelectorContainer" to="." method="_on_settings_button_pressed"]
 [connection signal="menu_button_pressed" from="ModePanel/MarginContainer/InterfaceContainer" to="." method="_on_board_menu_button_pressed"]
+[connection signal="pressed" from="ConnectingMessage/DisconnectButton" to="." method="_on_disconnect_button_pressed"]

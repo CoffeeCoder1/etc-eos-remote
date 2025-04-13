@@ -9,7 +9,6 @@ script = ExtResource("1_tnmd6")
 
 [node name="OSCClientTCP" type="Node" parent="."]
 script = ExtResource("1_e80f2")
-port = 3037
 ignore_expression = "/eos/out/get/patch/\\d.*"
 
 [node name="OSCUser" type="Node" parent="." node_paths=PackedStringArray("target_client")]

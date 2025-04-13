@@ -4,6 +4,13 @@ extends Node
 signal connected
 ## Emitted when the app disconnects from a server.
 signal disconnected
+## Emitted when a board is selected to connect to.
+signal board_connecting
+## Emitted when a board is disconnected.
+signal board_disconnected
+
+## Should the app be trying to connect to a board?
+var board_connected: bool
 
 @onready var osc_client_tcp: OSCClientTCP = $OSCClientTCP
 @onready var osc_user: OSCUser = $OSCUser
@@ -25,6 +32,22 @@ func get_client() -> OSCClientTCP:
 
 func get_user() -> OSCUser:
 	return osc_user
+
+
+func connect_board(board: BoardSettings):
+	board_connected = true
+	board_connecting.emit()
+	osc_client_tcp.connect_socket(board.get_ip_address(), board.get_port())
+
+
+func disconnect_board():
+	board_connected = false
+	board_disconnected.emit()
+	osc_client_tcp.close_socket()
+
+
+func is_board_connected() -> bool:
+	return board_connected
 
 
 func _on_settings_user_id_set(new_user_id: int) -> void:

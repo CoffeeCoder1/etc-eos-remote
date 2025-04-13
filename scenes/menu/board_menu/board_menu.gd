@@ -13,5 +13,5 @@ func _on_settings_button_pressed() -> void:
 
 
 func _on_disconnect_button_pressed() -> void:
-	OSCGlobals.get_client().close_socket()
+	OSCGlobals.disconnect_board()
 	close()
