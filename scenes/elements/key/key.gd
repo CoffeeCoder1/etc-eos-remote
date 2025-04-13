@@ -111,10 +111,6 @@ func _process(delta: float) -> void:
 			_hold_timer = 0.0
 
 
-func _get_minimum_size() -> Vector2:
-	return _panel_container.size
-
-
 func _input(event: InputEvent) -> void:
 	# Shortcut key
 	if key_shortcut:
