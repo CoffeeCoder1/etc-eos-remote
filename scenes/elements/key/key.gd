@@ -173,7 +173,7 @@ func _draw() -> void:
 	var scale_amount: float = 0.0
 	if size > unscaled_size:
 		scale_amount = (size - unscaled_size).length()
-	_label.max_font_size = scale_amount * max_font_size_scalar * 0.25 + normal_font_size
+	_label.max_font_size = scale_amount * max_font_size_scalar * 0.15 + normal_font_size
 
 
 func _on_mouse_entered() -> void:
