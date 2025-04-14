@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cy73ew523w6b4"]
+[gd_scene load_steps=5 format=3 uid="uid://cy73ew523w6b4"]
 
 [ext_resource type="Script" uid="uid://den182qcns20l" path="res://scenes/elements/wheel/wheel.gd" id="1_7dxjw"]
 [ext_resource type="Script" uid="uid://23k3hiebxmue" path="res://scenes/elements/osc_key/osc_key.gd" id="2_1jvid"]
 [ext_resource type="Script" uid="uid://btkt66wslfe7u" path="res://scenes/elements/wheel/wheel_box.gd" id="2_4k3ov"]
+[ext_resource type="Script" uid="uid://bt6qxxe528u7j" path="res://scenes/elements/auto_size_label/auto_size_label.gd" id="2_yn6l5"]
 
 [node name="Wheel" type="PanelContainer"]
 custom_minimum_size = Vector2(75, 0)
@@ -14,34 +15,69 @@ grow_vertical = 2
 size_flags_vertical = 3
 script = ExtResource("1_7dxjw")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Control" type="Control" parent="."]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="Label" type="Label" parent="Control"]
+unique_name_in_owner = true
 layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 0.0347222
+theme_override_font_sizes/font_size = 64
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+script = ExtResource("2_yn6l5")
+min_font_size = 12
+max_font_size = 64
+metadata/_custom_type_script = "uid://bt6qxxe528u7j"
+metadata/_edit_use_anchors_ = true
 
-[node name="Value" type="Label" parent="VBoxContainer"]
+[node name="Value" type="Label" parent="Control"]
+unique_name_in_owner = true
 layout_mode = 2
+anchor_top = 0.0402778
+anchor_right = 1.0
+anchor_bottom = 0.075
+theme_override_font_sizes/font_size = 64
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+script = ExtResource("2_yn6l5")
+min_font_size = 12
+max_font_size = 64
+metadata/_custom_type_script = "uid://bt6qxxe528u7j"
+metadata/_edit_use_anchors_ = true
 
-[node name="MaxButton" type="Control" parent="VBoxContainer"]
+[node name="MaxButton" type="Control" parent="Control"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
+anchors_preset = 0
+anchor_top = 0.0805556
+anchor_right = 1.0
+anchor_bottom = 0.115278
 script = ExtResource("2_1jvid")
 key_string = "max"
 address_prefix = "/at"
 text = "Max"
 metadata/_custom_type_script = "uid://23k3hiebxmue"
+metadata/_edit_use_anchors_ = true
 
-[node name="WheelBox" type="Control" parent="VBoxContainer"]
+[node name="WheelBox" type="Control" parent="Control"]
+unique_name_in_owner = true
 layout_mode = 2
+anchors_preset = 0
+anchor_top = 0.120833
+anchor_right = 1.0
+anchor_bottom = 0.959722
 size_flags_vertical = 3
 script = ExtResource("2_4k3ov")
+metadata/_edit_use_anchors_ = true
 
-[node name="VSlider" type="VSlider" parent="VBoxContainer/WheelBox"]
+[node name="VSlider" type="VSlider" parent="Control/WheelBox"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -53,17 +89,24 @@ size_flags_vertical = 3
 mouse_filter = 1
 tick_count = 3
 ticks_on_borders = true
+metadata/_edit_use_anchors_ = true
 
-[node name="MinButton" type="Control" parent="VBoxContainer"]
+[node name="MinButton" type="Control" parent="Control"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
+anchors_preset = 0
+anchor_top = 0.965278
+anchor_right = 1.0
+anchor_bottom = 1.0
 script = ExtResource("2_1jvid")
 key_string = "min"
 address_prefix = "/at"
 text = "Min"
 metadata/_custom_type_script = "uid://23k3hiebxmue"
+metadata/_edit_use_anchors_ = true
 
-[connection signal="dragged" from="VBoxContainer/WheelBox" to="." method="_on_wheel_box_dragged"]
-[connection signal="released" from="VBoxContainer/WheelBox" to="." method="_on_wheel_box_released"]
-[connection signal="value_changed" from="VBoxContainer/WheelBox" to="." method="_on_wheel_box_value_changed"]
-[connection signal="value_changed" from="VBoxContainer/WheelBox/VSlider" to="VBoxContainer/WheelBox" method="_on_v_slider_value_changed"]
+[connection signal="dragged" from="Control/WheelBox" to="." method="_on_wheel_box_dragged"]
+[connection signal="released" from="Control/WheelBox" to="." method="_on_wheel_box_released"]
+[connection signal="value_changed" from="Control/WheelBox" to="." method="_on_wheel_box_value_changed"]
+[connection signal="value_changed" from="Control/WheelBox/VSlider" to="Control/WheelBox" method="_on_v_slider_value_changed"]

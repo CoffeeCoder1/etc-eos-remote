@@ -20,9 +20,11 @@ class_name Wheel extends Control
 					wheel_box.relative = false
 		wheel_mode = new_wheel_mode
 
-@onready var max_button: OSCKey = $VBoxContainer/MaxButton
-@onready var min_button: OSCKey = $VBoxContainer/MinButton
-@onready var wheel_box: Control = $VBoxContainer/WheelBox
+@onready var label: Label = %Label
+@onready var value_label: Label = %Value
+@onready var max_button: OSCKey = %MaxButton
+@onready var min_button: OSCKey = %MinButton
+@onready var wheel_box: Control = %WheelBox
 
 var osc_element: OSCElement
 ## Parameter name for display.
@@ -72,8 +74,8 @@ func _on_osc_feedback(value: Array):
 	parameter_name = regex.search(str(value[0])).get_string()
 	osc_parameter_name = parameter_name.replace("/", "\\")
 	
-	$VBoxContainer/Label.text = parameter_name
-	$VBoxContainer/Value.text = str(round(value[2]))
+	label.text = parameter_name
+	value_label.text = str(round(value[2]))
 	wheel_box.set_value_feedback(value[2])
 	
 	max_button.address_prefix = "/param/" + osc_parameter_name
