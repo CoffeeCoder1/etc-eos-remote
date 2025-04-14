@@ -1,4 +1,4 @@
-extends VBoxContainer
+extends Control
 
 signal menu_button_pressed
 

@@ -1,4 +1,4 @@
-extends VBoxContainer
+extends Control
 
 signal settings_button_pressed
 ## Emitted when the new board button is pressed.

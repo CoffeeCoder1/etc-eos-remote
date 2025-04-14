@@ -1,4 +1,4 @@
-class_name OSCLabel extends Label
+class_name OSCLabel extends AutoSizeLabel
 
 @export var feedback_mode: OSCElement.FeedbackMode = OSCElement.FeedbackMode.USER
 @export var feedback_address: String:

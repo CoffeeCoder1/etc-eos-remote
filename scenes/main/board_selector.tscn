@@ -1,39 +1,69 @@
-[gd_scene load_steps=5 format=3 uid="uid://dijj37wh3tb1q"]
+[gd_scene load_steps=6 format=3 uid="uid://dijj37wh3tb1q"]
 
 [ext_resource type="Script" uid="uid://bdmj31a7op7sm" path="res://scenes/main/board_selector.gd" id="1_0wjf1"]
 [ext_resource type="PackedScene" uid="uid://cov5i5dcdtxb4" path="res://scenes/elements/board_list/board_list.tscn" id="1_1h431"]
+[ext_resource type="Script" uid="uid://bt6qxxe528u7j" path="res://scenes/elements/auto_size_label/auto_size_label.gd" id="2_2l6mo"]
 [ext_resource type="Script" uid="uid://ddlrj8b0ww7ka" path="res://scenes/elements/key/key.gd" id="2_vgvjv"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hoj37"]
 
-[node name="BoardSelector" type="VBoxContainer"]
+[node name="BoardSelector" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_0wjf1")
 
-[node name="HeaderContainer" type="PanelContainer" parent="."]
+[node name="HeaderContainer" type="Panel" parent="."]
 layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 0.016
+offset_bottom = 11.48
+metadata/_edit_use_anchors_ = true
 
 [node name="TitleLabel" type="Label" parent="HeaderContainer"]
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 8
 theme_override_styles/normal = SubResource("StyleBoxEmpty_hoj37")
 text = "ETC Eos Remote"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+script = ExtResource("2_2l6mo")
+max_font_size = 24
+metadata/_custom_type_script = "uid://bt6qxxe528u7j"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HeaderContainer"]
-layout_mode = 2
-
-[node name="SettingsButton" type="Control" parent="HeaderContainer/HBoxContainer"]
+[node name="SettingsButton" type="Control" parent="HeaderContainer"]
 custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
+anchors_preset = 0
+anchor_left = 0.941406
+anchor_right = 1.0
+anchor_bottom = 1.0
 size_flags_horizontal = 10
 script = ExtResource("2_vgvjv")
 text = "App Settings"
 metadata/_custom_type_script = "uid://ddlrj8b0ww7ka"
+metadata/_edit_use_anchors_ = true
 
 [node name="BoardList" parent="." instance=ExtResource("1_1h431")]
 layout_mode = 2
+anchor_top = 0.016
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 16.48
+offset_right = 0.0
+metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="HeaderContainer/HBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="HeaderContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="board_button_pressed" from="BoardList" to="." method="_on_board_list_board_button_pressed"]
 [connection signal="new_board_button_pressed" from="BoardList" to="." method="_on_new_board_button_pressed"]

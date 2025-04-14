@@ -18,7 +18,13 @@ func _init() -> void:
 
 func _ready() -> void:
 	syntax_highlighter = COMMAND_LINE_SYNTAX_HIGHLIGHTER
+	
+	text_changed.connect(_on_text_changed)
 
 
 func _on_osc_feedback(value: Array):
 	text = str(value[0]).replace("#", "♦")
+
+
+func _on_text_changed() -> void:
+	OSCGlobals.get_client().send_message("/eos/cmd", ["a"])

@@ -15,6 +15,7 @@ class_name AutoSizeLabel extends Label
 
 func _ready() -> void:
 	clip_text = true
+	autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	item_rect_changed.connect(update)
 
 

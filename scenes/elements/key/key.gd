@@ -154,6 +154,9 @@ func _draw() -> void:
 			_panel_container.add_theme_stylebox_override("panel", get_theme_stylebox("hover", "Button"))
 		DrawMode.DRAW_PRESSED:
 			_panel_container.add_theme_stylebox_override("panel", get_theme_stylebox("pressed", "Button"))
+	
+	# Calculate a good max font size. This makes sure that the font size scales nicely with the Key.
+	_label.max_font_size = (size - get_combined_minimum_size()).length() * 0.25 + 12
 
 
 func _on_mouse_entered() -> void:
