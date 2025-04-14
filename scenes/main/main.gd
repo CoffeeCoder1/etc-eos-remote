@@ -4,8 +4,8 @@ const SETTINGS_MENU = preload("res://scenes/menu/settings_menu/settings_menu.tsc
 const BOARD_MENU = preload("res://scenes/menu/board_menu/board_menu.tscn")
 const NEW_BOARD_MENU = preload("res://scenes/menu/new_board_menu/new_board_menu.tscn")
 
-@onready var board_selector_container: VBoxContainer = %BoardSelectorContainer
-@onready var interface_container: VBoxContainer = %InterfaceContainer
+@onready var board_selector_container: Control = %BoardSelectorContainer
+@onready var interface_container: Control = %InterfaceContainer
 @onready var menu_container: MenuContainer = %MenuContainer
 @onready var connecting_message: Control = $ConnectingMessage
 
