@@ -26,6 +26,9 @@ theme_override_constants/margin_bottom = 5
 layout_mode = 2
 script = ExtResource("2_dd0wq")
 hold_enabled = true
+normal_font_size = 16
+max_font_size_scalar = 0.1
+regular_size = Vector2(1270, 65)
 metadata/_custom_type_script = "uid://ddlrj8b0ww7ka"
 
 [connection signal="held" from="MarginContainer/Key" to="." method="_on_key_held"]

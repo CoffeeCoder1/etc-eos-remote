@@ -19,6 +19,14 @@ class_name Key extends Control
 @export var key_shortcut: Shortcut
 ## Determines when the key is considered pressed.
 @export var action_mode: Button.ActionMode = Button.ActionMode.ACTION_MODE_BUTTON_RELEASE
+## The unscaled font size of the key.
+@export var normal_font_size: int = 12
+## Scalar multiplied into the maximum font size calculations. Smaller values will cause a smaller font
+## size.
+@export var max_font_size_scalar: float = 1.0
+## The regular size of the button. Used to calculate how much the button has been scaled to calculate
+## a good maximum font size.
+@export var regular_size: Vector2 = Vector2.ZERO
 
 ## Emitted when the key is pressed.
 signal button_down
@@ -156,7 +164,16 @@ func _draw() -> void:
 			_panel_container.add_theme_stylebox_override("panel", get_theme_stylebox("pressed", "Button"))
 	
 	# Calculate a good max font size. This makes sure that the font size scales nicely with the Key.
-	_label.max_font_size = (size - get_combined_minimum_size()).length() * 0.25 + 12
+	var unscaled_size: Vector2
+	if regular_size == Vector2.ZERO:
+		unscaled_size = get_combined_minimum_size()
+	else:
+		unscaled_size = regular_size
+	
+	var scale_amount: float = 0.0
+	if size > unscaled_size:
+		scale_amount = (size - unscaled_size).length()
+	_label.max_font_size = scale_amount * max_font_size_scalar * 0.25 + normal_font_size
 
 
 func _on_mouse_entered() -> void:

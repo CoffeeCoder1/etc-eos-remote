@@ -4,7 +4,11 @@
 [ext_resource type="Script" uid="uid://ddlrj8b0ww7ka" path="res://scenes/elements/key/key.gd" id="2_0s2f0"]
 
 [node name="BoardList" type="PanelContainer"]
-offset_right = 82.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_vertical = 3
 script = ExtResource("1_iai02")
 metadata/_custom_type_script = "uid://c3sqxgw7bhvjs"
@@ -20,10 +24,13 @@ theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
 [node name="NewBoardButton" type="Control" parent="VBoxContainer/MarginContainer"]
-custom_minimum_size = Vector2(0, 40)
+custom_minimum_size = Vector2(100, 40)
 layout_mode = 2
 script = ExtResource("2_0s2f0")
 text = "New Board"
+normal_font_size = 16
+max_font_size_scalar = 0.1
+regular_size = Vector2(1270, 40)
 metadata/_custom_type_script = "uid://ddlrj8b0ww7ka"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
