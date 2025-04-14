@@ -610,8 +610,6 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.610937
 anchor_bottom = 1.00167
-grow_horizontal = 2
-grow_vertical = 2
 theme_override_constants/separation = 25
 
 [node name="Panel1" type="AspectRatioContainer" parent="Control/Control/KeyPanels"]
