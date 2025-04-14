@@ -30,6 +30,7 @@ func _on_rect_changed() -> void:
 	else:
 		panel_1.set_meta("tab", Tabs.MAIN)
 		panel_5.set_meta("tab", Tabs.MAIN)
+		tab_bar.current_tab = Tabs.MAIN
 	
 	queue_redraw()
 
