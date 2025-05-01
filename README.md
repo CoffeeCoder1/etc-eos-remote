@@ -2,6 +2,9 @@
 
 A third-party remote control app for ETC Eos family lighting consoles, designed to assist in focusing lights.
 
+> [!WARNING]  
+> Development on this has stopped pretty much completely, since I've been running into a ton of issues with Godot (it's not really designed to make apps like this). I'm actively working on reimplementing it using Qt, so stay tuned for more updates!
+
 <img width="752" alt="Screenshot 2025-01-29 at 09 07 18" src="https://github.com/user-attachments/assets/05ecd14e-3802-4ec6-a879-113ae9a6de28" />
 
 ## Installation
