@@ -4,6 +4,8 @@ A third-party remote control app for ETC Eos family lighting consoles, designed 
 
 > [!WARNING]  
 > Development on this has stopped pretty much completely, since I've been running into a ton of issues with Godot (it's not really designed to make apps like this). I'm actively working on reimplementing it using Qt, so stay tuned for more updates!
+> 
+> UPDATE - This has now been superseded by the [Universal Focus Remote](https://github.com/CoffeeCoder1/universal-focus-remote) project.
 
 <img width="752" alt="Screenshot 2025-01-29 at 09 07 18" src="https://github.com/user-attachments/assets/05ecd14e-3802-4ec6-a879-113ae9a6de28" />
 
